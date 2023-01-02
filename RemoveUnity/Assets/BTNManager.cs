@@ -24,6 +24,7 @@ public class BTNManager : MonoBehaviour
         {
             case BTNType.Start:
                 Debug.Log("게임시작");
+                SceneManager.LoadScene("StoryScene");
                 break;
             case BTNType.Option:
                 Debug.Log("설정");
