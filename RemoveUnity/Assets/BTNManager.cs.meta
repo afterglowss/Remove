@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:RemoveUnity/Assets/NewBehaviourScript.cs.meta
 guid: f51a6d5d16b9c024bb5a6cf9808ab412
+=======
+guid: 10472ddd6b50e7e49bb63db01143dfe5
+>>>>>>> Stashed changes:RemoveUnity/Assets/BTNManager.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
