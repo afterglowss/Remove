@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum BTNType
 {
@@ -10,7 +11,10 @@ public enum BTNType
     Quit,
     Back,
     Music,
-    Sound
+    Sound,
+    Skip,
+    Right,
+    Left
 }
 public class BTNManager : MonoBehaviour
 {
@@ -18,6 +22,17 @@ public class BTNManager : MonoBehaviour
     public CanvasGroup mainGroup;
     public CanvasGroup optionGroup;
     public CanvasGroup pauseGroup;
+    private Transform cameraTransform;
+    public Image presentImage;
+    public Image rightImage;
+    public Image leftImage;
+    private Button rightButton;
+    private Button leftButton;
+
+    public void Start()
+    {
+        cameraTransform = transform.Find("Main Camera");
+    }
     public void OnButtonClick()
     {
         switch (type)
@@ -39,6 +54,20 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOff(optionGroup);
                 CanvasGroupOn(mainGroup);
                 Debug.Log("µÚ·Î");
+                break;
+            case BTNType.Skip:
+                SceneManager.LoadScene("GameScene");
+                break;
+            case BTNType.Right:
+                rightImage.gameObject.SetActive(true);
+                leftImage.gameObject.SetActive(false);
+                rightImage.rectTransform.position = new Vector3(1920,0,0);
+                rightImage.rectTransform.position = Vector3.Lerp(rightImage.rectTransform.position, cameraTransform.position, 0.05f);
+                presentImage.gameObject.SetActive(false);
+                break;
+            case BTNType.Left:
+                leftImage.gameObject.SetActive(true);
+                rightImage.gameObject.SetActive(false);
                 break;
         }
     }

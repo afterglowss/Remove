@@ -455,8 +455,9 @@ GameObject:
   - component: {fileID: 1337409490}
   - component: {fileID: 1337409489}
   - component: {fileID: 1337409488}
+  - component: {fileID: 1337409491}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SkipButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,8 +481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -525}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -520, y: -20}
+  m_SizeDelta: {x: 465.48, y: 192.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337409488
 MonoBehaviour:
@@ -526,7 +527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1337409489}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1337409491}
+        m_TargetAssemblyTypeName: BTNManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1337409489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +578,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337409486}
   m_CullTransparentMesh: 1
+--- !u!114 &1337409491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337409486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51a6d5d16b9c024bb5a6cf9808ab412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  mainGroup: {fileID: 0}
+  optionGroup: {fileID: 0}
+  pauseGroup: {fileID: 0}
 --- !u!1 &1688038548
 GameObject:
   m_ObjectHideFlags: 0
