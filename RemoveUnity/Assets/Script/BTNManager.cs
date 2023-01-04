@@ -12,9 +12,7 @@ public enum BTNType
     Back,
     Music,
     Sound,
-    Skip,
-    Right,
-    Left
+    Skip
 }
 public class BTNManager : MonoBehaviour
 {
@@ -22,17 +20,7 @@ public class BTNManager : MonoBehaviour
     public CanvasGroup mainGroup;
     public CanvasGroup optionGroup;
     public CanvasGroup pauseGroup;
-    private Transform cameraTransform;
-    public Image presentImage;
-    public Image rightImage;
-    public Image leftImage;
-    private Button rightButton;
-    private Button leftButton;
 
-    public void Start()
-    {
-        cameraTransform = transform.Find("Main Camera");
-    }
     public void OnButtonClick()
     {
         switch (type)
@@ -57,17 +45,6 @@ public class BTNManager : MonoBehaviour
                 break;
             case BTNType.Skip:
                 SceneManager.LoadScene("GameScene");
-                break;
-            case BTNType.Right:
-                rightImage.gameObject.SetActive(true);
-                leftImage.gameObject.SetActive(false);
-                rightImage.rectTransform.position = new Vector3(1920,0,0);
-                rightImage.rectTransform.position = Vector3.Lerp(rightImage.rectTransform.position, cameraTransform.position, 0.05f);
-                presentImage.gameObject.SetActive(false);
-                break;
-            case BTNType.Left:
-                leftImage.gameObject.SetActive(true);
-                rightImage.gameObject.SetActive(false);
                 break;
         }
     }
