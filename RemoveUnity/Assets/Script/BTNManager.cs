@@ -12,7 +12,8 @@ public enum BTNType
     Back,
     Music,
     Sound,
-    Skip
+    Skip,
+    MainMenu
 }
 public class BTNManager : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class BTNManager : MonoBehaviour
                 break;
             case BTNType.Skip:
                 SceneManager.LoadScene("GameScene");
+                break;
+            case BTNType.MainMenu:
+                SceneManager.LoadScene("StartScene");
                 break;
         }
     }
