@@ -1,0 +1,50 @@
+﻿title: Bed
+tags:
+---
+<<set $BedBloodCleanOrNot = false>>
+<<set $Observation = 10>>
+내 방에 있는 침대이다.
+푹신하긴 하지만, 너무 좁다.
+-> 더 살펴볼래.
+	<<if $BedBloodCleanOrNot == false>>
+	<<jump Blood>>
+	<<else>>
+	특별한 점이 있진 않다.
+	<<endif>>
+-> 이정도면 됐어.
+===
+title: Blood
+---
+<color=red>피 묻은 자국</color>이 있다.
+-> 지워야 해.
+	자국을 깨끗이 지웠다.
+	<<set $BedBloodCleanOrNot = true>>
+
+-> 그대로 둬도 괜찮을 것 같아.
+-> 핏자국을 확인해봐야겠어. <<if $Observation > 10>>
+	이건... 피가 튀었다기보단 흐르는 피가 닦인 것 같다.
+<<if getCrimeEvidenceInStudio() == false>>
+아직 흔적이 남았다.
+경찰이 내가 범죄를 저질렀다는 사실을 알면 안된다.
+더 찾아보자.
+<<else>>
+다 지운 것 같다.
+이제 휴대폰만 확인하면 된다.
+<<endif>>
+===
+title: Sink
+---
+<<set $SinkTissueBurn = false>>
+싱크대이다.
+-> 안쪽을 확인해볼까?
+	말라붙은 귤 껍데기가 있다.
+	<<if $SinkTissueBurn == false>>
+	<color=red>피 묻은 휴지</color>가 있다.
+	-> 태우자.
+		휴지를 태웠다.
+		<<set $SinkTissueBurn = true>>
+	-> 신경쓰지 않아도 될거야.
+	<<endif>>
+
+-> 별로 도움될 만한 게 있을 것 같지 않아.
+===
