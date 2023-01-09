@@ -1,8 +1,12 @@
-﻿title: Bed
-tags:
+﻿title: variables
 ---
 <<set $BedBloodCleanOrNot = false>>
 <<set $Observation = 10>>
+<<set $SinkTissueBurn = false>>
+===
+title: Bed
+tags:
+---
 내 방에 있는 침대이다.
 푹신하긴 하지만, 너무 좁다.
 -> 더 살펴볼래.
@@ -34,7 +38,6 @@ title: Blood
 ===
 title: Sink
 ---
-<<set $SinkTissueBurn = false>>
 싱크대이다.
 -> 안쪽을 확인해볼까?
 	말라붙은 귤 껍데기가 있다.

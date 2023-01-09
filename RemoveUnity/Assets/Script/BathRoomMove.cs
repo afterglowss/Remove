@@ -14,7 +14,12 @@ public enum BathroomBTNType
 public class BathRoomMove : MonoBehaviour
 {
     public BathroomBTNType type;
-    public Camera mainCamera;
+    private Camera mainCamera;
+
+    private void Awake()
+    {
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+    }
 
     public void OnBathroomBtnClick()
     {

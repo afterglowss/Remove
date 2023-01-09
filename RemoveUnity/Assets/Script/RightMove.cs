@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class RightMove : MonoBehaviour
 {
     public Image presentImage;
-    public Camera mainCamera;
+    private Camera mainCamera;
 
+    private void Awake()
+    {
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+    }
     public void OnBtnClick()
     {
         if (presentImage.name == "Room1")
