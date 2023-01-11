@@ -7,7 +7,10 @@ using Yarn.Unity;
 public enum ObjectType
 {
     Bed,
-    Sink
+    Sink,
+    Refrigerator,
+    FrontDoor,
+    Desk
 }
 
 public class ObjectDialogueManager : MonoBehaviour
@@ -42,6 +45,15 @@ public class ObjectDialogueManager : MonoBehaviour
                 Debug.Log(BedBloodCleanOrNot);
                 break;
             case ObjectType.Sink:
+                dialogueRunner.StartDialogue(objectNode);
+                break;
+            case ObjectType.Refrigerator:
+                dialogueRunner.StartDialogue(objectNode);
+                break;
+            case ObjectType.FrontDoor:
+                dialogueRunner.StartDialogue(objectNode);
+                break;
+            case ObjectType.Desk:
                 dialogueRunner.StartDialogue(objectNode);
                 break;
         }

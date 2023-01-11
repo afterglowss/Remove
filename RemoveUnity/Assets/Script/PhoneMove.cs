@@ -98,6 +98,6 @@ public class PhoneMove : MonoBehaviour
     private void Update()
     {
         Phone.transform.position = Vector3.Lerp(Phone.transform.position,
-                cameraTransform.position + Target, Time.deltaTime * 3);
+                cameraTransform.position + Target, Time.deltaTime * 5);
     }
 }
