@@ -307,11 +307,12 @@ RectTransform:
   - {fileID: 302787980}
   - {fileID: 1962308307}
   - {fileID: 859524698}
+  - {fileID: 2059117230}
   - {fileID: 1491449387}
-  - {fileID: 1492043298}
   - {fileID: 940220241}
+  - {fileID: 1492043298}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -490,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1920.0001, y: -1079.9998}
+  m_AnchoredPosition: {x: 3840.0002, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56012171
@@ -568,7 +569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1080}
+  m_AnchoredPosition: {x: 5760.0005, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137131161
@@ -704,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5481484092624835572, guid: 3ff4e0d87ab7d4789a1565ac303e8261, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5481484092624835572, guid: 3ff4e0d87ab7d4789a1565ac303e8261, type: 3}
       propertyPath: m_AnchorMax.x
@@ -828,7 +829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1920.0001, y: 1080}
+  m_AnchoredPosition: {x: -3840.0002, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302787981
@@ -1016,7 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c4d32ee1399004fa5f65f91ef6031e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 1829265037}
 --- !u!1 &305483146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1941269bc7b40df4e9980a497e4b96e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 137131161}
 --- !u!114 &305483149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,7 +1352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c4d32ee1399004fa5f65f91ef6031e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 137131161}
 --- !u!114 &398173465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,7 +1877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2416,7 +2414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1941269bc7b40df4e9980a497e4b96e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 141907975}
 --- !u!1 &810615102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,7 +2467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c4d32ee1399004fa5f65f91ef6031e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 56012171}
 --- !u!114 &810615105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2750,7 +2746,6 @@ GameObject:
   - component: {fileID: 940220245}
   - component: {fileID: 940220244}
   - component: {fileID: 940220243}
-  - component: {fileID: 940220242}
   m_Layer: 5
   m_Name: PhoneDownButton
   m_TagString: Untagged
@@ -2776,22 +2771,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 646.83, y: 139}
+  m_AnchoredPosition: {x: 646.82, y: 139.00122}
   m_SizeDelta: {x: 275.96, y: 90.97}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &940220242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940220240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e2b39f0f010114c826c12f6b708949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Phone: {fileID: 2059117229}
 --- !u!114 &940220243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2836,34 +2818,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 940220243}
-        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
-        m_MethodName: StopCoroutine
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Pull
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 940220242}
+      - m_Target: {fileID: 1491449391}
         m_TargetAssemblyTypeName: PhoneMove, Assembly-CSharp
         m_MethodName: PhoneDown
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1492043297}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2947,7 +2905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1080}
+  m_AnchoredPosition: {x: -1920.0001, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964118806
@@ -3270,7 +3228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c4d32ee1399004fa5f65f91ef6031e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 141907975}
 --- !u!1 &1156331591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,7 +3846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1941269bc7b40df4e9980a497e4b96e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 56012171}
 --- !u!114 &1475931997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4012,17 +3968,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491449386}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 601708312}
   m_Father: {fileID: 45948196}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 646.83, y: 262}
+  m_AnchoredPosition: {x: 646.82, y: 261.99756}
   m_SizeDelta: {x: 275.96, y: 90.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491449388
@@ -4069,34 +4025,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1491449388}
-        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
-        m_MethodName: StopCoroutine
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Push
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1491449391}
         m_TargetAssemblyTypeName: PhoneMove, Assembly-CSharp
         m_MethodName: PhoneUp
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1492043297}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4168,7 +4100,7 @@ GameObject:
   - component: {fileID: 1492043300}
   - component: {fileID: 1492043299}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BlockImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4187,12 +4119,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 45948196}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5760, y: 3240}
+  m_AnchoredPosition: {x: 960, y: 0}
+  m_SizeDelta: {x: 11520, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492043299
 MonoBehaviour:
@@ -4550,7 +4482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2300.38, y: -1391.56}
+  m_AnchoredPosition: {x: 4220, y: -311}
   m_SizeDelta: {x: 1115.43, y: 407.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738330248
@@ -5157,7 +5089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1941269bc7b40df4e9980a497e4b96e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentImage: {fileID: 1829265037}
 --- !u!1 &1863956014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,107 +5224,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863956014}
   m_CullTransparentMesh: 1
---- !u!1 &1941114172
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1941114176}
-  - component: {fileID: 1941114175}
-  - component: {fileID: 1941114174}
-  - component: {fileID: 1941114173}
-  m_Layer: 5
-  m_Name: PhoneCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1941114173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941114172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1941114174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941114172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
---- !u!223 &1941114175
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941114172}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 35541448}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &1941114176
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941114172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2059117230}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920.0001, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1962308306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,7 +5670,7 @@ GameObject:
   - component: {fileID: 2059117232}
   - component: {fileID: 2059117231}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PhoneImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5853,17 +5683,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059117229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1941114176}
-  m_RootOrder: 0
+  m_Father: {fileID: 45948196}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1082}
+  m_AnchoredPosition: {x: 0.000061035156, y: -1081.9973}
   m_SizeDelta: {x: 520, y: 880}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2059117231

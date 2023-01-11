@@ -26,16 +26,16 @@ public class BathRoomMove : MonoBehaviour
         switch (type)
         {
             case BathroomBTNType.Left:
-                mainCamera.transform.position = new Vector3(-17.7778f, 10, -100);
+                mainCamera.transform.position = new Vector3(-35.5556f, 0, -100);
                 break;
             case BathroomBTNType.Right:
-                mainCamera.transform.position = new Vector3(0, 10, -100);
+                mainCamera.transform.position = new Vector3(-17.7778f, 0, -100);
                 break;
             case BathroomBTNType.Down:
                 mainCamera.transform.position = new Vector3(0, 0, -100);
                 break;
             case BathroomBTNType.Up:
-                mainCamera.transform.position = new Vector3(0, 10, -100);
+                mainCamera.transform.position = new Vector3(-17.7778f, 0, -100);
                 break;
         }
     }
