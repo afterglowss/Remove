@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class SoundManager : MonoBehaviour
 
     public static float volume = 0.5f;
     public static SoundManager instance;
+
+    
+
     public void SetSoundVolume(float volume)
     {
         SoundManager.volume = volume;
@@ -23,4 +28,5 @@ public class SoundManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+    
 }

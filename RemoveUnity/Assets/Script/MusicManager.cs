@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
@@ -22,6 +24,15 @@ public class MusicManager : MonoBehaviour
         }
         else 
             Destroy(gameObject);
+    }
+
+    public void Update()
+    {
+        Scene nowScene = SceneManager.GetActiveScene();
+        if (nowScene.name == "StoryScene")
+        {
+            musicSource.Stop();
+        }
     }
     //private GameObject[] musics;
 
