@@ -7681,7 +7681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51a6d5d16b9c024bb5a6cf9808ab412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 7
+  type: 11
   mainGroup: {fileID: 0}
   optionGroup: {fileID: 0}
   pauseGroup: {fileID: 0}
