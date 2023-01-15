@@ -47,8 +47,8 @@ namespace Yarn.Unity.Example
         public void SetSenderMe() 
         {
             isRightAlignment = true;
-            currentBGColor = Color.blue;
-            currentTextColor = Color.white;
+            currentBGColor = Color.yellow;
+            currentTextColor = Color.black;
         }
 
         // YarnCommand <<Them>> does not use YarnCommand C# attribute, registers in Awake() instead
