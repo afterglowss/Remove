@@ -29,7 +29,7 @@ public class MusicManager : MonoBehaviour
     public void Update()
     {
         Scene nowScene = SceneManager.GetActiveScene();
-        if (nowScene.name == "StoryScene")
+        if (nowScene.name == "StoryStart")
         {
             musicSource.Stop();
         }
