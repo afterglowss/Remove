@@ -12,7 +12,11 @@ public enum BTNType
     Back,
     Music,
     Sound,
-    Skip,
+    SkipToHospital,
+    SkipToBlack1,
+    SkipToPhone,
+    SkipToBlack2,
+    SkipToGamescene,
     MainMenu
 }
 public class BTNManager : MonoBehaviour
@@ -28,7 +32,7 @@ public class BTNManager : MonoBehaviour
         {
             case BTNType.Start:
                 Debug.Log("게임시작");
-                SceneManager.LoadScene("StoryScene");
+                SceneManager.LoadScene("StoryStart");
                 break;
             case BTNType.Option:
                 Debug.Log("설정");
@@ -44,7 +48,19 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOn(mainGroup);
                 Debug.Log("뒤로");
                 break;
-            case BTNType.Skip:
+            case BTNType.SkipToHospital:
+                SceneManager.LoadScene("Hospital");
+                break;
+            case BTNType.SkipToBlack1:
+                SceneManager.LoadScene("Black1");
+                break;
+            case BTNType.SkipToPhone:
+                SceneManager.LoadScene("Phone");
+                break;
+            case BTNType.SkipToBlack2:
+                SceneManager.LoadScene("Black2");
+                break;
+            case BTNType.SkipToGamescene:
                 SceneManager.LoadScene("GameScene");
                 break;
             case BTNType.MainMenu:

@@ -8,10 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/StoryScene.unity
-    guid: 8bce239aa3be9654ba61d6568fab0ab6
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 0380cdc075e84334fa902863c76f9344
+  - enabled: 1
+    path: Assets/Scenes/StoryScene/Hospital.unity
+    guid: 76f1f87fedfec084a80469ffe79486ee
+  - enabled: 1
+    path: Assets/Scenes/StoryScene/StoryStart.unity
+    guid: 093559623d5ea7e4b9a08499ec57bda1
+  - enabled: 1
+    path: Assets/Scenes/StoryScene/Black1.unity
+    guid: f3acd0b101311f741984448401b1671a
+  - enabled: 1
+    path: Assets/Scenes/StoryScene/Phone.unity
+    guid: e8c45a06dabc4a54e8b4987ad532ba1f
+  - enabled: 1
+    path: Assets/Scenes/StoryScene/Black2.unity
+    guid: 9e7c95d1de66c5e4eadbab43658f4c5a
   m_configObjects: {}

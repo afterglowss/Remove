@@ -11,14 +11,60 @@ ScriptedImporter:
   sourceScripts:
   - {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
   - {fileID: 6391573757903218779, guid: 8fabc15bba6485c458b1308e91550022, type: 3}
+  - {fileID: 6391573757903218779, guid: 2b8ff5cd994d360489d03f9f83509f3b, type: 3}
+  - {fileID: 6391573757903218779, guid: af17226e59717174c8657ada81b84480, type: 3}
+  - {fileID: 6391573757903218779, guid: 06693783650201a44a2640ac4673eb36, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $BedBloodCleanOrNot
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $Observation
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $SinkTissueBurn
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $RefrigeratorEvidence
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $DeskEvidence
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
   defaultLanguage: ko-KR
   languagesToSourceAssets: []
   useAddressableAssets: 0
   searchAllAssembliesForActions: 1
   assembliesToSearch: []
   ListOfFunctions:
+  - Name: GetCrimeEvidenceInStudio
+    ReturnType: -> Boolean
+    Parameters: []
   - Name: Random
     ReturnType: -> Single
     Parameters: []
