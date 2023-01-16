@@ -3,13 +3,10 @@ tags:
 colorID: 0
 position: 0,0
 ---
-// <<Me>> and <<Them>> are custom commands implemented in PhoneChatDialogueHelper.cs
 
-// set current speaker to "Me", the player
 <<Me>>
 <<wait 1>>
 
-// set current speaker to "Them", the person the player is talking to
 <<Them>>
 <<wait 2>>
 언니!! 다쳤다는 거 진짜예요??!!?
@@ -23,8 +20,12 @@ position: 0,0
 <<Them>>
 <<wait 3>>
 B가 말해줬어요!! 약 받아올게잇어서 잠깐 병원 들럿는데 언니를 본거 같다구ㅠㅠㅠ
-<<wait 3>>
+<<jump PhoneChat2>>
+===
 
+
+title: PhoneChat2
+---
 <<Me>>
 <<wait 3>>
 아 그래?? 난 못 봤는데...
@@ -73,8 +74,12 @@ B가 말해줬어요!! 약 받아올게잇어서 잠깐 병원 들럿는데 언�
 <<Them>>
 <<wait 3>>
 누나. 많이 다쳤어요? 기억 어떤 거 안나요?
-<<wait 3>>
+<<jump PhoneChat3>>
+===
 
+
+title: PhoneChat3
+---
 <<Me>>
 <<wait 2>>
 괜찮아ㅋㅋ 아까 말한 게 다야
