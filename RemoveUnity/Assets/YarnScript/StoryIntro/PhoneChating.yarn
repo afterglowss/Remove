@@ -20,7 +20,9 @@ position: 0,0
 <<Them>>
 <<wait 3>>
 B가 말해줬어요!! 약 받아올게잇어서 잠깐 병원 들럿는데 언니를 본거 같다구ㅠㅠㅠ
-<<jump WhileChating1>>
+
+나: B군이라면 같은 동아리 후배이다. E양과 마찬가지로 친하게 지냈던 기억이 있다.
+<<jump PhoneChat2>>
 ===
 
 
@@ -74,7 +76,7 @@ title: PhoneChat2
 <<Them>>
 <<wait 3>>
 누나. 많이 다쳤어요? 기억 어떤 거 안나요?
-<<jump WhileChating2>>
+<<jump PhoneChat3>>
 ===
 
 
@@ -105,22 +107,5 @@ title: PhoneChat3
 <<wait 2>>
 잘했어ㅋㅋ
 
-<<jump WhileChating3>>
 ===
 
-title: WhileTexting1
----
-B군이라면 같은 동아리 후배이다. E양과 마찬가지로 친하게 지냈던 기억이 있다.
-<<jump PhoneChat2>>
-===
-title: WhileTexting2
----
-아무래도 B군이 E양의 휴대폰을 뺏은 모양이다...
-<<jump PhoneChat3>>
-===
-title: WhileTexting3
----
-나: 아이고... 정신없어
-그래도 활기차고 귀여운 후배들을 보고 있으니 기운이 좀 나는 것 같다.
-나는 후배들과 몇 가지 이야기를 마저 주고받은 뒤 휴대폰을 내려 놓았다.
-===
