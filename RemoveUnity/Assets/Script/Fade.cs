@@ -13,6 +13,8 @@ namespace Yarn.Unity
 
         void Start()
         {
+            tmpColor = Color.black;
+            tmpColor.a = 1f;
             TestImage = GetComponent<Image>();
             TestImage.color = tmpColor;
         }
