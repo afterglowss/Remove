@@ -33,7 +33,7 @@ namespace Yarn.Unity.Example
             runner = GetComponent<DialogueRunner>();
             runner.AddCommandHandler( "Me", SetSenderMe ); // registers Yarn Command <<Me>>, which sets the current message sender to "Me"
             runner.AddCommandHandler( "Them", SetSenderThem ); // registers Yarn Command <<They>>, which sets the current message sender to "Them" (whoever the player is talking to)
-
+            runner.AddCommandHandler("Monologue", SetSenderMonologue);
             optionsContainer.SetActive(false);
         }
 
@@ -56,6 +56,13 @@ namespace Yarn.Unity.Example
         {
             isRightAlignment = false;
             currentBGColor = Color.white;
+            currentTextColor = Color.black;
+        }
+
+        public void SetSenderMonologue()
+        {
+            isRightAlignment = true;
+            currentBGColor = Color.gray;
             currentTextColor = Color.black;
         }
 

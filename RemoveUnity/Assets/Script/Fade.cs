@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
-namespace Yarn.Unity
-{
     public class Fade : MonoBehaviour
     {
         Image TestImage;
@@ -49,4 +48,3 @@ namespace Yarn.Unity
         }
 
     }
-}
