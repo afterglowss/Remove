@@ -21,7 +21,10 @@ public enum ObjectType
     KitchenKnife,
     Window,
     BookShelf,
-    Basin
+    Basin,
+    KitchenCabinet,
+    TrashCan
+
 }
 
 public class ObjectDialogueManager : MonoBehaviour
