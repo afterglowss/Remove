@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public enum BTNType
 {
@@ -26,6 +27,15 @@ public class BTNManager : MonoBehaviour
     public CanvasGroup optionGroup;
     public CanvasGroup pauseGroup;
 
+    private DialogueRunner dialogueRunner;
+    private InMemoryVariableStorage variableStorage;
+
+    public void Start()
+    {
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        variableStorage = FindObjectOfType<InMemoryVariableStorage>();
+    }
+
     public void OnButtonClick()
     {
         switch (type)
@@ -37,6 +47,7 @@ public class BTNManager : MonoBehaviour
             case BTNType.Option:
                 Debug.Log("설정");
                 CanvasGroupOn(optionGroup);
+                optionGroup.alpha = 1;
                 CanvasGroupOff(mainGroup);
                 break;
             case BTNType.Quit:
@@ -45,6 +56,7 @@ public class BTNManager : MonoBehaviour
                 break;
             case BTNType.Back:
                 CanvasGroupOff(optionGroup);
+                optionGroup.alpha = 0;
                 CanvasGroupOn(mainGroup);
                 Debug.Log("뒤로");
                 break;
@@ -64,21 +76,27 @@ public class BTNManager : MonoBehaviour
                 SceneManager.LoadScene("GameScene");
                 break;
             case BTNType.MainMenu:
-                SceneManager.LoadScene("StartScene");
+                dialogueRunner.StartDialogue("GameExit");
                 break;
         }
     }
 
     private void CanvasGroupOn(CanvasGroup cg)
     {
-        cg.alpha = 1;
+        //cg.alpha = 1;
         cg.interactable = true;
         cg.blocksRaycasts = true;
     }
     private void CanvasGroupOff(CanvasGroup cg)
     {
-        cg.alpha = 0;
+        //cg.alpha = 0;
         cg.interactable = false;
         cg.blocksRaycasts = false;
+    }
+
+    [YarnCommand("jumpScene")]
+    public static void JumpScene()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }

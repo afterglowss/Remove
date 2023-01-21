@@ -14,7 +14,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 2b8ff5cd994d360489d03f9f83509f3b, type: 3}
   - {fileID: 6391573757903218779, guid: af17226e59717174c8657ada81b84480, type: 3}
   - {fileID: 6391573757903218779, guid: 06693783650201a44a2640ac4673eb36, type: 3}
-  - {fileID: 6391573757903218779, guid: a0ef6871fe605b540bc08381284a0761, type: 3}
+  - {fileID: 6391573757903218779, guid: 76d6d9618415b484892947356e5d5afb, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $BedBloodCleanOrNot
@@ -33,7 +33,7 @@ ScriptedImporter:
     description: Implicitly declared in ObjectInteraction.yarn, node variables
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
-  - name: $SinkTissueBurn
+  - name: $BloodTissue
     typeName: Bool
     defaultValueBool: 0
     defaultValueNumber: 0
@@ -57,15 +57,124 @@ ScriptedImporter:
     description: Implicitly declared in ObjectInteraction.yarn, node variables
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $FloorHammer
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $BathRoomKey
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $StalkingPicture
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $LighterAndCigarette
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $ClueToTheTruth
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $BloodHandprint
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $SmellOfBlood
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $CigaretteInBathroom
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $BloodOnCloth
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $CheckTheMajor
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $DresserKey
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $MentalHospitalCall
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $HammerInTrashCan
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node variables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
+  - name: $KitchenCabinetKey
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in ObjectInteraction.yarn, node DresserDrawer
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: cd7112388b7dda847bd0ae229c3e620f, type: 3}
   defaultLanguage: ko-KR
   languagesToSourceAssets: []
   useAddressableAssets: 0
   searchAllAssembliesForActions: 1
   assembliesToSearch: []
   ListOfFunctions:
-  - Name: GetCrimeEvidenceInStudio
-    ReturnType: -> Boolean
-    Parameters: []
   - Name: Random
     ReturnType: -> Single
     Parameters: []
