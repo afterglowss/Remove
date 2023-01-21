@@ -31,7 +31,11 @@ public class MusicManager : MonoBehaviour
         Scene nowScene = SceneManager.GetActiveScene();
         if (nowScene.name == "StoryStart")
         {
-            musicSource.Stop();
+            musicSource.Pause();
+        }
+        if (nowScene.name == "GameScene")
+        {
+            musicSource.Play();
         }
     }
     //private GameObject[] musics;
