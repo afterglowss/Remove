@@ -13,10 +13,8 @@ public enum BTNType
     Back,
     Music,
     Sound,
-    SkipToHospital,
-    SkipToBlack1,
     SkipToPhone,
-    SkipToBlack2,
+    SkipToStoryEnd,
     SkipToGamescene,
     MainMenu
 }
@@ -60,17 +58,11 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOn(mainGroup);
                 Debug.Log("µÚ·Î");
                 break;
-            case BTNType.SkipToHospital:
-                SceneManager.LoadScene("Hospital");
-                break;
-            case BTNType.SkipToBlack1:
-                SceneManager.LoadScene("Black1");
-                break;
             case BTNType.SkipToPhone:
                 SceneManager.LoadScene("Phone");
                 break;
-            case BTNType.SkipToBlack2:
-                SceneManager.LoadScene("Black2");
+            case BTNType.SkipToStoryEnd:
+                SceneManager.LoadScene("StoryEnd");
                 break;
             case BTNType.SkipToGamescene:
                 SceneManager.LoadScene("GameScene");
