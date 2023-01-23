@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: 0380cdc075e84334fa902863c76f9344
   - enabled: 1
-    path: Assets/Scenes/StoryScene/Hospital.unity
+    path: Assets/Scenes/StoryScene/StoryEnd.unity
     guid: 76f1f87fedfec084a80469ffe79486ee
   - enabled: 1
     path: Assets/Scenes/StoryScene/StoryStart.unity
