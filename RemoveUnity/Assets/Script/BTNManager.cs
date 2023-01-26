@@ -86,9 +86,24 @@ public class BTNManager : MonoBehaviour
         cg.blocksRaycasts = false;
     }
 
-    [YarnCommand("jumpScene")]
-    public static void JumpScene()
+    [YarnCommand("jumpMainScene")]
+    public static void JumpMainScene()
     {
         SceneManager.LoadScene("StartScene");
+    }
+    [YarnCommand("jumpGameScene")]
+    public static void JumpGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+    [YarnCommand("jumpPhone")]
+    public static void JumpPhone()
+    {
+        SceneManager.LoadScene("Phone");
+    }
+    [YarnCommand("jumpStoryEnd")]
+    public static void JumpStoryEnd()
+    {
+        SceneManager.LoadScene("StoryEnd");
     }
 }
