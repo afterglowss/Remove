@@ -117,6 +117,8 @@ title: DresserDrawer
 	화장대 서랍을 열자 못 보던 열쇠가 들어있다.
 	어디에 쓰는 걸까?
 	<<set $KitchenCabinetKey = true>>
+<<else>>
+	화장대 서랍이다. 잠겨있다.
 <<endif>>
 ===
 title: KitchenCabinet
@@ -128,9 +130,14 @@ title: KitchenCabinet
 	내가 이 수면제를 처방받은 이유도 알고 있다.
 	내가 이 수면제를 처방받은 이유는…
 	-> 내가 누군가를 스토킹했기 때문에.
+		그렇지. B군을 스토킹하면서 정신적인 질병이 있었을지도 모르겠어.
 	-> 누군가가 나를 스토킹했기 때문에.
+		누가... 나를?
+		아니야. 방 안에는 온통 내가 스토킹한 흔적 뿐이잖아.
+		그럴 리 없어.
 	-> 망상 때문에 잠에 들지 못해서. <<if $MentalHospitalCall == true>>
-
+<<else>>
+	부엌 찬장이다. 잠겨있다.
 <<endif>>
 ===
 title: KitchenFloor
@@ -297,7 +304,7 @@ title: TrashCan
 		-> 태우자.
 			휴지를 태웠다.
 			<<set $BloodTissue = true>>
-		-> 신경쓰지 않아도 될거야.
+		-> 경찰도 발견 못하겠지.
 	<<endif>>
 	쓰레기통 속에서 무언가 반짝거린다.
 	은색에 검은 진주가 박힌 예쁜 반지다.
