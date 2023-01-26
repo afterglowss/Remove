@@ -3,47 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Timeline;
+using TMPro;
 
 public class TimeController : MonoBehaviour
 {
-    public Text gameTime;
+    [SerializeField]
+    
+    public TextMeshProUGUI timeText;
 
-    // 전체 제한 시간을 설정해준다. 여기서는 180초.
-    float setTime = 765;
-
-    // 분단위와 초단위를 담당할 변수를 만들어준다.
-    int hour;
-    float sec;
+    int hour = 12;
+    int min = 45;
+    float sec = 0f;
 
     void Update()
     {
-        // 남은 시간을 감소시켜준다.
-        setTime += Time.deltaTime;
-
-        // 전체 시간이 60초 보다 클 때
-        if (setTime >= 60f)
+        PhoneTime();
+    }
+    void PhoneTime()
+    {
+        sec += Time.deltaTime;
+        timeText.text = String.Format("{0:D2}:{1:D2}", hour, min);
+        if ((int)sec > 59)
         {
-            // 60으로 나눠서 생기는 몫을 분단위로 변경
-            hour = (int)setTime / 60;
-            // 60으로 나눠서 생기는 나머지를 초단위로 설정
-            sec = setTime % 60;
-            // UI를 표현해준다
-            gameTime.text = hour + ":" + (int)sec;
+            sec = 0f;
+            min++;
         }
-
-        // 전체시간이 60초 미만일 때
-        if (setTime < 60f)
+        if (min > 59)
         {
-            // 분 단위는 필요없어지므로 초단위만 남도록 설정
-            gameTime.text = (string)setTime;
-        }
-
-        // 남은 시간이 0보다 작아질 때
-        if (setTime <= 0)
-        {
-            // UI 텍스트를 0초로 고정시킴.
-            gameTime.text = "남은 시간 : 0초";
+            min = 0;
+            hour++;
         }
     }
 
