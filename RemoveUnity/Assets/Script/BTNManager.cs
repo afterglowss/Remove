@@ -106,4 +106,10 @@ public class BTNManager : MonoBehaviour
     {
         SceneManager.LoadScene("StoryEnd");
     }
+
+    [YarnCommand("fadeInOut")]
+    public static void FadeInOut()
+    {
+        SceneManager.LoadScene("FadeInOut");
+    }
 }
