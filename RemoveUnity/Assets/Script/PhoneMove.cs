@@ -76,6 +76,7 @@ public class PhoneMove : MonoBehaviour
 {
     private Transform cameraTransform;
     public GameObject Phone;
+    private Image phoneImage;
     private Vector3 Target;
 
 
@@ -83,6 +84,7 @@ public class PhoneMove : MonoBehaviour
     {
         cameraTransform = GameObject.Find("Main Camera").GetComponent<Transform>();
         Target = new Vector3(0, -11, 100);
+        //phoneImage = Phone.GetComponent<Image>();
     }
 
     public void PhoneUp()
@@ -93,6 +95,7 @@ public class PhoneMove : MonoBehaviour
     public void PhoneDown()
     {
         Target = new Vector3(0, -11, 100);
+        //phoneImage.sprite = "È­¸é ´Ù²¨Áü";
     }
 
     private void Update()

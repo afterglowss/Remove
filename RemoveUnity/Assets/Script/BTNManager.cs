@@ -39,24 +39,24 @@ public class BTNManager : MonoBehaviour
         switch (type)
         {
             case BTNType.Start:
-                Debug.Log("게임시작");
+                //Debug.Log("게임시작");
                 SceneManager.LoadScene("StoryStart");
                 break;
             case BTNType.Option:
-                Debug.Log("설정");
+                //Debug.Log("설정");
                 CanvasGroupOn(optionGroup);
                 optionGroup.alpha = 1;
                 CanvasGroupOff(mainGroup);
                 break;
             case BTNType.Quit:
                 Application.Quit();
-                Debug.Log("앱종료");
+                //Debug.Log("앱종료");
                 break;
             case BTNType.Back:
                 CanvasGroupOff(optionGroup);
                 optionGroup.alpha = 0;
                 CanvasGroupOn(mainGroup);
-                Debug.Log("뒤로");
+                //Debug.Log("뒤로");
                 break;
             case BTNType.SkipToPhone:
                 SceneManager.LoadScene("Phone");
