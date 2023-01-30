@@ -23,7 +23,8 @@ public class BTNManager : MonoBehaviour
     public BTNType type;
     public CanvasGroup mainGroup;
     public CanvasGroup optionGroup;
-    public CanvasGroup pauseGroup;
+    public CanvasGroup phoneGroup;
+    
 
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
@@ -47,6 +48,8 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOn(optionGroup);
                 optionGroup.alpha = 1;
                 CanvasGroupOff(mainGroup);
+                CanvasGroupOff(phoneGroup);
+                phoneGroup.alpha = 0;   
                 break;
             case BTNType.Quit:
                 Application.Quit();
@@ -56,6 +59,8 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOff(optionGroup);
                 optionGroup.alpha = 0;
                 CanvasGroupOn(mainGroup);
+                CanvasGroupOn(phoneGroup);
+                phoneGroup.alpha = 1;
                 //Debug.Log("µÚ·Î");
                 break;
             case BTNType.SkipToPhone:
