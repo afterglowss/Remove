@@ -78,12 +78,14 @@ public class PhoneMove : MonoBehaviour
     public GameObject Phone;
     private Image phoneImage;
     private Vector3 Target;
+    private Vector3 std;
 
 
     void Awake()
     {
         cameraTransform = GameObject.Find("Main Camera").GetComponent<Transform>();
         Target = new Vector3(0, -11, 100);
+        std = new Vector3(0, -11, 100);
         //phoneImage = Phone.GetComponent<Image>();
     }
 
@@ -100,6 +102,13 @@ public class PhoneMove : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(std.x-Target.x==0 && std.y-Target.y == 0 && std.z-Target.z==0)
+                PhoneUp();
+            else
+                PhoneDown();
+        }
         Phone.transform.position = Vector3.Lerp(Phone.transform.position,
                 cameraTransform.position + Target, Time.deltaTime * 5);
     }
