@@ -12,11 +12,11 @@ public class PhoneMove : MonoBehaviour
     private Vector3 Target;
     private Vector3 std;
 
-    public CanvasGroup runApp;
-    public Image backGround;
-    public Sprite TalkFriend;
-    public Sprite TalkConversationList;
-    public Sprite TalkConversation;
+    //public CanvasGroup runApp;
+    //public Image backGround;
+    //public Sprite TalkFriend;
+    //public Sprite TalkConversationList;
+    //public Sprite TalkConversation;
 
     void Awake()
     {
@@ -56,9 +56,9 @@ public class PhoneMove : MonoBehaviour
     //    runApp.blocksRaycasts = false;
     //    runApp.interactable = false; 
     //}
-    public void ClickFriendIconInTalkApp()
-    {
-        backGround.sprite = TalkFriend;
+    //public void ClickFriendIconInTalkApp()
+    //{
+    //    backGround.sprite = TalkFriend;
 
-    }
+    //}
 }
