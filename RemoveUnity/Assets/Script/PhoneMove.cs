@@ -11,12 +11,14 @@ public class PhoneMove : MonoBehaviour
     private Image phoneImage;
     private Vector3 Target;
     private Vector3 std;
+    private GameObject phoneBlock;
 
     //public CanvasGroup runApp;
     //public Image backGround;
     //public Sprite TalkFriend;
     //public Sprite TalkConversationList;
     //public Sprite TalkConversation;
+
 
     void Awake()
     {
@@ -42,9 +44,16 @@ public class PhoneMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if(std.x-Target.x==0 && std.y-Target.y == 0 && std.z-Target.z==0)
+            {
                 PhoneUp();
+                GameObject.Find("PhoneCanvas").transform.Find("PhoneBlockImage").gameObject.SetActive(true);
+            }
             else
+            {
                 PhoneDown();
+                GameObject.Find("PhoneBlockImage").gameObject.SetActive(!true);
+            }
+               
         }
         Phone.transform.position = Vector3.Lerp(Phone.transform.position,
                 cameraTransform.position + Target, Time.deltaTime * 5);
