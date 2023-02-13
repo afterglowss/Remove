@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
+using Yarn;
+
 public class FurnitureOpenClose : MonoBehaviour
 {
     public Sprite Open;
     public Sprite Close;
-    public Image backGround;
+    private Image backGround;
 
+    private DialogueRunner dialogueRunner;
+    private InMemoryVariableStorage variableStorage;
     private void Awake()
     {
-        //backGround = gameObject.GetComponentInParent<Image>();
-        
+        backGround = gameObject.transform.parent.parent.GetComponent<Image>();
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        variableStorage = FindObjectOfType<InMemoryVariableStorage>();
+
     }
     //private void Update()
     //{
@@ -41,6 +48,35 @@ public class FurnitureOpenClose : MonoBehaviour
                 return;
             }
             child.gameObject.SetActive(false);
+        }
+    }
+    bool dresserKey;
+
+    public void DresserDrawerOpenOrClose()
+    {
+        variableStorage.TryGetValue("$DresserKey", out dresserKey);
+        if (dresserKey == true)
+        {
+            dialogueRunner.StartDialogue("DresserDrawerOpen");
+            FurnitureOpen();
+        }
+        else
+        {
+            dialogueRunner.StartDialogue("DresserDrawerLocked");
+        }
+    }
+
+    bool kitchenCabinetKey;
+    public void KitchenCabinetOpenOrClose()
+    {
+        variableStorage.TryGetValue("$KitchenCabinetKey", out kitchenCabinetKey);
+        if (kitchenCabinetKey == true)
+        {
+            FurnitureOpen();
+        }
+        else
+        {
+            dialogueRunner.StartDialogue("KitchenCabinetLocked");
         }
     }
 }
