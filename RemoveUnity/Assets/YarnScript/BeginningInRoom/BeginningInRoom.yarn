@@ -79,9 +79,11 @@ title: PoliceCalling
 title: Memory
 ---
 <<wait 0.5>>
+<<fadeIn>>
 ??: 꺄악!!!
 ??: 살려... 살려 줘 제발. 제발 살려 줘...
 <<wait 0.5>>
+<<fadeOut>>
 <<jump Confusing>>
 ===
 
