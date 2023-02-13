@@ -29,6 +29,19 @@ public class BTNManager : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (optionGroup.alpha == 1)
+            {
+                OptionCanvasOff();
+            }
+            else
+                OptionCanvasOn();
+        }
+    }
+
     public void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
@@ -76,6 +89,23 @@ public class BTNManager : MonoBehaviour
                 dialogueRunner.StartDialogue("GameExit");
                 break;
         }
+    }
+
+    private void OptionCanvasOn()
+    {
+        CanvasGroupOn(optionGroup);
+        optionGroup.alpha = 1;
+        CanvasGroupOff(mainGroup);
+        CanvasGroupOff(phoneGroup);
+        phoneGroup.alpha = 0;
+    }
+    private void OptionCanvasOff()
+    {
+        CanvasGroupOff(optionGroup);
+        optionGroup.alpha = 0;
+        CanvasGroupOn(mainGroup);
+        CanvasGroupOn(phoneGroup);
+        phoneGroup.alpha = 1;
     }
 
     private void CanvasGroupOn(CanvasGroup cg)

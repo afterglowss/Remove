@@ -23,7 +23,8 @@ public enum ObjectType
     BookShelf,
     Basin,
     KitchenCabinet,
-    TrashCan
+    TrashCan,
+    KitchenDrawer
 
 }
 
