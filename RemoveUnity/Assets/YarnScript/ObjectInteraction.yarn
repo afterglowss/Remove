@@ -1,9 +1,13 @@
 ﻿title: variables
 ---
+<<set $Photo1Delete = false>>
+<<set $Photo2Delete = false>>
+<<set $Photo3Delete = false>>
+<<set $Photo4Delete = false>>
 <<set $BedBloodCleanOrNot = false>>
 <<set $Observation = 10>>
 <<set $BloodTissue = false>>
-<<set $RefrigeratorEvidence = false>>
+<<set $FingerInCakeBox = false>>
 <<set $DeskEvidence = false>>
 <<set $FloorHammer = false>>
 <<set $BathRoomKey = false>>
@@ -18,6 +22,55 @@
 <<set $DresserKey = false>>
 <<set $MentalHospitalCall = false>>
 <<set $HammerInTrashCan = false>>
+===
+title: StalkingPhoto1
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $Photo1Delete = true>>
+	<<photo1Delete>>
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: StalkingPhoto2
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $Photo2Delete = true>>
+	<<photo2Delete>>
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: StalkingPhoto3
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $Photo3Delete = true>>
+	<<photo3Delete>>
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: StalkingPhoto4
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $Photo4Delete = true>>
+	<<photo4Delete>>
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: Diagnosis
+---
+병원 진단 기록인듯 하다.
+진료 날짜는 11월 3일이다.
 ===
 title: Bed
 tags:
@@ -324,7 +377,49 @@ title: Event1
 다행히도 집주인인 모양이다.
 ===
 
-title: KitChenDrawer
+title: KitchenDrawer
 ---
 신경쓰이는 것은 없다.
+===
+title: RefrigratorUp
+---
+텅 비어있다.
+===
+title: CakeBox
+---
+냉장고 안에 케이크 상자가 들어있다.
+한번 열어볼까?
+-> 그러자.
+	<<if $FingerInCakeBox == false>>	
+		케이크 상자 안에는 잘린 손가락이 들어 있었다.
+		역했다. 토할 것 같았지만 애써 억눌렀다.
+		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
+		그럼 어떻게 하지?
+		-> 그래도 그냥 변기에 버리자. 이대로 뒀다가 들키면 끝장이다.
+			변기에 버리고 물을 내렸다.
+			<<set $FingerInCakeBox = true>>
+		-> 방법도 없으니 일단 이대로 둘까.
+			다시 상자에 숨겨뒀다.
+		-> 음식물 쓰레기 사이에 숨겨 두자.
+			여기까지 찾아보진 않겠지.
+			<<set $FingerInCakeBox = true>>
+	<<else>>
+		케이크가 들어있다.
+	<<endif>>
+-> 배가 고프진 않아.
+	뭐든 있겠지. 열지 말자.
+===
+title: Water
+---
+물이 담겨있는 물병이다.
+마실까?
+-> 그냥 마시자.
+	마침 목이 말랐는데 잘 됐다. 시원하다.
+-> 됐어.
+	그래. 언제 사둔 건지 기억도 안 나는데 마시지 말자.
+===
+title: Box
+---
+냉동식품의 포장지가 남아있다.
+쓰레기도 똑바로 처리 못했네......
 ===

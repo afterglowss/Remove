@@ -147,4 +147,6 @@ public class BTNManager : MonoBehaviour
     {
         SceneManager.LoadScene("FadeInOut");
     }
+
+    
 }

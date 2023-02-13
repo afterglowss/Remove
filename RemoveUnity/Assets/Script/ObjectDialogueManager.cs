@@ -24,7 +24,10 @@ public enum ObjectType
     Basin,
     KitchenCabinet,
     TrashCan,
-    KitchenDrawer
+    KitchenDrawer,
+    CakeBox,
+    Water,
+    Box
 
 }
 
