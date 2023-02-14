@@ -1,12 +1,32 @@
-﻿title: InferingStart
+﻿title: chance
+---
+<<set $TotalChance = 4>>
+===
+title: InferingStart
 tags:
 ---
-<<set $chance = 4>>
+<<fadeIn>>
+이제 눈에 보이는 단서는 다 지웠다.
+경찰이 곧 들이닥칠 것이다.
+......그런데, 자꾸 거슬리는 것이 있다.
+이 모든 상황이 너무 작위적으로 느껴지는 것은 기분 탓일까.
+그래, 꼭...... 무언가 틀렸다는 듯이.
+내가 아직 기억해 내지 못한 것이 있다는 듯이.
+그리고 그 기억 너머에......숨겨진 진실이 있다는 듯이.
+경찰은 아직 도착하지 않았어.
+어쩌면 지금이 마지막 기회일지도 모른다.
+대체 무엇이 거슬렸는지 찾아낼 기회.
+그래, 다시 처음부터 천천히 되짚어보자.
+<<fadeOut>>
+
 어디부터 되짚어 봐야 좋을까.
 감이 전혀 잡히지 않아......
 그렇다면 내 마지막 기억인, 사고가 났던 날부터 시작해 봐야겠다.
 
-사고가 났던 날, 이상했던 것?
+<<bluebox1_In>>
+<<wait 1>>
+<<bluebox1_Out>>
+
 
 내가 사고가 났던 날.
 기억이 아주 드문드문 나지만, 아예 안 나는 것은 아냐. 
@@ -15,22 +35,43 @@ tags:
 그래. 이런 대화가 오갔었지. 
 그런데 이 대화, 어딘가 이상하네......
 어디가 수상한걸까?
+<<jump InferingStorystart>>
+===
+title: InferingStorystart
+---
 그 대화에서 수상했던 것은...
 -> 신고자 분이 어디 있는지 찾았던 구급대원
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingStorystart>>
+    <<endif>>
 -> 피를 너무 많이 흘렸다고 지목한 행인
+    그래, 맞아.
+    피를 많이 흘렸다니 말이 안돼.
+    다른 구급대원은 분명 큰 외상이 없어 보인다고 했어.
+    바닥이 피바다가 될 만큼 피를 흘렸다면 외상이 없어 보일리 없지.
+    그렇다면 행인이 본 피는 뭐였을까?
     <<jump InferingBlood>>
 -> 이송하겠다고 외친 구급대원
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingStorystart>>
+    <<endif>>
 ===
 title: InferingBlood
 ---
-그래, 맞아.
-피를 많이 흘렸다니 말이 안돼.
-다른 구급대원은 분명 큰 외상이 없어 보인다고 했어.
-바닥이 피바다가 될 만큼 피를 흘렸다면 외상이 없어 보일리 없지.
-그렇다면 행인이 본 피는 뭐였을까?
 그 날, 행인이 본 피의 정체는......
 -> 내 피가 맞다.
-    <<set $chance = $chance -1>>
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingBlood>>
+    <<endif>>
 -> 다른 사람의 피다.
     그래! 다른 사람의 피였겠지.
     그 피를 흘린 사람은 아마도 하나겠네.
@@ -38,22 +79,47 @@ title: InferingBlood
     그렇다면, 하나는 이 원룸 안이 아닌 원룸 바깥에서 죽었겠네.
     행인과 구급대원이 시신에 대해 언급하지 않은 걸로 봐선 이미 시신을 처리한 후였을테고.
     음, 그렇다면 다시 이상한 것이 생기는데......
+
+    <<bluebox2_In>>
+    <<wait 1>>
+    <<bluebox2_Out>>
+
+   <<hammerIn>>
     왜 흉기를 시신과 함께 처리하지 않았을까?
     흉기를 도로 원룸으로 가지고 돌아온 이유가 뭐지?
+    <<hammerOut>>
     그리고 시신을 깔끔히 처리했다면, 있어선 안 되는 것이 원룸 안에 있었어.
     <<jump InferingRoomobject>>
 -> 행인이 거짓말을 했다.
-    <<set $chance = $chance -1>>
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingBlood>>
+    <<endif>>
 ===
 title: InferingRoomobject
 ---
 원룸 안에 있어서 안 됐던 것은......
 -> 옷장 속에 있었다.
-    <<set $chance = $chance -1>>
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingRoomobject>>
+    <<endif>>
 -> 화장실 세면대 위에 있었다.
-    <<set $chance = $chance -1>>
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingRoomobject>>
+    <<endif>>
 -> 냉장고 안에 있었다.
+    <<fingerIn>>
     맞아. 손가락.
+    <<fingerOut>>
+
     시신에서 손가락만 툭 잘라서 케이크 상자 속에 넣어야 했던 이유가 있었을까?
     그리고 그것 뿐만이 아냐......
     그 손가락에서 발견할 수 있는 이상한 것이 또 있어.
@@ -64,16 +130,237 @@ title: InferingFinger
 ---
 잘린 손가락은 이것과 연관지어 생각해 봤을 때 수상한데......
 -> 피묻은 망치
+    그래.
+    망치로 손가락을 그렇게 잘라낼 수 있을까?
+    그건 불가능해.
+    그렇다는 건...... 내가 모르는 흉기가 또 있단 거겠지.
+    <<jump InferingWeapon1>>
 -> 피묻은 옷자락
-    <<set $chance = $chance -1>>
-    <<if $chance == 0>>
-    <<jump Fail>>
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingFinger>>
     <<endif>>
 -> 반지
-    <<set $chance = $chance -1>>
-    <<if $chance == 0>>
-    <<jump Fail>>
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingFinger>>
     <<endif>>
+===
+title: InferingWeapon1
+---
+나는 그걸 원룸에서......
+-> 봤다
+    <<jump InferingWeapon2>>
+-> 보지 못했다
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingWeapon1>>
+    <<endif>>
+===
+title: InferingWeapon2
+---
+그건......
+-> 화장실에 있었다
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingWeapon2>>
+    <<endif>>
+-> 책상 위에 있었다
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingWeapon2>>
+    <<endif>>
+-> 부엌에 있었다
+    맞아, 부엌이야.
+    <<knifeIn>>
+    부엌에 있던 그 큰 식칼.
+    아마도 고기 자를 때 쓰는 칼처럼 생겼었지.
+    <<knifeOut>>
+    사람 손가락도 자를 수 있을 거야.
+    그런데 식칼로 손가락을 잘랐다기엔, 이게 이상하지 않나?
+    <<jump InferingKnife>>
+===
+title: InferingKnife
+---
+식칼의 이상한 점은......
+-> 칼날 부분
+    맞아! 칼날이 이상해.
+    <<hammerIn>>
+    망치에는 피가 잔득 묻어있었잖아.
+    <<hammerOut>>
+    <<KnifeIn>>
+    근데 칼날엔 피가 묻어있지 않았어.
+    <<knifeOut>>
+    어째서지?
+    이게 가리키는 것은......
+    <<jump InferingCleanKnife>>
+-> 손잡이 부분
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingKnife>>
+    <<endif>>
+===
+title: InferingCleanKnife
+---
+깨끗한 식칼을 통해 알 수 있는 건......
+-> 내가 사건을 저지른 뒤 식칼을 깔끔히 닦았다.
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingCleanKnife>>
+    <<endif>>
+-> 내가 아닌 누군가가 사건 현장을 건드렸다.
+    그래. 이제 명확해진다.
+    망치를 시신과 함께 처리하지 않고 원룸에 가지고 온 이유.
+    식칼은 망치와 달리 깨끗했던 이유.
+    그 사건 현장에 내가 아닌 누군가가 또 있었어.
+    그리고...... 증거를 조작했어.
+    이거말고도 사건 조작 증거를 찾을 수 있을까?
+
+    <<bluebox3_In>>
+    <<wait 1>>
+    <<bluebox3_Out>>
+
+    일단 원룸부터 생각해 보자.
+    누군가 내 원룸을 건드렸다는 증거가 있을까?
+    <<jump InferingRoom>>
+-> 사실 식칼로 자른 게 아니다.
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingCleanKnife>>
+    <<endif>>
+===
+title: InferingRoom
+---
+그런 증거가......
+-> 있다
+    있었어.
+    그리고 그 증거는......
+    <<jump InferingProof>>
+-> 없다
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingRoom>>
+    <<endif>>
+===
+title: InferingProof
+---
+그 증거를 찾을 수 있는 곳은......
+-> 화장대 서랍 안
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingProof>>
+    <<endif>>
+-> 화장실 앞 러그 위
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingProof>>
+    <<endif>>
+-> 창문
+    <<handprintIn>>
+    맞아. 창문이야.
+    창문에 찍혀 있던 손자국...... 이상해.
+    <<handprintOut>>
+    <<jump InferingHandprint>>
+===
+title: InferingHandprint
+---
+창문 위 손자국의 이상한 점은......
+-> 크기
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingHandprint>>
+    <<endif>>
+-> 위치
+    그래! 위치가 이상했어.
+
+    <<handprintTxtIn>>
+    손자국은 높이 있어서 침대 위에 올라가 손자국을 닦아야 했을 정도였지.
+    <<handprintTxtOut>>
+
+    지금 생각해보면, 손자국이 내 손보다 조금 더 컸던 거 같기도 하고......
+    나보다 키가 큰 누군가가 원룸을 건드렸단 뜻이겠네.
+    그런 증거가 원룸에 또 있을까?
+    <<jump InferingOther>>
+-> 모양
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingHandprint>>
+    <<endif>>
+===
+title: InferingOther
+---
+사건 조작의 또다른 증거가 원룸에......
+-> 있다
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingOther>>
+    <<endif>>
+-> 없다
+    그래......
+    원룸에는 더 없었던 거 같다.
+    그렇다면 스마트폰에서 그런 증거를 찾을 수 있지 않을까?
+    스마트폰에서 수상한 것이 있었는지 생각해 보자......
+
+    <<messageIn>>
+    스마트폰을 뒤지다 보니, 협박 문자를 발견했었지.
+    <<messageOut>>
+    지워버렸었는데......
+    그런데 그 협박 문자, 이상해.
+    그리고 그 수상한 점은 이 어플 속 단서와 연관지을 수 있었어.
+    <<jump InferingMessage>>
+===
+title: InferingMessage
+---
+협박 문자는 이 어플 속 단서와 연관지을 때 이상한데......
+-> 캘린더
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingMessage>>
+    <<endif>>
+-> 갤러리
+    <<jump InferingGallery>>
+-> 메모장
+    <<set $TotalChance = $TotalChance -1>>
+    <<if $TotalChance == 0>>
+        <<jump Fail>>
+    <<else>>
+        <<jump InferingMessage>>
+    <<endif>>
+===
+title: InferingGallery
+---
+갤러리의 이 사진과 연관지을 수 있는데......
+
 ===
 title: Fail
 ---
