@@ -80,6 +80,17 @@ title: Diagnosis
 병원 진단 기록인듯 하다.
 진료 날짜는 11월 3일이다.
 ===
+title: OhHana
+---
+...어라? 메신저함이 깔끔하게 비워져 있다.
+지운 이유가 있을까?
+===
+title: ShimJaehwan
+---
+...협박 문자다.
+아마 살인 사건이 있었던 날 보낸 거겠지.
+심재환이 이 사건을 목격이라도 한 걸까?
+===
 title: Bed
 tags:
 ---
@@ -223,7 +234,7 @@ title: Window
 		생각보다 높이 있어 닦기가 어려웠다.
 		침대 위에 올라가 핏자국을 닦아냈다.
 		<<set $BloodHandprint = true>> //손자국 지워짐
-		
+		<<objectDelete HandPrint HandPrint>>
 	-> 굳이?
 		그래. 그냥 두자. 어차피 블라인드 내리면 안 보이겠지.
 <<else>>
