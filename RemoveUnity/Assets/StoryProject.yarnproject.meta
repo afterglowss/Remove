@@ -16,6 +16,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 06693783650201a44a2640ac4673eb36, type: 3}
   - {fileID: 6391573757903218779, guid: 76d6d9618415b484892947356e5d5afb, type: 3}
   - {fileID: 6391573757903218779, guid: 4ae068a8ea88f3943a306a213ba0b1cd, type: 3}
+  - {fileID: 6391573757903218779, guid: 63c23a4b082eeaa4984add7f3c55eade, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $BedBloodCleanOrNot

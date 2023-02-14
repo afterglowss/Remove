@@ -142,10 +142,16 @@ public class BTNManager : MonoBehaviour
         SceneManager.LoadScene("StoryEnd");
     }
 
-    [YarnCommand("fadeInOut")]
-    public static void FadeInOut()
+    [YarnCommand("fadeIn")]
+    public static void FadeIn()
     {
-        SceneManager.LoadScene("FadeInOut");
+        GameObject.Find("FadeCanvas").transform.Find("Image").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("fadeOut")]
+    public static void FadeOut()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Image").gameObject.SetActive(false);
     }
 
     
