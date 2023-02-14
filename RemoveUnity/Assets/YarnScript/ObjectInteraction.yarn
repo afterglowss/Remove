@@ -26,17 +26,50 @@
 <<set $Ring1 = false>>
 <<set $Ring2 = false>>
 ===
-title: StalkingPhoto
+title: StalkingPhoto1
 ---
 이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
 지울까?
 -> 당연하지.
 	사진을 삭제했다.
 	<<set $PhotoDelete = $PhotoDelete+1>>
-	<<photoDelete Photo Photo1>>
-	<<photoDelete Photo Photo2>>
-	<<photoDelete Photo Photo3>>
-	<<photoDelete Photo Photo4>>
+	<<photoDelete Photo1 Photo1>>
+
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: StalkingPhoto2
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $PhotoDelete = $PhotoDelete+1>>
+	<<photoDelete Photo2 Photo2>>
+
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: StalkingPhoto3
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $PhotoDelete = $PhotoDelete+1>>
+	<<photoDelete Photo3 Photo3>>
+
+-> 아니야.
+	그래, 그냥 두자.
+===
+title: StalkingPhoto4
+---
+이건... 아무래도 내가 재환이를 몰래 찍은 거겠지.
+지울까?
+-> 당연하지.
+	사진을 삭제했다.
+	<<set $PhotoDelete = $PhotoDelete+1>>
+	<<photoDelete Photo4 Photo4>>
 
 -> 아니야.
 	그래, 그냥 두자.
@@ -241,6 +274,7 @@ title: Rug
 	-> 그러자.
 		열심히 문질러 지우자 약간의 자국은 남았지만 크게 눈에 띄지는 않는다.
 		<<set $BloodOnRug = true>>
+		<<objectDelete Rug Rug>>
 	-> 글쎄......
 		뭐... 이걸 어떻게 보겠어?
 <<endif>>

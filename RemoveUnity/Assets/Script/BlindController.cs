@@ -5,55 +5,42 @@ using UnityEngine.UI;
 
 public class BlindController : MonoBehaviour
 {
-    Sprite[] sprites = new Sprite[3];
-    public Sprite blind1;
-    public Sprite blind2;
-    public Sprite blind3;
+    private Transform blind;
 
-    public GameObject handPrint;
-
-    private Image backGround;
-
-    int i = 0;
+    private Vector3 Target;
+    private Vector3 Target2;
     public void Awake()
     {
-        sprites[0] = blind1;
-        sprites[1] = blind2;
-        sprites[2] = blind3;
-        backGround = gameObject.transform.parent.parent.GetComponent<Image>();
-        if (backGround.sprite == blind1)
+        blind = GetComponent<Transform>();
+        Target = new Vector3(38.842f, 3.509f, 0);
+    }
+    
+    public void Up()
+    {
+        if (Target == new Vector3(38.842f, 3.509f, 0))
         {
-            i = 0;
+            Target = new Vector3(38.842f, 5.61f, 0);
         }
-        else if (backGround.sprite == blind2)
+        else if (Target == new Vector3(38.842f, 5.61f, 0))
         {
-            i = 1;
+            Target = new Vector3(38.842f, 7.87f, 0);
         }
         else
         {
-            i = 2;
+            Target = new Vector3(38.842f, 3.509f, 0);
         }
     }
+    //public void Up2()
+    //{
+    //    Target = new Vector3(38.83f, 8.3f, 0);
+    //}
 
     public void Update()
     {
-        if (backGround.sprite != blind3)
-        {
-            handPrint.SetActive(false);
-        }
+
+        blind.position = Vector3.MoveTowards(blind.position, 
+            Target, 0.3f);
     }
 
-    public void BlindClick()
-    {
-        
-        if (i < 2)
-        {
-            backGround.sprite = sprites[i++];
-        }
-        else
-        {
-            backGround.sprite = sprites[i];
-            i = 0;
-        }
-    }
+    
 }
