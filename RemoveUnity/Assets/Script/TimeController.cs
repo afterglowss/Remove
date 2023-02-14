@@ -11,8 +11,8 @@ public class TimeController : MonoBehaviour
     
     public TextMeshProUGUI timeText;
 
-    int hour = 12;
-    int min = 45;
+    int hour = 1;
+    int min = 43;
     float sec = 0f;
 
     void Update()
