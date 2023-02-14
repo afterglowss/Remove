@@ -145,13 +145,43 @@ public class BTNManager : MonoBehaviour
     [YarnCommand("fadeIn")]
     public static void FadeIn()
     {
-        GameObject.Find("FadeCanvas").transform.Find("Image").gameObject.SetActive(true);
+        GameObject.Find("FadeCanvas").transform.Find("BlackImage").gameObject.SetActive(true);
     }
 
     [YarnCommand("fadeOut")]
     public static void FadeOut()
     {
-        GameObject.Find("FadeCanvas").transform.Find("Image").gameObject.SetActive(false);
+        GameObject.Find("FadeCanvas").transform.Find("BlackImage").gameObject.SetActive(false);
+    }
+
+    [YarnCommand("fadeInStarting")]
+    public static void FadeInStarting()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Starting").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("fadeOutStarting")]
+    public static void FadeOutStarting()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Starting").gameObject.SetActive(false);
+    }
+
+    [YarnCommand("fadeInHospital")]
+    public static void FadeInHospital()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Hospital").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("fadeOutHospital")]
+    public static void FadeOutHospital()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Hospital").gameObject.SetActive(false);
+    }
+
+    [YarnCommand("checkingTab")]
+    public static void CheckingTab()
+    {
+
     }
 
     
