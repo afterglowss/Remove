@@ -14,7 +14,7 @@ public enum ObjectType
     BathRoom,
     ShoeShelfOpen,
     ShoeShelfClose,
-    DresserDrawerOpen,
+    DresserDrawer,
     DresserDrawerClose,
     StalkingPicture,
     KitchenFloor,
@@ -23,7 +23,21 @@ public enum ObjectType
     BookShelf,
     Basin,
     KitchenCabinet,
-    TrashCan
+    TrashCan,
+    KitchenDrawer,
+    CakeBox,
+    Water,
+    Box,
+    Drug,
+    Plate,
+    BathRoomTrashCan,
+    BathRoomTrash,
+    Shampoo,
+    LaptopAndPencilHolder,
+    RefrigeratorUp,
+    Comic,
+    Novel,
+    Rug,
 
 }
 
@@ -35,30 +49,10 @@ public class ObjectDialogueManager : MonoBehaviour
     private InMemoryVariableStorage variableStorage;
     public string objectNode;
 
-    Image Room1;
-    Image Room2;
-    Image Room3;
-    Image Room4;
-    //public Sprite changeImage;
-    //private Sprite presentImage;
-
-    //private static bool CrimeEvidenceInStudio = true;
-    //bool BedBloodCleanOrNot;
-
-    //[YarnFunction("getCrimeEvidenceInStudio")]
-    //public static bool GetCrimeEvidenceInStudio()
-    //{
-    //    return CrimeEvidenceInStudio;
-    //}
-
     public void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         variableStorage = FindObjectOfType<InMemoryVariableStorage>();
-        Room1 = GameObject.Find("Room1").GetComponent<Image>();
-        Room2 = GameObject.Find("Room2").GetComponent<Image>();
-        Room3 = GameObject.Find("Room3").GetComponent<Image>();
-        Room4 = GameObject.Find("Room4").GetComponent<Image>();
     }
     public void OnObjectDialogueStart()
     {
@@ -78,25 +72,22 @@ public class ObjectDialogueManager : MonoBehaviour
             case ObjectType.Desk:
                 break;
             case ObjectType.ShoeShelfClose:
-                //if (Room3.sprite == changeImage)
-                //{
-                //    dialogueRunner.StartDialogue(objectNode);
-
-                //}
-                //else
-                //{
-                //    presentImage = Room3.sprite;
-                //    Room3.sprite = changeImage;
-                //}
                 
                 break;
-            case ObjectType.DresserDrawerOpen:
+            case ObjectType.DresserDrawer:
 
+                break;
+            case ObjectType.KitchenFloor:
                 break;
         }
     }
-    public void ObjectInteration()
-    {
 
+    
+    [YarnCommand("objectDelete")]
+    public void ObjectDelete(GameObject obj)
+    {
+        obj.SetActive(false);
     }
+
+    
 }
