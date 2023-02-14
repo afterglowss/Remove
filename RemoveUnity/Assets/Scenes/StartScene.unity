@@ -264,7 +264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73832120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f51a6d5d16b9c024bb5a6cf9808ab412, type: 3}
   m_Name: 
@@ -272,7 +272,7 @@ MonoBehaviour:
   type: 4
   mainGroup: {fileID: 0}
   optionGroup: {fileID: 0}
-  pauseGroup: {fileID: 0}
+  phoneGroup: {fileID: 0}
 --- !u!1 &88088653
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
   type: 3
   mainGroup: {fileID: 1726498026}
   optionGroup: {fileID: 1758821690}
-  pauseGroup: {fileID: 0}
+  phoneGroup: {fileID: 0}
 --- !u!114 &283360833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683040391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f51a6d5d16b9c024bb5a6cf9808ab412, type: 3}
   m_Name: 
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   type: 5
   mainGroup: {fileID: 0}
   optionGroup: {fileID: 0}
-  pauseGroup: {fileID: 0}
+  phoneGroup: {fileID: 0}
 --- !u!1 &718862949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,9 +1909,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  mainGroup: {fileID: 0}
-  optionGroup: {fileID: 0}
-  pauseGroup: {fileID: 0}
+  mainGroup: {fileID: 1726498026}
+  optionGroup: {fileID: 1758821690}
+  phoneGroup: {fileID: 0}
 --- !u!1 &1100033154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,7 +2739,7 @@ MonoBehaviour:
   type: 1
   mainGroup: {fileID: 1726498026}
   optionGroup: {fileID: 1758821690}
-  pauseGroup: {fileID: 0}
+  phoneGroup: {fileID: 0}
 --- !u!1 &1726498021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,9 +3201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  mainGroup: {fileID: 0}
-  optionGroup: {fileID: 0}
-  pauseGroup: {fileID: 0}
+  mainGroup: {fileID: 1726498026}
+  optionGroup: {fileID: 1758821690}
+  phoneGroup: {fileID: 0}
 --- !u!1 &2015667297
 GameObject:
   m_ObjectHideFlags: 0
