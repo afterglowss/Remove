@@ -1195,7 +1195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "E\uC591"
+  m_Text: "\uCEF4\uACF5 \uC774\uC9C0\uC5F0"
 --- !u!222 &1517201468
 CanvasRenderer:
   m_ObjectHideFlags: 0

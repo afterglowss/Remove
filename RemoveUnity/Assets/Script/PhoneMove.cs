@@ -12,6 +12,8 @@ public class PhoneMove : MonoBehaviour
     private Vector3 Target;
     private Vector3 std;
     private GameObject phoneBlock;
+    public GameObject phoneBlack;
+    
 
     //public CanvasGroup runApp;
     //public Image backGround;
@@ -31,12 +33,13 @@ public class PhoneMove : MonoBehaviour
     public void PhoneUp()
     {
         Target = new Vector3(0, 0, 100);
+        phoneBlack.SetActive(false);
     }
 
     public void PhoneDown()
     {
         Target = new Vector3(0, -11, 100);
-        //phoneImage.sprite = "È­¸é ´Ù²¨Áü";
+        phoneBlack.SetActive(true);
     }
 
     private void Update()
