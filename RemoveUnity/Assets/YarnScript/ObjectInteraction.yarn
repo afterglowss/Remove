@@ -161,7 +161,12 @@ title: DresserDrawerOpen
 화장대 서랍을 열자 못 보던 열쇠가 들어있다.
 잠긴 문이 또 어디 있더라?
 <<set $KitchenCabinetKey = true>>
-<<jump MentalHospitalCall>>
+띠리리링-!
+<<mentalHospitalActive MentalHospital>>
+<<setNumber 2>>
+<<wait 1>>
+<<setNumber 1>>
+<<objectDelete MentalHospital MentalHospital>>
 ===
 title: DresserDrawerLocked
 ---
@@ -169,11 +174,17 @@ title: DresserDrawerLocked
 ===
 title: MentalHospitalCall
 ---
+<<wait 0.5>>
 ??: 성하 정신건강의학과입니다.
 ??: 오늘 예약이신데 아직 안 오셔서 연락드렸어요.
 ??: 오고 계신가요?
 나: 네... 네? 무슨 말씀이시죠?
 ??: ......잠시 담당 의료진과 대화 후 다시 전화드리겠습니다.
+<<objectDelete MentalHospital MentalHospital>>
+<<wait 0.5>>
+......방금 뭐지?
+잘못 걸려온건가...... 어쨌든 조사나 더 해보자.
+<<set $MentalHospitalCall = true>>
 ===
 title: KitchenCabinetLocked
 ---
@@ -358,11 +369,13 @@ title: Basin
 ---
 <<if $BloodOnCloth == false>>
 	아무래도 쇠냄새의 원인을 찾은 것 같다. 
-	옷을 뒤적거리는데 주머니에서 무언가 나온다. 
+	옷을 뒤적거리는데 주머니에서 무언가 나온다.
+	<<ringAppear ring1>>
 	이건... <color=orange>반지</color>?
 	주인을 알 수 없는 반지를 주웠다.
 	<<set $Ring1 = true>>
 	은색에 검은 진주가 박힌 예쁜 반지다.
+	<<objectDelete ring1 ring1>>
 	피 묻은 옷은 어디에 숨겨둘까? 
 	-> 옷장 안에 숨긴다.
 		//잘 숨겨뒀다.
@@ -382,8 +395,10 @@ title: Basin
 title: BathRoomTrashCan
 ---
 쓰레기통 속에서 무언가 반짝거린다.
+<<ringAppear ring2>>
 은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
 <<set $Ring2 = true>>
+<<objectDelete ring2 ring2>>
 ===
 title: BathRoomTrash
 ---
