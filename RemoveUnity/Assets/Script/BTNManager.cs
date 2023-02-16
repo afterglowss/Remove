@@ -29,6 +29,8 @@ public class BTNManager : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
 
+
+    private GameObject obj;
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -141,18 +143,29 @@ public class BTNManager : MonoBehaviour
     {
         SceneManager.LoadScene("StoryEnd");
     }
-
-    [YarnCommand("fadeIn")]
-    public static void FadeIn()
+    [YarnCommand("jumpEnding1")]
+    public static void JumpEnding1()
     {
-        GameObject.Find("FadeCanvas").transform.Find("Image").gameObject.SetActive(true);
+        SceneManager.LoadScene("Ending1");
     }
-
-    [YarnCommand("fadeOut")]
-    public static void FadeOut()
+    [YarnCommand("jumpEnding2")]
+    public static void JumpEnding2()
     {
-        GameObject.Find("FadeCanvas").transform.Find("Image").gameObject.SetActive(false);
+        SceneManager.LoadScene("Ending2");
     }
-
-    
+    [YarnCommand("jumpEnding3")]
+    public static void JumpEnding3()
+    {
+        SceneManager.LoadScene("Ending3");
+    }
+    [YarnCommand("jumpEnding4")]
+    public static void JumpEnding4()
+    {
+        SceneManager.LoadScene("Ending4");
+    }
+    [YarnCommand("jumpEnding5")]
+    public static void JumpEnding5()
+    {
+        SceneManager.LoadScene("Ending5");
+    }
 }
