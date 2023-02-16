@@ -81,13 +81,63 @@ public class ObjectDialogueManager : MonoBehaviour
                 break;
         }
     }
+    public void PoliceCallingStart()
+    {
+        dialogueRunner.StartDialogue("PoliceCalling");
+    }
+    public void MentalHospitalCallStart()
+    {
+        dialogueRunner.StartDialogue("MentalHospitalCall");
+    }
 
-    
+    public void DialogueStop()
+    {
+        dialogueRunner.Stop();
+    }
+
     [YarnCommand("objectDelete")]
     public void ObjectDelete(GameObject obj)
     {
         obj.SetActive(false);
     }
-
-    
+    [YarnCommand("policeCallActive")]
+    public static void PoliceCallActive(GameObject obj)
+    {
+        obj = GameObject.Find("PhoneImage").transform.Find("PoliceCall").gameObject;
+        obj.SetActive(true);
+    }
+    [YarnCommand("hammerActive")]
+    public static void HammerActive(GameObject obj)
+    {
+        obj = GameObject.Find("RoomCanvas").transform.Find("Hammer").gameObject;
+        obj.SetActive(true);
+    }
+    [YarnCommand("mentalHospitalActive")]
+    public static void MentalHospitalActive(GameObject obj)
+    {
+        obj = GameObject.Find("PhoneCanvas").transform.Find("MentalHospital").gameObject;
+        obj.SetActive(true);
+    }
+    [YarnCommand("Image")]
+    public void ImageEnabled(Image img)
+    {
+        img.enabled = true;
+    }
+    [YarnCommand("btnUnEnabled")]
+    public void BtnUnEnabled(Button btn)
+    {
+        btn.enabled = false;
+    }
+    [YarnCommand("btnEnabled")]
+    public void BtnEnabled(Button btn)
+    {
+        btn.enabled = true;
+    }
+    [YarnCommand("ringAppear")]
+    public static void RingAppear(GameObject ring)
+    {
+        Color color;
+        color = ring.GetComponent<Image>().color;
+        color.a = 1f;
+    }
 }
