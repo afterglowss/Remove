@@ -55,11 +55,11 @@ public class BTNManager : MonoBehaviour
         switch (type)
         {
             case BTNType.Start:
-                //Debug.Log("°ÔÀÓ½ÃÀÛ");
+                //Debug.Log("ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½");
                 SceneManager.LoadScene("StoryStart");
                 break;
             case BTNType.Option:
-                //Debug.Log("¼³Á¤");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½");
                 CanvasGroupOn(optionGroup);
                 optionGroup.alpha = 1;
                 CanvasGroupOff(mainGroup);
@@ -68,7 +68,7 @@ public class BTNManager : MonoBehaviour
                 break;
             case BTNType.Quit:
                 Application.Quit();
-                //Debug.Log("¾ÛÁ¾·á");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                 break;
             case BTNType.Back:
                 CanvasGroupOff(optionGroup);
@@ -76,7 +76,7 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOn(mainGroup);
                 CanvasGroupOn(phoneGroup);
                 phoneGroup.alpha = 1;
-                //Debug.Log("µÚ·Î");
+                //Debug.Log("ï¿½Ú·ï¿½");
                 break;
             case BTNType.SkipToPhone:
                 SceneManager.LoadScene("Phone");
@@ -167,5 +167,35 @@ public class BTNManager : MonoBehaviour
     public static void JumpEnding5()
     {
         SceneManager.LoadScene("Ending5");
+    }
+
+    [YarnCommand("fadeInStarting")]
+    public static void FadeInStarting()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Starting").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("fadeOutStarting")]
+    public static void FadeOutStarting()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Starting").gameObject.SetActive(false);
+    }
+
+    [YarnCommand("fadeInHospital")]
+    public static void FadeInHospital()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Hospital").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("fadeOutHospital")]
+    public static void FadeOutHospital()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Hospital").gameObject.SetActive(false);
+    }
+
+    [YarnCommand("checkingTab")]
+    public static void CheckingTab()
+    {
+
     }
 }
