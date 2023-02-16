@@ -21,6 +21,7 @@
 <<set $LighterAndCigarette = false>>
 <<set $MentalHospitalCall = false>>
 <<set $HammerInTrashCan = 0>>
+<<set $BloodOnClothInCloset = false>>
 
 <<set $BathRoomKey = false>> //진실증거
 <<set $DresserKey = false>>
@@ -95,19 +96,7 @@ title: ShimJaehwan
 아마 살인 사건이 있었던 날 보낸 거겠지.
 심재환이 이 사건을 목격이라도 한 걸까?
 ===
-title: Bed
-tags:
----
-내 방에 있는 침대이다.
-푹신하긴 하지만, 너무 좁다.
--> 더 살펴볼래.
-	<<if $BedBloodCleanOrNot == false>>
-	<<jump Blood>>
-	<<else>>
-	특별한 점이 있진 않다.
-	<<endif>>
--> 이정도면 됐어.
-===
+
 title: Blood
 ---
 <color=red>피 묻은 자국</color>이 있다.
@@ -199,10 +188,7 @@ title: Drug
 -> 망상 때문에 잠에 들지 못해서. <<if $MentalHospitalCall == true>>
 	<<jumpEnding2>>
 ===
-title:Plate
----
-잘 쓰지 않는 접시가 겹겹이 쌓여 있다.
-===
+
 title: KitchenFloor
 ---
 <<if $FloorHammer == false>> //망치가 있으면
@@ -307,14 +293,14 @@ title: BookShelf
 	-> 컴퓨터공학과 학생이다.
 		그렇다면 이 <color=yellow>‘인지심리학’</color>과 <color=yellow>‘사회심리학’</color>의 주인은 내가 아니겠군. 누가 주인일까?
 		<<set $CheckTheMajor = true>>
-		-> B군이 주인이다.
+		-> 심재환이 주인이다.
 			흠, 과연 심재환의 책일까?
 			<<set $ClueToTheTruth = true>>
-		-> C양이 주인이다.
+		-> 오하나가 주인이다.
 			흠, 과연 오하나의 책일까?
 			<<set $ClueToTheTruth = true>>
-		-> E양이 주인이다.
-			E양은… 나와 같은 과 아니었나?
+		-> 이지연이 주인이다.
+			지연이는… 나와 같은 과 아니었나?
 	-> 심리학과와 컴퓨터공학과를 복수전공 중이다. 
 		그렇다면 이 책들 모두 내 것이겠군.
 		<<set $CheckTheMajor = true>>
@@ -357,18 +343,18 @@ title: Basin
 	아무래도 쇠냄새의 원인을 찾은 것 같다. 
 	옷을 뒤적거리는데 주머니에서 무언가 나온다.
 	<<ringAppear ring1>>
+	<<ringAppear ring11>>
 	이건... <color=orange>반지</color>?
 	주인을 알 수 없는 반지를 주웠다.
 	<<set $Ring1 = true>>
 	은색에 검은 진주가 박힌 예쁜 반지다.
 	<<objectDelete ring1 ring1>>
+	<<objectDelete ring11 ring11>>
 	피 묻은 옷은 어디에 숨겨둘까? 
 	-> 옷장 안에 숨긴다.
-		//잘 숨겨뒀다.
+		<<set $BloodOnClothInCloset = true>>
 	-> 부엌 서랍 안에 숨긴다.
-		//잘 숨겨뒀다.
 	-> 침대 밑에 숨긴다.
-		//잘 숨겨뒀다.
 	<<wait 0.7>>
 	<<set $BloodOnCloth = true>>
 	<<objectDelete BloodCloth BloodCloth>>
@@ -383,9 +369,11 @@ title: BathRoomTrashCan
 <<if $Ring2 == false>>
 	쓰레기통 속에서 무언가 반짝거린다.
 	<<ringAppear ring2>>
+	<<ringAppear ring22>>
 	은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
 	<<set $Ring2 = true>>
 	<<objectDelete ring2 ring2>>
+	<<objectDelete ring22 ring22>>
 <<else>>
 	쓰레기가 가득 차있다.
 <<endif>>
@@ -464,7 +452,10 @@ title: ShoeShelf
 ---
 평범한 운동화다. 사이즈는 260이다.
 ===
-
+title:Plate
+---
+잘 쓰지 않는 접시가 겹겹이 쌓여 있다.
+===
 title: LaptopAndPencilHolder
 ---
 노트북과 연필꽂이가 있다.
@@ -509,4 +500,33 @@ title: Box
 ---
 냉동식품의 포장지가 남아있다.
 쓰레기도 똑바로 처리 못했네......
+===
+title: Socket1
+---
+냉장고 옆 콘센트다.
+냉장고 선은 다른 곳에 꽂혀있는 모양이다.
+===
+title: Socket2
+---
+책상 밑 콘센트다.
+나: 그러고보니 책상에 전등 하나 없네...
+===
+title: Mirror
+---
+화장대 위에는 거울이 매달려있다.
+내 앉은 키보다는 높아서 살짝 불편하다.
+===
+title: Cloth
+---
+몇 안되는 옷이 걸려있다.
+자취를 하다보니 정말 필요한 옷 말고는 전부 본가에 있다.
+<<if $BloodOnClothInCloset == true>>
+	화장실에서 발견했던 피 묻은 옷은 구석에 잘 숨겨져있다.
+<<endif>>
+===
+title: Bed
+tags:
+---
+내 방에 있는 침대이다.
+푹신하긴 하지만, 너무 좁다.
 ===

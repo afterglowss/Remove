@@ -57,29 +57,6 @@ public class ObjectDialogueManager : MonoBehaviour
     public void OnObjectDialogueStart()
     {
         dialogueRunner.StartDialogue(objectNode);
-        //switch (objectType)
-        //{
-        //    case ObjectType.Bed:
-        //        //variableStorage.TryGetValue("$BloodCleanOrNot", out BedBloodCleanOrNot);
-        //        //Debug.Log(BedBloodCleanOrNot);
-        //        break;
-        //    case ObjectType.Sink:
-        //        break;
-        //    case ObjectType.Refrigerator:
-        //        break;
-        //    case ObjectType.FrontDoor:
-        //        break;
-        //    case ObjectType.Desk:
-        //        break;
-        //    case ObjectType.ShoeShelfClose:
-                
-        //        break;
-        //    case ObjectType.DresserDrawer:
-
-        //        break;
-        //    case ObjectType.KitchenFloor:
-        //        break;
-        //}
     }
     public void PoliceCallingStart()
     {
@@ -110,6 +87,12 @@ public class ObjectDialogueManager : MonoBehaviour
     public static void HammerActive(GameObject obj)
     {
         obj = GameObject.Find("RoomCanvas").transform.Find("Hammer").gameObject;
+        obj.SetActive(true);
+    }
+    [YarnCommand("blockActive")]
+    public static void BlockActive(GameObject obj)
+    {
+        obj = GameObject.Find("RoomCanvas").transform.Find("HammerBlockImage").gameObject;
         obj.SetActive(true);
     }
     [YarnCommand("mentalHospitalActive")]
