@@ -9,7 +9,6 @@ using Yarn.Unity;
 
 public class YarnCommand : MonoBehaviour
 {
-    public DialogueRunner dialogueRunner;
 
     /*--------이 부분은 추리씬에서의 사진을 다루는 스크립트입니다------*/
 
@@ -467,6 +466,19 @@ public class YarnCommand : MonoBehaviour
     public static void TxtWithJae()
     {
         GameObject.Find("FadeCanvas").transform.Find("TxtWithJae").gameObject.SetActive(false);
+    }
+
+    //
+    [YarnCommand("PasswordIn")]
+    public static void PasswordIn()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("PasswordImage").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("PasswordOut")]
+    public static void PasswordOut()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("PasswordImage").gameObject.SetActive(false);
     }
 }
 

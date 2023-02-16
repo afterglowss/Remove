@@ -1,7 +1,7 @@
 ﻿title: chance
 ---
-<<set $TotalChance = 4>>
-<<set $chance = 2>>
+<<set $TotalChance = 0>>
+<<set $chance = 0>>
 ===
 title: InferingStart
 tags:
@@ -42,8 +42,9 @@ title: InferingStorystart
 ---
 그 대화에서 수상했던 것은...
 -> 신고자 분이 어디 있는지 찾았던 구급대원
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance >= 4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingStorystart>>
@@ -56,8 +57,9 @@ title: InferingStorystart
     그렇다면 행인이 본 피는 뭐였을까?
     <<jump InferingBlood>>
 -> 이송하겠다고 외친 구급대원
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingStorystart>>
@@ -67,8 +69,9 @@ title: InferingBlood
 ---
 그 날, 행인이 본 피의 정체는......
 -> 내 피가 맞다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBlood>>
@@ -92,8 +95,9 @@ title: InferingBlood
     그리고 시신을 깔끔히 처리했다면, 있어선 안 되는 것이 원룸 안에 있었어.
     <<jump InferingRoomobject>>
 -> 행인이 거짓말을 했다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBlood>>
@@ -103,15 +107,17 @@ title: InferingRoomobject
 ---
 원룸 안에 있어서 안 됐던 것은......
 -> 옷장 속에 있었다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingRoomobject>>
     <<endif>>
 -> 화장실 세면대 위에 있었다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingRoomobject>>
@@ -137,15 +143,17 @@ title: InferingFinger
     그렇다는 건...... 내가 모르는 흉기가 또 있단 거겠지.
     <<jump InferingWeapon1>>
 -> 피묻은 옷자락
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingFinger>>
     <<endif>>
 -> 반지
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingFinger>>
@@ -157,8 +165,9 @@ title: InferingWeapon1
 -> 봤다
     <<jump InferingWeapon2>>
 -> 보지 못했다
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingWeapon1>>
@@ -168,15 +177,17 @@ title: InferingWeapon2
 ---
 그건......
 -> 화장실에 있었다
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingWeapon2>>
     <<endif>>
 -> 책상 위에 있었다
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingWeapon2>>
@@ -206,8 +217,9 @@ title: InferingKnife
     이게 가리키는 것은......
     <<jump InferingCleanKnife>>
 -> 손잡이 부분
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingKnife>>
@@ -217,8 +229,9 @@ title: InferingCleanKnife
 ---
 깨끗한 식칼을 통해 알 수 있는 건......
 -> 내가 사건을 저지른 뒤 식칼을 깔끔히 닦았다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingCleanKnife>>
@@ -239,8 +252,9 @@ title: InferingCleanKnife
     누군가 내 원룸을 건드렸다는 증거가 있을까?
     <<jump InferingRoom>>
 -> 사실 식칼로 자른 게 아니다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingCleanKnife>>
@@ -254,8 +268,9 @@ title: InferingRoom
     그리고 그 증거는......
     <<jump InferingProof>>
 -> 없다
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingRoom>>
@@ -265,15 +280,17 @@ title: InferingProof
 ---
 그 증거를 찾을 수 있는 곳은......
 -> 화장대 서랍 안
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingProof>>
     <<endif>>
 -> 화장실 앞 러그 위
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingProof>>
@@ -289,8 +306,9 @@ title: InferingHandprint
 ---
 창문 위 손자국의 이상한 점은......
 -> 크기
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingHandprint>>
@@ -307,8 +325,9 @@ title: InferingHandprint
     그런 증거가 원룸에 또 있을까?
     <<jump InferingOther>>
 -> 모양
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingHandprint>>
@@ -318,8 +337,9 @@ title: InferingOther
 ---
 사건 조작의 또다른 증거가 원룸에......
 -> 있다
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingOther>>
@@ -342,8 +362,9 @@ title: InferingMessage
 ---
 협박 문자는 이 어플 속 단서와 연관지을 때 이상한데......
 -> 캘린더
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingMessage>>
@@ -351,8 +372,9 @@ title: InferingMessage
 -> 갤러리
     <<jump InferingGallery>>
 -> 메모장
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingMessage>>
@@ -362,15 +384,17 @@ title: InferingGallery
 ---
 갤러리의 이 사진과 연관지을 수 있는데......
 -> 4번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingGallery>>
     <<endif>>
 -> 8-3번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingGallery>>
@@ -386,8 +410,9 @@ title: InferingCombining
 ---
 그건 바로......
 -> 문자의 내용
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingCombining>>
@@ -405,8 +430,9 @@ title: InferingCombining
     ......생각났다.
     <<jump Etc>>
 -> 문자의 말투
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingCombining>>
@@ -422,15 +448,17 @@ title: Etc
     이 사진과 비교했을 때, 이걸 10월 15일에 찍었다는 건 말이 안 돼.
     <<jump ComparingWithPicture4>>
 -> 5번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump Etc>>
     <<endif>>
 -> 9번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump Etc>>
@@ -440,15 +468,17 @@ title: ComparingWithPicture4
 ---
 비교할 만한 사진은......
 -> 10번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump ComparingWithPicture4>>
     <<endif>>
 -> 14번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump ComparingWithPicture4>>
@@ -467,8 +497,9 @@ title: InferingFakePicture
 ---
 이 중 조작된 사진은......
 -> 4번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingFakePicture>>
@@ -493,15 +524,17 @@ title: InferingPictureTime
     이것도 다른 곳에 힌트가 있었지.
     <<jump InferingImpossible>>
 -> 12번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingPictureTime>>
     <<endif>>
 -> 6번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingPictureTime>>
@@ -511,15 +544,17 @@ title: InferingImpossible
 ---
 10월 10일에 찍을 수 없었던 이유를 증명해 줄 수 있는 사람은......
 -> 오하나
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingImpossible>>
     <<endif>>
 -> 심재환
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingImpossible>>
@@ -545,15 +580,17 @@ title: InferingMessageMore
     사건 현장을 조작했다는 의심이 가장 크게 가는 사람은 한 명이야.
     <<jump InferingPeople>>
 -> 니가 하나 이렇게 만든거야
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingMessageMore>>
     <<endif>>
 -> 나와 죽여버리기 전에
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingMessageMore>>
@@ -563,8 +600,9 @@ title: InferingPeople
 ---
 그리고 그 사람은......
 -> 이지연
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingPeople>>
@@ -577,8 +615,9 @@ title: InferingPeople
     그렇지만 사건을 다른 관점에서 생각해 보면, 이유를 유추해 볼 수도 있겠지.
     <<jump InferingReason>>
 -> 오하나
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingPeople>>
@@ -588,15 +627,17 @@ title: InferingReason
 ---
 심재환이 이 사건을 조작한 이유는......
 -> 내가 심재환을 스토킹했기 때문에
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingReason>>
     <<endif>>
 -> 심재환이 오하나를 스토킹했기 때문에
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingReason>>
@@ -628,15 +669,17 @@ title: InferingObjects
     그런데 이 책이 누구 것인지 알 수 있는 단서가 스마트폰에 있었어.
     <<jump InferingBook>>
 -> 책장과 세면대에 있었다
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingObjects>>
     <<endif>>
 -> 부엌 찬장 안과 화장대 서랍 안에 있었다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingObjects>>
@@ -646,8 +689,9 @@ title: InferingBook
 ---
 책의 주인을 알 수 있는 단서는......
 -> 캘린더와 갤러리
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBook>>
@@ -656,8 +700,9 @@ title: InferingBook
     그래. 갤러리와 메신저.
     <<jump InferingBookOwner>>
 -> 메신저와 통화 내역
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBook>>
@@ -667,8 +712,9 @@ title: InferingBookOwner
 ---
 저 단서를 토대로 보았을 때, 주인은......
 -> 심재환
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBookOwner>>
@@ -689,8 +735,9 @@ title: InferingBookOwner
     내 것이 아니란 단서를 여기서 찾을 수 있었지.
     <<jump InferingSneaker>>
 -> 이지연
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBookOwner>>
@@ -700,15 +747,17 @@ title: InferingSneaker
 ---
 운동화가 내 것이 아니란 단서는 여기에......
 -> 캘린더
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingSneaker>>
     <<endif>>
 -> 통화 내역
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingSneaker>>
@@ -733,15 +782,17 @@ title: InferingHana
 ---
 오하나의 물건이 내 원룸에 많은 이유는......
 -> 오하나를 죽인 뒤 몇 가지 물건을 훔쳐 왔다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingHana>>
     <<endif>>
 -> 모종의 이유로 일상 생활 중 오하나의 물건을 몇 개 훔쳤다.
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingHana>>
@@ -755,8 +806,9 @@ title: RoomGallery
 ---
 그건 바로......
 -> 커피잔
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump RoomGallery>>
@@ -774,8 +826,9 @@ title: RoomGallery
     일단 반지 두 개를 모두 껴볼까?
     <<jump InferingRing>>
 -> 열쇠
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump RoomGallery>>
@@ -806,8 +859,9 @@ title: InferingRing
     그 힌트가 되는 사진은......
     <<jump InferingD>>
 -> 착용하지 말자
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingRing>>
@@ -817,8 +871,9 @@ title: InferingD
 ---
 D의 힌트가 되는 사진은......
 -> 1번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingD>>
@@ -836,8 +891,9 @@ D의 힌트가 되는 사진은......
     거기서 자주 등장했던 것들이 있었는데.
     <<jump InferingPictureD>>
 -> 14번 사진
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingD>>
@@ -847,15 +903,17 @@ title: InferingPictureD
 ---
 그건 바로......
 -> 커피
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingPictureD>>
     <<endif>>
 -> 책
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingPictureD>>
@@ -888,15 +946,17 @@ title: RingToFinger
     <<jump KeepGoing>>
     
 -> 부엌 찬장 안
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump RingToFinger>>
     <<endif>>
 -> 침대 밑
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump RingToFinger>>
@@ -921,23 +981,28 @@ title: KeepGoing
 title: InferingPassword
 ---
 누군가의 생일은......
-<<set $chance = $chance -1>>
 <<PasswordIn>>
-<<if $chance<1>>
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance ==0>>
+<<set $chance = $chance+1>>
+<<stamina>>
+<<if $chance>=2>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<endif>>
+<<else>>
+    <<PasswordOut>>
+    <<jump PasswordCorrect>>
 <<endif>>
 ===
 title: PasswordCorrect
 ---
-<<set $chance = 2>>
+<<set $chance = 0>>
 맞아. 8월 28일이야.
 <<Memo_8_28In>>
 8월 28일, 메모장에 적힌 내용들이 있었지.
 케이크, 꼬깔 모자, 선물, 마치 누군가의 생일을 준비하는 듯 했어.
 <<Memo_8_28Out>>
+
 
 비밀번호를 입력해보자!
 
@@ -945,8 +1010,8 @@ title: PasswordCorrect
 나는 하나의 물건들이 왜 내 원룸에 많았는지 기억한다.
 <<RingIn>><<RingAnotherIn>>
 나는 반지의 의미를 기억한다.
-<<RingAnotherOut>><<RingOut
-<<CalenderDIn>>>>
+<<RingAnotherOut>><<RingOut>>
+<<CalenderDIn>>
 ......나는 'D'가 무엇의 약자인지 기억한다.
 <<CalenderDOut>>
 <<jump DMeaning>>
@@ -954,11 +1019,12 @@ title: PasswordCorrect
 title: DMeaning
 ---
 D가 의미하는 단어는......
-<<set $chance = $chance -1>>
+<<set $chance = $chance+1>>
+<<stamina>>
 <<DateIn>>
-<<if $chance<1>>
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance ==0>>
+<<if $chance>=2>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<endif>>
 <<endif>>
@@ -974,8 +1040,9 @@ title: InferingApplication
 ---
 그 어플은......
 -> L
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingApplication>>
@@ -984,8 +1051,9 @@ title: InferingApplication
     그리고, 그걸 알고 있는 사람은......
     <<jump PersonWhoKnows>>
 -> 통화 기록
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingApplication>>
@@ -995,8 +1063,9 @@ title: PersonWhoKnows
 ---
 그 사람은......
 -> 이지연
-    <<set $TotalChance = $TotalChance -1>>
-    <<if $TotalChance == 0>>
+    <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
+    <<if $TotalChance>=4>>
         <<jump Fail>>
     <<else>>
         <<jump PersonWhoKnows>>
