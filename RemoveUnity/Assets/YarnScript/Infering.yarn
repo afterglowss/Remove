@@ -6,7 +6,6 @@
 title: InferingStart
 tags:
 ---
-<<fadeIn>>
 이제 눈에 보이는 단서는 다 지웠다.
 경찰이 곧 들이닥칠 것이다.
 ......그런데, 자꾸 거슬리는 것이 있다.
@@ -18,7 +17,6 @@ tags:
 어쩌면 지금이 마지막 기회일지도 모른다.
 대체 무엇이 거슬렸는지 찾아낼 기회.
 그래, 다시 처음부터 천천히 되짚어보자.
-<<fadeOut>>
 
 어디부터 되짚어 봐야 좋을까.
 감이 전혀 잡히지 않아......
@@ -976,22 +974,19 @@ title: KeepGoing
 그 어플의 비밀번호가 뭔지 기억났어.
 누군가의 생일이었어!
 그리고 생일과 관련된 정보는 분명 스마트폰에서 찾을 수 있었어......
+누군가의 생일은......
 <<jump InferingPassword>>
 ===
 title: InferingPassword
 ---
-누군가의 생일은......
 <<PasswordIn>>
 <<set $chance = $chance+1>>
-<<stamina>>
 <<if $chance>=2>>
     <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
     <<if $TotalChance>=4>>
         <<jump Fail>>
     <<endif>>
-<<else>>
-    <<PasswordOut>>
-    <<jump PasswordCorrect>>
 <<endif>>
 ===
 title: PasswordCorrect
@@ -1014,16 +1009,16 @@ title: PasswordCorrect
 <<CalenderDIn>>
 ......나는 'D'가 무엇의 약자인지 기억한다.
 <<CalenderDOut>>
+D가 의미하는 단어는......
 <<jump DMeaning>>
 ===
 title: DMeaning
 ---
-D가 의미하는 단어는......
+<<DMeaningIn>>
 <<set $chance = $chance+1>>
-<<stamina>>
-<<DateIn>>
 <<if $chance>=2>>
     <<set $TotalChance = $TotalChance+1>>
+    <<stamina>>
     <<if $TotalChance>=4>>
         <<jump Fail>>
     <<endif>>
