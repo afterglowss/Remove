@@ -29,6 +29,8 @@ public class BTNManager : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
 
+
+    private GameObject obj;
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -53,11 +55,11 @@ public class BTNManager : MonoBehaviour
         switch (type)
         {
             case BTNType.Start:
-                //Debug.Log("°ÔÀÓ½ÃÀÛ");
+                //Debug.Log("ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½");
                 SceneManager.LoadScene("StoryStart");
                 break;
             case BTNType.Option:
-                //Debug.Log("¼³Á¤");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½");
                 CanvasGroupOn(optionGroup);
                 optionGroup.alpha = 1;
                 CanvasGroupOff(mainGroup);
@@ -66,7 +68,7 @@ public class BTNManager : MonoBehaviour
                 break;
             case BTNType.Quit:
                 Application.Quit();
-                //Debug.Log("¾ÛÁ¾·á");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                 break;
             case BTNType.Back:
                 CanvasGroupOff(optionGroup);
@@ -74,7 +76,7 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOn(mainGroup);
                 CanvasGroupOn(phoneGroup);
                 phoneGroup.alpha = 1;
-                //Debug.Log("µÚ·Î");
+                //Debug.Log("ï¿½Ú·ï¿½");
                 break;
             case BTNType.SkipToPhone:
                 SceneManager.LoadScene("Phone");
@@ -141,17 +143,30 @@ public class BTNManager : MonoBehaviour
     {
         SceneManager.LoadScene("StoryEnd");
     }
-
-    [YarnCommand("fadeIn")]
-    public static void FadeIn()
+    [YarnCommand("jumpEnding1")]
+    public static void JumpEnding1()
     {
-        GameObject.Find("FadeCanvas").transform.Find("BlackImage").gameObject.SetActive(true);
+        SceneManager.LoadScene("Ending1");
     }
-
-    [YarnCommand("fadeOut")]
-    public static void FadeOut()
+    [YarnCommand("jumpEnding2")]
+    public static void JumpEnding2()
     {
-        GameObject.Find("FadeCanvas").transform.Find("BlackImage").gameObject.SetActive(false);
+        SceneManager.LoadScene("Ending2");
+    }
+    [YarnCommand("jumpEnding3")]
+    public static void JumpEnding3()
+    {
+        SceneManager.LoadScene("Ending3");
+    }
+    [YarnCommand("jumpEnding4")]
+    public static void JumpEnding4()
+    {
+        SceneManager.LoadScene("Ending4");
+    }
+    [YarnCommand("jumpEnding5")]
+    public static void JumpEnding5()
+    {
+        SceneManager.LoadScene("Ending5");
     }
 
     [YarnCommand("fadeInStarting")]
@@ -183,6 +198,4 @@ public class BTNManager : MonoBehaviour
     {
 
     }
-
-    
 }

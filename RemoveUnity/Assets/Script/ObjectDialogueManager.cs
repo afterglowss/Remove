@@ -57,29 +57,29 @@ public class ObjectDialogueManager : MonoBehaviour
     public void OnObjectDialogueStart()
     {
         dialogueRunner.StartDialogue(objectNode);
-        switch (objectType)
-        {
-            case ObjectType.Bed:
-                //variableStorage.TryGetValue("$BloodCleanOrNot", out BedBloodCleanOrNot);
-                //Debug.Log(BedBloodCleanOrNot);
-                break;
-            case ObjectType.Sink:
-                break;
-            case ObjectType.Refrigerator:
-                break;
-            case ObjectType.FrontDoor:
-                break;
-            case ObjectType.Desk:
-                break;
-            case ObjectType.ShoeShelfClose:
+        //switch (objectType)
+        //{
+        //    case ObjectType.Bed:
+        //        //variableStorage.TryGetValue("$BloodCleanOrNot", out BedBloodCleanOrNot);
+        //        //Debug.Log(BedBloodCleanOrNot);
+        //        break;
+        //    case ObjectType.Sink:
+        //        break;
+        //    case ObjectType.Refrigerator:
+        //        break;
+        //    case ObjectType.FrontDoor:
+        //        break;
+        //    case ObjectType.Desk:
+        //        break;
+        //    case ObjectType.ShoeShelfClose:
                 
-                break;
-            case ObjectType.DresserDrawer:
+        //        break;
+        //    case ObjectType.DresserDrawer:
 
-                break;
-            case ObjectType.KitchenFloor:
-                break;
-        }
+        //        break;
+        //    case ObjectType.KitchenFloor:
+        //        break;
+        //}
     }
     public void PoliceCallingStart()
     {
@@ -115,23 +115,8 @@ public class ObjectDialogueManager : MonoBehaviour
     [YarnCommand("mentalHospitalActive")]
     public static void MentalHospitalActive(GameObject obj)
     {
-        obj = GameObject.Find("PhoneCanvas").transform.Find("MentalHospital").gameObject;
+        obj = GameObject.Find("PhoneImage").transform.Find("MentalHospital").gameObject;
         obj.SetActive(true);
-    }
-    [YarnCommand("Image")]
-    public void ImageEnabled(Image img)
-    {
-        img.enabled = true;
-    }
-    [YarnCommand("btnUnEnabled")]
-    public void BtnUnEnabled(Button btn)
-    {
-        btn.enabled = false;
-    }
-    [YarnCommand("btnEnabled")]
-    public void BtnEnabled(Button btn)
-    {
-        btn.enabled = true;
     }
     [YarnCommand("ringAppear")]
     public static void RingAppear(GameObject ring)
@@ -139,5 +124,6 @@ public class ObjectDialogueManager : MonoBehaviour
         Color color;
         color = ring.GetComponent<Image>().color;
         color.a = 1f;
+        ring.GetComponent<Image>().color = color;
     }
 }

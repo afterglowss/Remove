@@ -1,90 +1,3 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.UI;
-//using Yarn.Unity;
-
-//public class PhoneMove : MonoBehaviour
-//{
-//    private Transform cameraTransform;
-//    public GameObject Phone;
-//    private Image phoneImage;
-//    private Vector3 Target;
-//    private Vector3 std;
-//    private GameObject phoneBlock;
-//    public GameObject phoneBlack;
-
-//    public Image policeCall;
-//    public Image policeCallAnswer;
-//    public Image mentalHospital;
-//    public Image mentalHospitalAnswer;
-
-//    ObjectDialogueManager objectDialogueManager;
-
-//    public static int i = 0;
-//    [YarnCommand("setNumber")]
-//    public static void SetNumber(int newNumber)
-//    {
-//        i = newNumber;
-//    }
-
-//    void Awake()
-//    {
-//        cameraTransform = GameObject.Find("Main Camera").GetComponent<Transform>();
-//        Target = new Vector3(0, -11, 100);
-//        std = new Vector3(0, -11, 100);
-//        //phoneImage = Phone.GetComponent<Image>();
-//    }
-
-//    public void PhoneUp()
-//    {
-//        Target = new Vector3(0, 0, 100);
-//        phoneBlack.SetActive(false);
-//        GameObject.Find("PhoneCanvas").transform.Find("PhoneBlockImage").gameObject.SetActive(true);
-//    }
-
-//    public void PhoneDown()
-//    {
-//        Target = new Vector3(0, -11, 100);
-//        phoneBlack.SetActive(true);
-//        GameObject.Find("PhoneBlockImage").gameObject.SetActive(!true);
-//    }
-
-//    private void Update()
-//    {
-//        if (Input.GetKeyDown(KeyCode.Tab))
-//        {
-//            if (std.x-Target.x==0 && std.y-Target.y == 0 && std.z-Target.z==0)
-//            {
-//                PhoneUp();
-//                if (i == 0)
-//                {
-//                    Invoke("PoliceCallAnswer", 1f);
-//                    objectDialogueManager.PoliceCallingStart();
-//                }
-//            }
-//            else
-//            {
-//                if (i == 0)
-//                {
-//                    return;
-//                }
-//                PhoneDown();
-//            }
-
-//        }
-//        Phone.transform.position = Vector3.Lerp(Phone.transform.position,
-//                cameraTransform.position + Target, Time.deltaTime * 5);
-//    }
-//    public void PoliceCallAnswer()
-//    {
-//        policeCallAnswer.enabled = true;
-//    }
-//    public void MentalHospitalAnswer()
-//    {
-//        mentalHospitalAnswer.enabled = true;
-//    }
-//}
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -108,7 +21,7 @@ public class PhoneMove : MonoBehaviour
 
     ObjectDialogueManager objectDialogueManager;
 
-    public static int i = 0;
+    public static int i = 1;
     [YarnCommand("setNumber")]
     public static void SetNumber(int newNumber)
     {
@@ -161,7 +74,7 @@ public class PhoneMove : MonoBehaviour
             }
             else
             {
-                if (i == 0)
+                if (i == 0 || i == 2)
                 {
                     return;
                 }

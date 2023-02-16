@@ -1,22 +1,26 @@
 ﻿title: variables
 ---
-<<set $PhotoDelete = 0>>
 
-<<set $BedBloodCleanOrNot = false>> //살인증거
-<<set $BloodTissue = false>>
+
+
+<<set $DeskEvidence = false>> //안쓰는 거
+<<set $BedBloodCleanOrNot = false>> 
+
+
+<<set $PhotoDelete = 0>> //살인증거
+<<set $BloodTissue = false>> 
 <<set $FingerInCakeBox = false>>
-<<set $DeskEvidence = false>>
 <<set $FloorHammer = false>>
 <<set $StalkingPicture = false>>
-<<set $LighterAndCigarette = false>>
 <<set $BloodHandprint = false>>
 <<set $SmellOfBlood = false>>
 <<set $CigaretteInBathroom = false>>
 <<set $BloodOnCloth = false>>
 <<set $BloodOnRug = false>>
 
+<<set $LighterAndCigarette = false>>
 <<set $MentalHospitalCall = false>>
-<<set $HammerInTrashCan = false>>
+<<set $HammerInTrashCan = 0>>
 
 <<set $BathRoomKey = false>> //진실증거
 <<set $DresserKey = false>>
@@ -115,20 +119,8 @@ title: Blood
 -> 핏자국을 확인해봐야겠어.
 	이건... 피가 튀었다기보단 천에 흐르는 피가 닦인 것 같다.
 	어떤 상황이었던 거지?
-// <<if getCrimeEvidenceInStudio() == false>>
-// 아직 흔적이 남았다.
-// 경찰이 내가 범죄를 저질렀다는 사실을 알면 안된다.
-// 더 찾아보자.
-// <<else>>
-// 다 지운 것 같다.
-// 이제 휴대폰만 확인하면 된다.
-// <<endif>>
 ===
-title: FrontDoor
----
-지금 나갈 시간은 없다.
-경찰이 오기 전까지 남은 흔적을 모두 지워야 한다.
-===
+
 title: Desk
 ---
 공부할 때 쓰는 책상이다.
@@ -152,21 +144,21 @@ title: Desk
 -> 교재들만 멀쩡하면 그만이다.
 
 ===
-title: ShoeShelf
----
-평범한 운동화다. 사이즈는 260이다.
-===
+
 title: DresserDrawerOpen
 ---
-화장대 서랍을 열자 못 보던 열쇠가 들어있다.
-잠긴 문이 또 어디 있더라?
-<<set $KitchenCabinetKey = true>>
-띠리리링-!
-<<mentalHospitalActive MentalHospital>>
-<<setNumber 2>>
-<<wait 1>>
-<<setNumber 1>>
-<<objectDelete MentalHospital MentalHospital>>
+<<if $KitchenCabinetKey == false>>
+	화장대 서랍을 열자 못 보던 열쇠가 들어있다.
+	잠긴 문이 또 어디 있더라?
+	<<set $KitchenCabinetKey = true>>
+	<<mentalHospitalActive MentalHospital>>
+	<<setNumber 2>>
+	<<wait 1>>
+	<<setNumber 1>>
+	<<objectDelete MentalHospital MentalHospital>>
+<<else>>
+	신경 쓰이는 것은 없다.
+<<endif>>
 ===
 title: DresserDrawerLocked
 ---
@@ -174,16 +166,19 @@ title: DresserDrawerLocked
 ===
 title: MentalHospitalCall
 ---
-<<wait 0.5>>
-??: 성하 정신건강의학과입니다.
-??: 오늘 예약이신데 아직 안 오셔서 연락드렸어요.
-??: 오고 계신가요?
+<<wait 1>>
+??: ......에요?
+??: 어? 받으셨네.
+??: 안녕하세요, 환자분. 성하 정신건강의학과입니다.
+??: 제가 예약 시간을 착각해서 잘못 전화드렸네요.
 나: 네... 네? 무슨 말씀이시죠?
-??: ......잠시 담당 의료진과 대화 후 다시 전화드리겠습니다.
+??: 아, 예약을 오늘로 알고 안 오신줄 알았어요. 다음에 다시 연락드릴게요.
+나: 아, 네......
 <<objectDelete MentalHospital MentalHospital>>
 <<wait 0.5>>
 ......방금 뭐지?
 잘못 걸려온건가...... 어쨌든 조사나 더 해보자.
+<<setNumber 1>>
 <<set $MentalHospitalCall = true>>
 ===
 title: KitchenCabinetLocked
@@ -202,6 +197,7 @@ title: Drug
 -> 누군가가 나를 스토킹했기 때문에.
 	......응? 그 반대 아닌가?
 -> 망상 때문에 잠에 들지 못해서. <<if $MentalHospitalCall == true>>
+	<<jumpEnding2>>
 ===
 title:Plate
 ---
@@ -216,7 +212,7 @@ title: KitchenFloor
 		쓰레기는 쓰레기통에!
 		쓰레기통에 쑤셔 넣었다.
 		<<set $FloorHammer = true>> //망치 숨김
-		<<set $HammerInTrashCan = true>> //쓰레기통에 망치가 생김
+		<<set $HammerInTrashCan = 1>> //쓰레기통에 망치가 생김
 		<<objectDelete KitchenFloor KitchenFloor>>
 	-> 침대 밑에 숨긴다.
 		침대 밑에 숨기면 아무도 찾지 못할 것이다.
@@ -231,11 +227,7 @@ title: KitchenFloor
 	신경쓰이는 것은 없다.
 <<endif>>
 ===
-title: KitchenKnife
----
-평범한 식칼 치고는 조금 더 크고 날카롭다.
-전문가용 같은데..., 내가 요리에 취미가 있었나?
-===
+
 title: Window
 ---
 <<if $BloodHandprint == false>> //손자국이 있으면
@@ -256,7 +248,7 @@ title: Window
 title: StalkingPicture
 ---
 <<if $StalkingPicture == false>>
-	스토킹의 흔적이다. B군의 사진이 잔뜩 붙어있다.
+	스토킹의 흔적이다. 심재환의 사진이 잔뜩 붙어있다.
 	어떻게 할까?
 	-> 떼어내어 정리한 후 옷장 속 옷 주머니 안에 숨긴다.
 		옷장 속 옷 주머니 안에 사진을 넣으려다 무언가를 발견했다. 
@@ -289,16 +281,18 @@ title: StalkingPicture
 ===
 title: Rug
 ---
-평범한 러그다.
+
 <<if $BloodOnRug == false>>
-	자세히보니 러그에 피가 묻어있다.
-	일단 닦아낼까?
-	-> 그러자.
+	피가 흥건히 묻어 있는 러그다.
+	닦을까?
+	-> 예.
 		열심히 문질러 지우자 약간의 자국은 남았지만 크게 눈에 띄지는 않는다.
 		<<set $BloodOnRug = true>>
 		<<objectDelete Rug Rug>>
-	-> 글쎄......
-		뭐... 이걸 어떻게 보겠어?
+	-> 아니오.
+		그냥 얼룩인 줄 알거야.
+<<else>>		
+	평범한 러그다.
 <<endif>>
 ===
 title: BookShelf
@@ -326,14 +320,6 @@ title: BookShelf
 		<<set $CheckTheMajor = true>>
 	-> 좀 더 생각해봐야겠어. 
 <<endif>>
-===
-title: Comic
----
-만화책이 몇 권 꽂혀 있다.
-===
-title: Novel
----
-두꺼운 소설책이 몇 권 꽂혀 있다.
 ===
 title: BathRoom
 ---
@@ -394,11 +380,70 @@ title: Basin
 ===
 title: BathRoomTrashCan
 ---
-쓰레기통 속에서 무언가 반짝거린다.
-<<ringAppear ring2>>
-은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
-<<set $Ring2 = true>>
-<<objectDelete ring2 ring2>>
+<<if $Ring2 == false>>
+	쓰레기통 속에서 무언가 반짝거린다.
+	<<ringAppear ring2>>
+	은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
+	<<set $Ring2 = true>>
+	<<objectDelete ring2 ring2>>
+<<else>>
+	쓰레기가 가득 차있다.
+<<endif>>
+===
+title: TrashCan
+---
+쓰레기통 안에는 쓰레기들이 가득하다.
+<<if $HammerInTrashCan == 1>>
+	아까 넣은 망치 손잡이도 살짝 보인다.
+<<endif>>
+<<if $BloodTissue == false>>
+	조금 뒤적거리자 <color=red>피 묻은 휴지</color>들이 나왔다.
+	어떻게 하지?
+	-> 쓰레기통 안에 그대로 두자.
+		정말 그대로 두기엔 신경 쓰인다... 다른 방법이 있지 않을까?
+	-> 내가 먹어버리자.
+		우웩... 맛없어. 다 뱉어냈다. 다른 방법이 있지 않을까?
+	-> 변기에 넣고 내리자. <<if $BathRoomKey == true>>
+		변기에 넣고 물을 내렸다.
+		<<set $BloodTissue = true>>
+<<endif>>
+===
+title: CakeBox
+---
+냉장고 안에 케이크 상자가 들어있다.
+한번 열어볼까?
+-> 예.
+	<<if $FingerInCakeBox == false>>	
+		케이크 상자 안에는 잘린 손가락이 들어 있었다.
+		역했다. 토할 것 같았지만 애써 억눌렀다.
+		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
+		그럼 어떻게 하지?
+		-> 그래도 그냥 변기에 버리자. 이대로 뒀다가 들키면 끝장이다.
+			변기에 버리고 물을 내렸다.
+			<<set $FingerInCakeBox = true>>
+		-> 방법도 없으니 일단 이대로 둘까.
+			다시 상자에 숨겨뒀다.
+		-> 음식물 쓰레기 사이에 숨겨 두자.
+			여기까지 찾아보진 않겠지.
+			<<set $FingerInCakeBox = true>>
+	<<else>>
+		케이크가 들어있다.
+	<<endif>>
+-> 아니오.
+	케이크가 들어있겠지. 열지 말자.
+===
+title: KitchenKnife
+---
+평범한 식칼 치고는 조금 더 크고 날카롭다.
+전문가용 같은데..., 내가 요리에 취미가 있었나?
+===
+title: Comic
+---
+만화책이 몇 권 꽂혀 있다.
+===
+title: Novel
+---
+두꺼운 소설책이 몇 권 꽂혀 있다.
 ===
 title: BathRoomTrash
 ---
@@ -410,21 +455,16 @@ title: Shampoo
 샴푸가 담긴 통이다.
 라벤더 향이라고 쓰여 있다.
 ===
-title: TrashCan
+title: FrontDoor
 ---
-쓰레기통 안에는 쓰레기들이 가득하다.
-아까 넣은 망치 손잡이도 살짝 보인다. <<if $HammerInTrashCan == true>>
-<<if $BloodTissue == false>>
-	조금 뒤적거리자 <color=red>피 묻은 휴지</color>들이 나왔다.
-	-> 쓰레기통 안에 그대로 두자.
-		정말 그대로 두기엔 신경 쓰인다... 다른 방법이 있지 않을까?
-	-> 내가 먹어버리자.
-		우웩... 맛없어. 다 뱉어냈다. 다른 방법이 있지 않을까?
-	-> 변기에 넣고 내리자. <<if $BathRoomKey == true>>
-		변기에 넣고 물을 내렸다.
-		<<set $BloodTissue = true>>
-<<endif>>
+지금 나갈 시간은 없다.
+경찰이 오기 전까지 남은 흔적을 모두 지워야 한다.
 ===
+title: ShoeShelf
+---
+평범한 운동화다. 사이즈는 260이다.
+===
+
 title: LaptopAndPencilHolder
 ---
 노트북과 연필꽂이가 있다.
@@ -455,30 +495,7 @@ title: RefrigeratorUp
 ---
 텅 비어있다.
 ===
-title: CakeBox
----
-냉장고 안에 케이크 상자가 들어있다.
-한번 열어볼까?
--> 그러자.
-	<<if $FingerInCakeBox == false>>	
-		케이크 상자 안에는 잘린 손가락이 들어 있었다.
-		역했다. 토할 것 같았지만 애써 억눌렀다.
-		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
-		그럼 어떻게 하지?
-		-> 그래도 그냥 변기에 버리자. 이대로 뒀다가 들키면 끝장이다.
-			변기에 버리고 물을 내렸다.
-			<<set $FingerInCakeBox = true>>
-		-> 방법도 없으니 일단 이대로 둘까.
-			다시 상자에 숨겨뒀다.
-		-> 음식물 쓰레기 사이에 숨겨 두자.
-			여기까지 찾아보진 않겠지.
-			<<set $FingerInCakeBox = true>>
-	<<else>>
-		케이크가 들어있다.
-	<<endif>>
--> 배가 고프진 않아.
-	뭐든 있겠지. 열지 말자.
-===
+
 title: Water
 ---
 물이 담겨있는 물병이다.

@@ -11,6 +11,7 @@ namespace Yarn.Unity.Example
     /// </summary>
     public class PhoneChatDialogueHelper : DialogueViewBase
     {
+        public DialogueRunner dialogueRunner;
         DialogueRunner runner;
 
         public TMPro.TextMeshProUGUI text;
@@ -33,7 +34,7 @@ namespace Yarn.Unity.Example
             runner = GetComponent<DialogueRunner>();
             runner.AddCommandHandler( "Me", SetSenderMe ); // registers Yarn Command <<Me>>, which sets the current message sender to "Me"
             runner.AddCommandHandler( "Them", SetSenderThem ); // registers Yarn Command <<They>>, which sets the current message sender to "Them" (whoever the player is talking to)
-            runner.AddCommandHandler("Monologue", setSenderMonologue);
+            //runner.AddCommandHandler("Monologue", SetSenderMonologue);
 
             optionsContainer.SetActive(false);
         }
@@ -60,11 +61,16 @@ namespace Yarn.Unity.Example
             currentTextColor = Color.black;
         }
 
-        public void setSenderMonologue()
+        //public void setSenderMonologue()
+        //{
+        //    isRightAlignment = true;
+        //    currentBGColor = Color.gray;
+        //    currentTextColor = Color.black;
+        //}
+        [YarnCommand("monologue")]
+        public void Monologue(string nodeName)
         {
-            isRightAlignment = true;
-            currentBGColor = Color.gray;
-            currentTextColor = Color.black;
+            dialogueRunner.StartDialogue(nodeName);
         }
 
         // when we clone a new message box, re-style the message box based on whether SetSenderMe or SetSenderThem was most recently called

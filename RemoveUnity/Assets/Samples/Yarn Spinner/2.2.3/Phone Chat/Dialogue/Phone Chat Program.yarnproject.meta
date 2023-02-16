@@ -27,9 +27,6 @@ ScriptedImporter:
   searchAllAssembliesForActions: 1
   assembliesToSearch: []
   ListOfFunctions:
-  - Name: GetCrimeEvidenceInStudio
-    ReturnType: -> Boolean
-    Parameters: []
   - Name: Random
     ReturnType: -> Single
     Parameters: []
