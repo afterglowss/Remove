@@ -161,7 +161,7 @@ public class PhoneMove : MonoBehaviour
             }
             else
             {
-                if (i == 0)
+                if (i == 0 || i == 2)
                 {
                     return;
                 }

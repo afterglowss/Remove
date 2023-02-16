@@ -16,7 +16,7 @@
 <<set $BloodOnRug = false>>
 
 <<set $MentalHospitalCall = false>>
-<<set $HammerInTrashCan = false>>
+<<set $HammerInTrashCan = 0>>
 
 <<set $BathRoomKey = false>> //진실증거
 <<set $DresserKey = false>>
@@ -115,14 +115,6 @@ title: Blood
 -> 핏자국을 확인해봐야겠어.
 	이건... 피가 튀었다기보단 천에 흐르는 피가 닦인 것 같다.
 	어떤 상황이었던 거지?
-// <<if getCrimeEvidenceInStudio() == false>>
-// 아직 흔적이 남았다.
-// 경찰이 내가 범죄를 저질렀다는 사실을 알면 안된다.
-// 더 찾아보자.
-// <<else>>
-// 다 지운 것 같다.
-// 이제 휴대폰만 확인하면 된다.
-// <<endif>>
 ===
 title: FrontDoor
 ---
@@ -158,15 +150,18 @@ title: ShoeShelf
 ===
 title: DresserDrawerOpen
 ---
-화장대 서랍을 열자 못 보던 열쇠가 들어있다.
-잠긴 문이 또 어디 있더라?
-<<set $KitchenCabinetKey = true>>
-띠리리링-!
-<<mentalHospitalActive MentalHospital>>
-<<setNumber 2>>
-<<wait 1>>
-<<setNumber 1>>
-<<objectDelete MentalHospital MentalHospital>>
+<<if $KitchenCabinetKey == false>>
+	화장대 서랍을 열자 못 보던 열쇠가 들어있다.
+	잠긴 문이 또 어디 있더라?
+	<<set $KitchenCabinetKey = true>>
+	<<mentalHospitalActive MentalHospital>>
+	<<setNumber 2>>
+	<<wait 1>>
+	<<setNumber 1>>
+	<<objectDelete MentalHospital MentalHospital>>
+<<else>>
+	신경 쓰이는 것은 없다.
+<<endif>>
 ===
 title: DresserDrawerLocked
 ---
@@ -174,16 +169,19 @@ title: DresserDrawerLocked
 ===
 title: MentalHospitalCall
 ---
-<<wait 0.5>>
-??: 성하 정신건강의학과입니다.
-??: 오늘 예약이신데 아직 안 오셔서 연락드렸어요.
-??: 오고 계신가요?
+<<wait 1>>
+??: ......에요?
+??: 어? 받으셨네.
+??: 안녕하세요, 환자분. 성하 정신건강의학과입니다.
+??: 제가 예약 시간을 착각해서 잘못 전화드렸네요.
 나: 네... 네? 무슨 말씀이시죠?
-??: ......잠시 담당 의료진과 대화 후 다시 전화드리겠습니다.
+??: 아, 예약을 오늘로 알고 안 오신줄 알았어요. 다음에 다시 연락드릴게요.
+나: 아, 네......
 <<objectDelete MentalHospital MentalHospital>>
 <<wait 0.5>>
 ......방금 뭐지?
 잘못 걸려온건가...... 어쨌든 조사나 더 해보자.
+<<setNumber 1>>
 <<set $MentalHospitalCall = true>>
 ===
 title: KitchenCabinetLocked
@@ -216,7 +214,7 @@ title: KitchenFloor
 		쓰레기는 쓰레기통에!
 		쓰레기통에 쑤셔 넣었다.
 		<<set $FloorHammer = true>> //망치 숨김
-		<<set $HammerInTrashCan = true>> //쓰레기통에 망치가 생김
+		<<set $HammerInTrashCan = 1>> //쓰레기통에 망치가 생김
 		<<objectDelete KitchenFloor KitchenFloor>>
 	-> 침대 밑에 숨긴다.
 		침대 밑에 숨기면 아무도 찾지 못할 것이다.
@@ -394,11 +392,15 @@ title: Basin
 ===
 title: BathRoomTrashCan
 ---
-쓰레기통 속에서 무언가 반짝거린다.
-<<ringAppear ring2>>
-은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
-<<set $Ring2 = true>>
-<<objectDelete ring2 ring2>>
+<<if $Ring2 == false>>
+	쓰레기통 속에서 무언가 반짝거린다.
+	<<ringAppear ring2>>
+	은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
+	<<set $Ring2 = true>>
+	<<objectDelete ring2 ring2>>
+<<else>>
+	쓰레기가 가득 차있다.
+<<endif>>
 ===
 title: BathRoomTrash
 ---
@@ -413,7 +415,9 @@ title: Shampoo
 title: TrashCan
 ---
 쓰레기통 안에는 쓰레기들이 가득하다.
-아까 넣은 망치 손잡이도 살짝 보인다. <<if $HammerInTrashCan == true>>
+<<if $HammerInTrashCan == 1>>
+	아까 넣은 망치 손잡이도 살짝 보인다.
+<<endif>>
 <<if $BloodTissue == false>>
 	조금 뒤적거리자 <color=red>피 묻은 휴지</color>들이 나왔다.
 	-> 쓰레기통 안에 그대로 두자.

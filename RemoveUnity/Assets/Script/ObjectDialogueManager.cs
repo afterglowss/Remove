@@ -115,7 +115,7 @@ public class ObjectDialogueManager : MonoBehaviour
     [YarnCommand("mentalHospitalActive")]
     public static void MentalHospitalActive(GameObject obj)
     {
-        obj = GameObject.Find("PhoneCanvas").transform.Find("MentalHospital").gameObject;
+        obj = GameObject.Find("PhoneImage").transform.Find("MentalHospital").gameObject;
         obj.SetActive(true);
     }
     [YarnCommand("Image")]
@@ -139,5 +139,6 @@ public class ObjectDialogueManager : MonoBehaviour
         Color color;
         color = ring.GetComponent<Image>().color;
         color.a = 1f;
+        ring.GetComponent<Image>().color = color;
     }
 }
