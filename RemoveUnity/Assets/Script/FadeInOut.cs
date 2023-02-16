@@ -36,8 +36,6 @@ public class FadeInOut : MonoBehaviour
             obj.GetComponent<Image>().color = color;
         }
     }
-
-
     [YarnCommand("fadeOut")]
     public void FadeOut(GameObject obj)
     {

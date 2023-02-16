@@ -15,7 +15,7 @@ public class TimeController : MonoBehaviour
     private InMemoryVariableStorage variableStorage;
 
     int hour = 1;
-    int min = 50;
+    int min = 45;
     float sec = 0f;
     public void Start()
     {

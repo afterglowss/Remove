@@ -8,14 +8,29 @@ public class ChatDialogue : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
     public string objectNode;
+    int a, b;
 
     private void Awake()
     {
+        a = 0;
+        b = 0;
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         variableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
-    public void ChatDialogueStart()
+    public void ChatDialogueShimJaehwanStart()
     {
-        dialogueRunner.StartDialogue(objectNode);
+        if (a == 0)
+        {
+            dialogueRunner.StartDialogue("ShimJaehwan");
+            a++;
+        }
+    }
+    public void ChatDialogueOhHanaStart()
+    {
+        if (b == 0)
+        {
+            b++;
+            dialogueRunner.StartDialogue("OhHana");
+        }
     }
 }
