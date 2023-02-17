@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Yarn.Unity;
 
 public class SoundSetVolume : MonoBehaviour
 {
@@ -11,10 +11,11 @@ public class SoundSetVolume : MonoBehaviour
     public AudioClip soundClipStep;
     public AudioClip soundClipWalk;
 
+
     private void Awake()
     {
         soundSlider = GetComponent<Slider>();
-        soundSource = SoundManager.instance.GetComponentInChildren<AudioSource>();
+        soundSource = SoundManager.soundSource;
     }
     void Start()
     {
@@ -26,19 +27,14 @@ public class SoundSetVolume : MonoBehaviour
         SoundManager.instance.SetSoundVolume(volume);
     }
 
-    public void PlayClickSound()
+    [YarnCommand("playSound")]
+    public void PlaySound(string str)
     {
+        AudioClip audioClip;
+        audioClip = (AudioClip)Resources.Load(str, typeof(AudioClip));
+        soundSource.clip = audioClip;
         if (!soundSource.isPlaying)
         {
-            soundSource.clip = soundClipStep;
-            soundSource.Play();
-        }
-    }
-    public void PlayWalkSound()
-    {
-        if (!soundSource.isPlaying)
-        {
-            soundSource.clip = soundClipWalk;
             soundSource.Play();
         }
     }

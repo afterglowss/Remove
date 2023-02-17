@@ -33,10 +33,6 @@ public class MusicManager : MonoBehaviour
         {
             musicSource.Pause();
         }
-        if (nowScene.name == "GameScene")
-        {
-            musicSource.Play();
-        }
     }
     //private GameObject[] musics;
 

@@ -57,6 +57,7 @@ public class PhoneMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            if (i == 3) return;
             if (std.x - Target.x == 0 && std.y - Target.y == 0 && std.z - Target.z == 0)
             {
                 PhoneUp();
