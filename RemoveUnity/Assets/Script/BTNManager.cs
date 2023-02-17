@@ -55,11 +55,9 @@ public class BTNManager : MonoBehaviour
         switch (type)
         {
             case BTNType.Start:
-                //Debug.Log("���ӽ���");
                 Invoke("JumpStoryStart", 1f);
                 break;
             case BTNType.Option:
-                //Debug.Log("����");
                 CanvasGroupOn(optionGroup);
                 optionGroup.alpha = 1;
                 CanvasGroupOff(mainGroup);
@@ -68,7 +66,6 @@ public class BTNManager : MonoBehaviour
                 break;
             case BTNType.Quit:
                 Application.Quit();
-                //Debug.Log("������");
                 break;
             case BTNType.Back:
                 CanvasGroupOff(optionGroup);
@@ -76,12 +73,13 @@ public class BTNManager : MonoBehaviour
                 CanvasGroupOn(mainGroup);
                 CanvasGroupOn(phoneGroup);
                 phoneGroup.alpha = 1;
-                //Debug.Log("�ڷ�");
                 break;
             case BTNType.SkipToPhone:
+                dialogueRunner.Stop();
                 SceneManager.LoadScene("Phone");
                 break;
             case BTNType.SkipToStoryEnd:
+                dialogueRunner.Stop();
                 SceneManager.LoadScene("StoryEnd");
                 break;
             case BTNType.SkipToGamescene:

@@ -14,6 +14,12 @@ public class TimeController : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
 
+    int a = 0;
+
+    float photoDelete;
+    bool bloodTissue, fingerInCakeBox, floorHammer, stalkingPicture;
+    bool bloodHandprint, smellOfBlood, cigaretteInBathroom, bloodOnCloth, bloodOnRug;
+
     int hour = 1;
     int min = 45;
     float sec = 0f;
@@ -32,6 +38,27 @@ public class TimeController : MonoBehaviour
         {
             TimeOut();
         }
+
+        variableStorage.TryGetValue("$PhotoDelete", out photoDelete);
+        variableStorage.TryGetValue("$BloodTissue", out bloodTissue);
+        variableStorage.TryGetValue("$FingerInCakeBox", out fingerInCakeBox);
+        variableStorage.TryGetValue("$FloorHammer", out floorHammer);
+        variableStorage.TryGetValue("$StalkingPicture", out stalkingPicture);
+        variableStorage.TryGetValue("$BloodHandprint", out bloodHandprint);
+        variableStorage.TryGetValue("$SmellOfBlood", out smellOfBlood);
+        variableStorage.TryGetValue("$CigaretteInBathroom", out cigaretteInBathroom);
+        variableStorage.TryGetValue("$BloodOnCloth", out bloodOnCloth);
+        variableStorage.TryGetValue("$BloodOnRug", out bloodOnRug);
+
+        if (photoDelete == 4 && bloodTissue == true && bloodOnRug == true && 
+            bloodOnCloth == true && bloodHandprint == true && fingerInCakeBox == true &&
+            floorHammer == true && stalkingPicture == true && smellOfBlood == true &&
+            cigaretteInBathroom == true && a == 0)
+        {
+            Remove();
+            a++;
+        }
+        
     }
     void PhoneTime()
     {
@@ -54,6 +81,10 @@ public class TimeController : MonoBehaviour
     {
         dialogueRunner.StartDialogue("Intersection");
     }
-
+    public void Remove()
+    {
+        dialogueRunner.Stop();
+        dialogueRunner.StartDialogue("ToInfering");
+    }
 }
 
