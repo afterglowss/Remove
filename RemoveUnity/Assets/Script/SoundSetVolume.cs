@@ -6,19 +6,16 @@ using Yarn.Unity;
 
 public class SoundSetVolume : MonoBehaviour
 {
-    Slider soundSlider;
+    public Slider soundSlider;
     private AudioSource soundSource;
-    public AudioClip soundClipStep;
-    public AudioClip soundClipWalk;
 
 
     private void Awake()
     {
-        soundSlider = GetComponent<Slider>();
-        soundSource = SoundManager.soundSource;
     }
     void Start()
     {
+        soundSource = SoundManager.instance.soundSource;
         soundSlider.value = SoundManager.volume;
     }
 
@@ -27,15 +24,15 @@ public class SoundSetVolume : MonoBehaviour
         SoundManager.instance.SetSoundVolume(volume);
     }
 
-    [YarnCommand("playSound")]
-    public void PlaySound(string str)
-    {
-        AudioClip audioClip;
-        audioClip = (AudioClip)Resources.Load(str, typeof(AudioClip));
-        soundSource.clip = audioClip;
-        if (!soundSource.isPlaying)
-        {
-            soundSource.Play();
-        }
-    }
+    //[YarnCommand("playSound")]
+    //public void PlaySound(string str)
+    //{
+    //    AudioClip audioClip;
+    //    audioClip = (AudioClip)Resources.Load(str, typeof(AudioClip));
+    //    soundSource.clip = audioClip;
+    //    if (!soundSource.isPlaying)
+    //    {
+    //        soundSource.Play();
+    //    }
+    //}
 }

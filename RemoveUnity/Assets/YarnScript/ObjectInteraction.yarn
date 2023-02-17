@@ -538,3 +538,10 @@ tags:
 내 방에 있는 침대이다.
 푹신하긴 하지만, 너무 좁다.
 ===
+
+title: ToInfering
+---
+<<fadeIn FadeImage FadeImage>>
+<<wait 1>>
+<<jumpScene Infering>>
+===

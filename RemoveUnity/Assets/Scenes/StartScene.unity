@@ -1166,8 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e31b92a16f6b749943b6bd4fd364c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundClipStep: {fileID: 8300000, guid: adfb477aa2d8f44f1a8f3ffc61b6ccd5, type: 3}
-  soundClipWalk: {fileID: 8300000, guid: dee1c92d1a13f4459b070de962777e98, type: 3}
+  soundSlider: {fileID: 641036519}
 --- !u!1 &683040391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1437,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718862949}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1711,6 +1710,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c06dd249dccd4f816498b4a521837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSource: {fileID: 2121113478}
+  SoundList:
+  - name: door
+    sound: {fileID: 8300000, guid: adfb477aa2d8f44f1a8f3ffc61b6ccd5, type: 3}
+  - name: 
+    sound: {fileID: 0}
+  - name: 
+    sound: {fileID: 0}
 --- !u!1 &1067914726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,7 +3560,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121113476}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3669,5 +3676,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e31b92a16f6b749943b6bd4fd364c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundClipStep: {fileID: 8300000, guid: adfb477aa2d8f44f1a8f3ffc61b6ccd5, type: 3}
-  soundClipWalk: {fileID: 8300000, guid: dee1c92d1a13f4459b070de962777e98, type: 3}
+  soundSlider: {fileID: 641036519}
