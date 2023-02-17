@@ -109,4 +109,12 @@ public class ObjectDialogueManager : MonoBehaviour
         color.a = 1f;
         ring.GetComponent<Image>().color = color;
     }
+    [YarnCommand("ringDisappear")]
+    public static void RingDisappear(GameObject ring)
+    {
+        Color color;
+        color = ring.GetComponent<Image>().color;
+        color.a = 0f;
+        ring.GetComponent<Image>().color = color;
+    }
 }

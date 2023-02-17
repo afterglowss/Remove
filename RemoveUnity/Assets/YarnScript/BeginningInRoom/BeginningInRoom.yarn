@@ -122,6 +122,7 @@ title: Confusing
 
 title: StartingGame
 ---
+<<fadeIn Scene Scene>>
 나: ...그래.
 나: 역시 억울해... 난 감옥에 가고 싶지 않아.
 잘못된 생각인 것은 알고 있다.
@@ -130,6 +131,8 @@ title: StartingGame
 정말 미안하지만, 산 사람은 살아야지.
 나는 증거를 모두 없애고 경찰에 붙잡히지 않을 것이다.
 <color=orange>15분</color>이면 충분하다. 반드시 해낼 것이다.
+<<fadeOut Scene Scene>>
+<<wait 1>>
 <color=yellow>지금으로부터 15분 뒤, 정확히 2시에 경찰이 집에 도착합니다.</color>
 <color=yellow>남은 시간은 스마트폰의 상단바를 통해 확인할 수 있습니다.</color>
 <color=yellow>그 전까지 모든 증거를 없애고 경찰에 붙잡히지 마세요.</color>
@@ -241,8 +244,8 @@ title: Intersection
 <<wait 0.5>>
 나: ......네.
 
-<<if $PhotoDelete == 4 && $BloodTissue == true && $FingerInCakeBox == true && $FloorHammer == true && $StalkingPicture == true && $BloodHandprint == true && $SmellOfBlood == true && $CigaretteInBathroom == true && $BloodOnCloth == true && $BloodOnRug == true>>
-    <<jumpEnding4>>
+<<if $InferingEnter == true>>
+    <<jumpScene Ending4>>
 <<else>>
     <<jumpEnding3>>
 <<endif>>
@@ -309,6 +312,17 @@ title: Ending4
 ...... 내가 짐작한 것들. 그게 과연 이 사건의 전부이자 진실일까?
 아직 기억이 다 돌아오지 않은 나로서는 알 수 없지만......
 이제 나와 상관없는 일이다.
+
+<<fadeIn FadeImage FadeImage>>
+<<wait 1.5>>
+<<textFadeIn EndingText EndingText>>
+<<wait 3>>
+<<textAppear MainText>>
+===
+title: Ending5
+---
+
+
 
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>

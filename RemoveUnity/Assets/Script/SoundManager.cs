@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource soundSource;
+    public static AudioSource soundSource;
 
     public static float volume = 0.5f;
     public static SoundManager instance;

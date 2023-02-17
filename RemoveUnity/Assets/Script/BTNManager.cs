@@ -56,7 +56,7 @@ public class BTNManager : MonoBehaviour
         {
             case BTNType.Start:
                 //Debug.Log("���ӽ���");
-                SceneManager.LoadScene("StoryStart");
+                Invoke("JumpStoryStart", 1f);
                 break;
             case BTNType.Option:
                 //Debug.Log("����");
@@ -133,6 +133,11 @@ public class BTNManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+    
+    public void JumpStoryStart()
+    {
+        SceneManager.LoadScene("StoryStart");
+    }
     [YarnCommand("jumpPhone")]
     public static void JumpPhone()
     {
@@ -167,6 +172,12 @@ public class BTNManager : MonoBehaviour
     public static void JumpEnding5()
     {
         SceneManager.LoadScene("Ending5");
+    }
+
+    [YarnCommand("jumpScene")]
+    public static void JumpScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
     [YarnCommand("fadeInStarting")]
