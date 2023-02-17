@@ -6,31 +6,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
-public class Password : MonoBehaviour
+
+public class DMeaningScript : MonoBehaviour
 {
     private DialogueRunner Runner;
-    public TMP_InputField inputfield_birthday;
+    public TMP_InputField inputfield_input;
     public Button Enter;
-    public GameObject BirthdayImage;
+    public GameObject DMeaningImage;
 
-    private string password = "0828";
+    private string DMeaning = "Date";
     public void Start()
     {
         Runner = FindObjectOfType<DialogueRunner>();
     }
-    public void EnterClick()
+    public void Entering()
     {
-        if(inputfield_birthday.text.Equals(password))
+        if (inputfield_input.text.Equals(DMeaning))
         {
             Debug.Log("성공");
-            GameObject.Find("BirthdayImage").SetActive(false);
-            Runner.StartDialogue("PasswordCorrect");
+            GameObject.Find("DMeaningImage").SetActive(false);
+            Runner.StartDialogue("DCorrect");
         }
 
         else
         {
             Debug.Log("실패");
-            Runner.StartDialogue("InferingPassword");
+            Runner.StartDialogue("DMeaning");
         }
     }
 }

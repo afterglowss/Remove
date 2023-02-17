@@ -472,13 +472,13 @@ public class YarnCommand : MonoBehaviour
     [YarnCommand("PasswordIn")]
     public static void PasswordIn()
     {
-        GameObject.Find("FadeCanvas").transform.Find("PasswordImage").gameObject.SetActive(true);
+        GameObject.Find("FadeCanvas").transform.Find("BirthdayImage").gameObject.SetActive(true);
     }
 
-    [YarnCommand("PasswordOut")]
-    public static void PasswordOut()
+    [YarnCommand("DMeaningIn")]
+    public static void DMeaningIn()
     {
-        GameObject.Find("FadeCanvas").transform.Find("PasswordImage").gameObject.SetActive(false);
+        GameObject.Find("FadeCanvas").transform.Find("DMeaningImage").gameObject.SetActive(true);
     }
 }
 
