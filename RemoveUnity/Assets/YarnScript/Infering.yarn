@@ -73,15 +73,16 @@ title: InferingBlood
 ---
 그 날, 행인이 본 피의 정체는......
 <<setNumber 1>>
--> 내 피가 맞다.
+
+-> 내 피가 맞다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
-    <<if $TotalChance>=4>>
+    <<if $TotalChance >= 4>>
         <<jump Fail>>
     <<else>>
         <<jump InferingBlood>>
     <<endif>>
--> 다른 사람의 피다.
+-> 다른 사람의 피다
     <<setNumber 3>>
     그래! 다른 사람의 피였겠지.
     그 피를 흘린 사람은 아마도 하나겠네.
@@ -92,13 +93,13 @@ title: InferingBlood
     <<bluebox2_In>>
     <<wait 1>>
     <<bluebox2_Out>>
-   <<hammerIn>>
+    <<hammerIn>>
     왜 흉기를 시신과 함께 처리하지 않았을까?
     흉기를 도로 원룸으로 가지고 돌아온 이유가 뭐지?
     <<hammerOut>>
     그리고 시신을 깔끔히 처리했다면, 있어선 안 되는 것이 원룸 안에 있었어.
     <<jump InferingRoomobject>>
--> 행인이 거짓말을 했다.
+-> 행인이 거짓말을 했다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -112,7 +113,7 @@ title: InferingRoomobject
 원룸 안에 있어서 안 됐던 것은......
 <<setNumber 1>>
 
--> 옷장 속에 있었다.
+-> 옷장 속에 있었다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -120,7 +121,7 @@ title: InferingRoomobject
     <<else>>
         <<jump InferingRoomobject>>
     <<endif>>
--> 화장실 세면대 위에 있었다.
+-> 화장실 세면대 위에 있었다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -128,12 +129,11 @@ title: InferingRoomobject
     <<else>>
         <<jump InferingRoomobject>>
     <<endif>>
--> 냉장고 안에 있었다.
+-> 냉장고 안에 있었다
     <<setNumber 3>>
     <<fingerIn>>
     맞아. 손가락.
     <<fingerOut>>
-
     시신에서 손가락만 툭 잘라서 케이크 상자 속에 넣어야 했던 이유가 있었을까?
     그리고 그것 뿐만이 아냐......
     그 손가락에서 발견할 수 있는 이상한 것이 또 있어.
@@ -257,24 +257,21 @@ title: InferingCleanKnife
     <<else>>
         <<jump InferingCleanKnife>>
     <<endif>>
--> 내가 아닌 누군가가 사건 현장을 건드렸다.
+-> 내가 아닌 누군가가 사건 현장을 건드렸다
     <<setNumber 3>>
-
     그래. 이제 명확해진다.
     망치를 시신과 함께 처리하지 않고 원룸에 가지고 온 이유.
     식칼은 망치와 달리 깨끗했던 이유.
     그 사건 현장에 내가 아닌 누군가가 또 있었어.
     그리고...... 증거를 조작했어.
     이거말고도 사건 조작 증거를 찾을 수 있을까?
-
     <<bluebox3_In>>
     <<wait 1>>
     <<bluebox3_Out>>
-
     일단 원룸부터 생각해 보자.
     누군가 내 원룸을 건드렸다는 증거가 있을까?
     <<jump InferingRoom>>
--> 사실 식칼로 자른 게 아니다.
+-> 사실 식칼로 자른 게 아니다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -290,7 +287,6 @@ title: InferingRoom
 
 -> 있다
     <<setNumber 3>>
-
     있었어.
     그리고 그 증거는......
     <<jump InferingProof>>
@@ -380,7 +376,6 @@ title: InferingOther
     원룸에는 더 없었던 거 같다.
     그렇다면 스마트폰에서 그런 증거를 찾을 수 있지 않을까?
     스마트폰에서 수상한 것이 있었는지 생각해 보자......
-
     <<messageIn>>
     스마트폰을 뒤지다 보니, 협박 문자를 발견했었지.
     <<messageOut>>
@@ -403,7 +398,6 @@ title: InferingMessage
     <<endif>>
 -> 갤러리
     <<setNumber 3>>
-
     <<jump InferingGallery>>
 -> 메모장
     <<set $TotalChance = $TotalChance+1>>
@@ -508,7 +502,6 @@ title: ComparingWithPicture4
 ---
 비교할 만한 사진은......
 <<setNumber 1>>
-
 -> 10번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -527,7 +520,6 @@ title: ComparingWithPicture4
     <<endif>>
 -> 3번 사진
     <<setNumber 3>>
-
     그래.
     <<picture34In>>
     이 두 사진은 같은 날짜에 찍혔어.
@@ -547,7 +539,6 @@ title: InferingFakePicture
 ---
 이 중 조작된 사진은......
 <<setNumber 1>>
-
 -> 4번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -558,7 +549,6 @@ title: InferingFakePicture
     <<endif>>
 -> 3번 사진
     <<setNumber 3>>
-
     <<hanriverIn>>
     그래. 지연이는 분명 하나가 나랑 한강에서 만난 걸 들었다고 했어.
     <<hanriverOut>>
@@ -600,7 +590,6 @@ title: InferingImpossible
 ---
 10월 10일에 찍을 수 없었던 이유를 증명해 줄 수 있는 사람은......
 <<setNumber 1>>
-
 -> 오하나
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -619,7 +608,6 @@ title: InferingImpossible
     <<endif>>
 -> 이지연
     <<setNumber 3>>
-
     <<mainhouseIn>>
     그래. 일이 있어 본가에 내려갔었어.
     게다가 지연이가 그걸 봤다고 했지.
@@ -631,7 +619,6 @@ title: InferingMessageMore
 ---
 협박 문자 중 이 부분이 이상한데......
 <<setNumber 1>>
-
 -> 내가 말하지 말라고 했잖아 ㅋㅋ...
     <<setNumber 3>>
     맞아. 이 부분.
@@ -663,7 +650,6 @@ title: InferingPeople
 ---
 그리고 그 사람은......
 <<setNumber 1>>
-
 -> 이지연
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -674,7 +660,6 @@ title: InferingPeople
     <<endif>>
 -> 심재환
     <<setNumber 3>>
-
     그래. 
     심재환.
     ......하지만 심재환이 사건을 조작할 만한 이유가 없다.
@@ -694,7 +679,6 @@ title: InferingReason
 ---
 심재환이 이 사건을 조작한 이유는......
 <<setNumber 1>>
-
 -> 내가 심재환을 스토킹했기 때문에
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -713,13 +697,11 @@ title: InferingReason
     <<endif>>
 -> 심재환이 오하나를 죽였기 때문에
     <<setNumber 3>>
-
     ......어쩌면.
     그렇지만 심재환에게는 오하나를 살해할 동기가 없다.
     하지만 뒤집어 생각해보면, 나에게도 오하나를 살해할 동기는 없지.
     과연 누가, 왜 죽인걸까?
     우리들의 관계가 어땠는지부터 떠올리면 좋겠네.
-    <<jump InferingRelationship>>
     <<bluebox4_In>>
     <<wait 1>>
     <<bluebox4_Out>>
@@ -732,10 +714,8 @@ title: InferingObjects
 ---
 그리고 그 물건들은......
 <<setNumber 1>>
-
 -> 신발장과 책장에 있었다
     <<setNumber 3>>
-
     응. 각각 신발장과 책장이었지.
     <<MajorbookIn>>
     일단 책장에 꽂혀있던 책은 내 것이 아닌 거 같았어.
@@ -751,7 +731,7 @@ title: InferingObjects
     <<else>>
         <<jump InferingObjects>>
     <<endif>>
--> 부엌 찬장 안과 화장대 서랍 안에 있었다.
+-> 부엌 찬장 안과 화장대 서랍 안에 있었다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -764,7 +744,6 @@ title: InferingBook
 ---
 책의 주인을 알 수 있는 단서는......
 <<setNumber 1>>
-
 -> 캘린더와 갤러리
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -775,7 +754,6 @@ title: InferingBook
     <<endif>>
 -> 갤러리와 메신저
     <<setNumber 3>>
-
     그래. 갤러리와 메신저.
     <<jump InferingBookOwner>>
 -> 메신저와 통화 내역
@@ -791,7 +769,6 @@ title: InferingBookOwner
 ---
 저 단서를 토대로 보았을 때, 주인은......
 <<setNumber 1>>
-
 -> 심재환
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -802,7 +779,6 @@ title: InferingBookOwner
     <<endif>>
 -> 오하나
     <<setNumber 3>>
-
     <<SocialpsyIn>>
     갤러리에 사회심리학이 찍힌 사진이 있었지.
     <<SocialpsyOut>>
@@ -830,7 +806,6 @@ title: InferingSneaker
 ---
 운동화가 내 것이 아니란 단서는 여기에......
 <<setNumber 1>>
-
 -> 캘린더
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -849,7 +824,6 @@ title: InferingSneaker
     <<endif>>
 -> 갤러리
     <<setNumber 3>>
-
     맞아. 갤러리.
     <<ShoesIn>>
     갤러리에 있던 구두 판매사이트 캡쳐본.
@@ -869,8 +843,7 @@ title: InferingHana
 ---
 오하나의 물건이 내 원룸에 많은 이유는......
 <<setNumber 1>>
-
--> 오하나를 죽인 뒤 몇 가지 물건을 훔쳐 왔다.
+-> 오하나를 죽인 뒤 몇 가지 물건을 훔쳐 왔다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -878,7 +851,7 @@ title: InferingHana
     <<else>>
         <<jump InferingHana>>
     <<endif>>
--> 모종의 이유로 일상 생활 중 오하나의 물건을 몇 개 훔쳤다.
+-> 모종의 이유로 일상 생활 중 오하나의 물건을 몇 개 훔쳤다
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -886,9 +859,8 @@ title: InferingHana
     <<else>>
         <<jump InferingHana>>
     <<endif>>
--> 나는 오하나와 친한 친구였다.
+-> 나는 오하나와 친한 친구였다
     <<setNumber 3>>
-
     하나와 내가 생각보다 긴밀한 사이였나보네.
     마지막으로, 원룸에서도 보고 갤러리에서도 볼 수 있었던 물건이 하나 더 있었어.
     <<jump RoomGallery>>
@@ -897,7 +869,6 @@ title: RoomGallery
 ---
 그건 바로......
 <<setNumber 1>>
-
 -> 커피잔
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -908,16 +879,13 @@ title: RoomGallery
     <<endif>>
 -> 반지
     <<setNumber 3>>
-
     <<RingIn>>
     그래. 반지.
     그 반지의 주인을 찾아야 해.
     <<RingOut>>
-
     <<bluebox5_In>>
     <<wait 1>>
     <<bluebox5_Out>>
-
     일단 반지 두 개를 모두 껴볼까?
     <<jump InferingRing>>
 -> 열쇠
@@ -933,10 +901,8 @@ title: InferingRing
 ---
 반지를......
 <<setNumber 1>>
-
 -> 착용해 보자
     <<setNumber 3>>
-
     응.
     한 개는 딱 맞고 한 개는 조금 헐렁거리네.
     <<RingAnotherIn>>
@@ -970,7 +936,6 @@ title: InferingD
 ---
 D의 힌트가 되는 사진은......
 <<setNumber 1>>
-
 -> 1번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -981,11 +946,10 @@ D의 힌트가 되는 사진은......
     <<endif>>
 -> 5번 사진
     <<setNumber 3>>
-
     맞아. 아까 그 사진.
-    <<picture5In>><<pictureCalender5DIn>>
+    <<picture5In>><<CalenderDIn>>
     이게 D랑 같은 날짜에 찍혀 있었어.
-    <<picture5Out>><<pictureCalender5DOut>>
+    <<picture5Out>><<CalenderDOut>>
     <<picture5In>>
     그리고 아까 추측에 의하면, 이 사진 속 손의 주인은 아마도 하나였을거야.
     <<picture5Out>>
@@ -1006,7 +970,6 @@ title: InferingPictureD
 ---
 그건 바로......
 <<setNumber 1>>
-
 -> 커피
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -1025,7 +988,6 @@ title: InferingPictureD
     <<endif>>
 -> 반지
     <<setNumber 3>>
-
     ......반지.
     반지의 주인이 짐작 간다.
     ......하지만 좀 더 확실하게 검증할 수 있는 방법이 있어.
@@ -1041,10 +1003,8 @@ title: RingToFinger
 ---
 검증을 도울 수 있는 도구는......
 <<setNumber 1>>
-
 -> 케이크 상자 속
     <<setNumber 3>>
-
     ......그래.
     <<fingerIn>>
     나는 아까 숨겨두었던 하나의 손가락을 조심스레 꺼냈다.
@@ -1053,9 +1013,7 @@ title: RingToFinger
     나는 구역질을 참으며 그 손가락에 남은 반지를 끼웠다.
     <<FingerInRingIn>>
     ......반지는 손가락에 딱 맞았다.
-    <<FingerInRingOut>>
     <<jump KeepGoing>>
-    
 -> 부엌 찬장 안
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -1076,6 +1034,7 @@ title: RingToFinger
 title: KeepGoing
 ---
 ......그래. 하나의 것이 맞아.
+<<FingerInRingOut>>
 그렇다는 건, 나랑 하나가 우정 반지라도 맞춘 걸까?
 그 때, 갑자기 어떤 생각이 머릿속을 빠르게 스쳐 지나갔다.
 
@@ -1114,22 +1073,23 @@ title: PasswordCorrect
 케이크, 꼬깔 모자, 선물, 마치 누군가의 생일을 준비하는 듯 했어.
 <<Memo_8_28Out>>
 
-
-비밀번호를 입력해보자!
+<<setNumber 1>>
+핸드폰을 열어 비밀번호를 입력해보자!
 
 ......모든 것이 선명해진다.
+<<setNumber 3>>
 나는 하나의 물건들이 왜 내 원룸에 많았는지 기억한다.
-<<RingIn>><<RingAnotherIn>>
+<<TwoRingsIn>>
 나는 반지의 의미를 기억한다.
-<<RingAnotherOut>><<RingOut>>
+<<TwoRingsOut>>
 <<CalenderDIn>>
 ......나는 'D'가 무엇의 약자인지 기억한다.
 <<CalenderDOut>>
-D가 의미하는 단어는......
 <<jump DMeaning>>
 ===
 title: DMeaning
 ---
+D가 의미하는 단어는......
 <<setNumber 1>>
 <<DMeaningIn>>
 <<set $chance = $chance+1>>
@@ -1154,7 +1114,6 @@ title: InferingApplication
 ---
 그 어플은......
 <<setNumber 1>>
-
 -> L
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -1165,7 +1124,6 @@ title: InferingApplication
     <<endif>>
 -> 메신저
     <<setNumber 3>>
-
     그리고, 그걸 알고 있는 사람은......
     <<jump PersonWhoKnows>>
 -> 통화 기록
@@ -1192,7 +1150,6 @@ title: PersonWhoKnows
     <<endif>>
 -> 심재환
     <<setNumber 3>>
-
     그래. 
     <<TxtWithJaeIn>>
     심재환과의 대화 내역에 아무에게도 말하지 말아달라고 신신당부하는......
