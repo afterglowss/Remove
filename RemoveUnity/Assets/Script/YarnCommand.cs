@@ -9,6 +9,7 @@ using Yarn.Unity;
 
 public class YarnCommand : MonoBehaviour
 {
+    public GameObject script;
 
     /*--------이 부분은 추리씬에서의 사진을 다루는 스크립트입니다------*/
 
@@ -317,13 +318,13 @@ public class YarnCommand : MonoBehaviour
     [YarnCommand("WordspacingIn")]
     public static void WordspacingIn()
     {
-        GameObject.Find("FadeCanvas").transform.Find("Wordspacing").gameObject.SetActive(true);
+        GameObject.Find("FadeCanvas").transform.Find("WordSpacing").gameObject.SetActive(true);
     }
 
     [YarnCommand("WordspacingOut")]
     public static void WordspacingOut()
     {
-        GameObject.Find("FadeCanvas").transform.Find("Wordspacing").gameObject.SetActive(false);
+        GameObject.Find("FadeCanvas").transform.Find("WordSpacing").gameObject.SetActive(false);
     }
 
     //전공책 사진
@@ -455,6 +456,19 @@ public class YarnCommand : MonoBehaviour
     public static void ApplicationLOut()
     {
         GameObject.Find("FadeCanvas").transform.Find("ApplicationL").gameObject.SetActive(false);
+    }
+
+    //반지 두개 동시에
+    [YarnCommand("TwoRingsIn")]
+    public static void TwoRingsIn()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("RingCanvas").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("TwoRingsOut")]
+    public static void TwoRingsOut()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("RingCanvas").gameObject.SetActive(false);
     }
 
 
