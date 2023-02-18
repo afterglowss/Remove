@@ -233,6 +233,47 @@ public class YarnCommand : MonoBehaviour
         GameObject.Find("FadeCanvas").transform.Find("Picture4").gameObject.SetActive(false);
     }
 
+    //3, 4번 사진
+    [YarnCommand("picture34In")]
+    public static void picture34In()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture34Canvas").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("picture34Out")]
+    public static void picture34Out()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture34Canvas").gameObject.SetActive(false);
+    }
+
+    //34번 상세 사진
+    [YarnCommand("picture34DetailIn")]
+    public static void picture34DetailIn()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture34DetailCanvas").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("picture34DetailOut")]
+    public static void picture34DetailOut()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture34DetailCanvas").gameObject.SetActive(false);
+    }
+
+
+
+    //5번 사진
+    [YarnCommand("picture5In")]
+    public static void picture5In()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture5").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("picture5Out")]
+    public static void picture5Out()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture5").gameObject.SetActive(false);
+    }
+
     //지연이 한강 대화사진
     [YarnCommand("hanriverIn")]
     public static void hanriverIn()
@@ -416,18 +457,6 @@ public class YarnCommand : MonoBehaviour
         GameObject.Find("FadeCanvas").transform.Find("ApplicationL").gameObject.SetActive(false);
     }
 
-    //5번 사진
-    [YarnCommand("picture5In")]
-    public static void picture5In()
-    {
-        GameObject.Find("FadeCanvas").transform.Find("Picture5").gameObject.SetActive(true);
-    }
-
-    [YarnCommand("picture5Out")]
-    public static void picture5Out()
-    {
-        GameObject.Find("FadeCanvas").transform.Find("Picture5").gameObject.SetActive(false);
-    }
 
     //손가락 반지 사진
     [YarnCommand("FingerInRingIn")]
