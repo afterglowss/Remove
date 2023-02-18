@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class MusicManager : MonoBehaviour
 {
     public AudioSource musicSource;
+    [System.Serializable]
+    public struct BgmType
+    {
+        public string name;
+        public AudioClip bgm;
+    }
+
+    public BgmType[] BgmList;
+
     static public MusicManager instance;
     public static float volume = 0.5f;
     public void SetMusicVolume(float volume)
@@ -14,6 +24,7 @@ public class MusicManager : MonoBehaviour
         musicSource.volume = volume;
         MusicManager.volume = volume;
     }
+    
 
     private void Awake()
     {
@@ -29,31 +40,72 @@ public class MusicManager : MonoBehaviour
     public void Update()
     {
         Scene nowScene = SceneManager.GetActiveScene();
-        if (nowScene.name == "StoryStart")
+        if (nowScene.name == "StartScene" && musicSource.isPlaying == false)
         {
-            musicSource.Pause();
+            for (int i = 0; i < BgmList.Length; i++)
+            {
+                if (BgmList[i].name == "1")
+                {
+                    musicSource.clip = BgmList[i].bgm;
+                    if (!musicSource.isPlaying)
+                    {
+                        musicSource.Play();
+                    }
+                    break;
+                }
+            }
         }
     }
-    //private GameObject[] musics;
 
-    //private void Awake()
+    
+    [YarnCommand("playMusic")]
+    public void PlayMusic(string str)
+    {
+        for (int i = 0; i < BgmList.Length; i++)
+        {
+            if (str == BgmList[i].name)
+            {
+                musicSource.clip = BgmList[i].bgm;
+                if (!musicSource.isPlaying)
+                {
+                    musicSource.Play();
+                    Debug.Log("playingMusic");
+                }
+                break;
+            }
+        }
+    }
+    //[YarnCommand("playRepeatMusic")]
+    //public void PlayRepeatMusic(string str)
     //{
-    //    musics = GameObject.FindGameObjectsWithTag("Music");
-    //    if (musics.Length >= 2)
+    //    for (int i = 0; i < BgmList.Length; i++)
     //    {
-    //        Destroy(this.gameObject);
+    //        if (str == BgmList[i].name)
+    //        {
+    //            musicSource.clip = BgmList[i].bgm;
+    //            if (!musicSource.isPlaying)
+    //            {
+    //                musicSource.loop = true;
+    //                musicSource.Play();
+    //                Debug.Log("playingMusic");
+    //            }
+    //            break;
+    //        }
     //    }
-    //    DontDestroyOnLoad(transform.gameObject);
-    //    musicSource=GetComponent<AudioSource>();
     //}
-
-    //public void PlayMusic()
-    //{
-    //    if (musicSource.isPlaying) return;
-    //    musicSource.Play();
-    //}
-    //public void StopMusic()
-    //{
-    //    musicSource.Stop();
-    //}
+    [YarnCommand("stopMusic")]
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+    [YarnCommand("pauseMusic")]
+    public void PauseMusic()
+    {
+        musicSource.Pause();
+    }
+    [YarnCommand("unPauseMusic")]
+    public void UnPauseMusic()
+    {
+        musicSource.UnPause();
+    }
 }

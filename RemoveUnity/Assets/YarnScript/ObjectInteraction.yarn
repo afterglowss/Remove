@@ -144,7 +144,9 @@ title: DresserDrawerOpen
 	<<objectDelete Key3 Key3>>
 	<<mentalHospitalActive MentalHospital>>
 	<<setNumber 2>>
+	<<playSound SoundManager 7>>
 	<<wait 1>>
+	<<stopSound SoundManager>>
 	<<setNumber 1>>
 	<<objectDelete MentalHospital MentalHospital>>
 <<else>>
@@ -165,8 +167,10 @@ title: MentalHospitalCall
 나: 네... 네? 무슨 말씀이시죠?
 ??: 아, 예약을 오늘로 알고 안 오신줄 알았어요. 다음에 다시 연락드릴게요.
 나: 아, 네......
+<<playSound SoundManager 31>>
 <<objectDelete MentalHospital MentalHospital>>
 <<wait 0.5>>
+<<stopSound SoundManager>>
 ......방금 뭐지?
 잘못 걸려온건가...... 어쨌든 조사나 더 해보자.
 <<setNumber 1>>
@@ -197,6 +201,9 @@ title: KitchenFloor
 	아까 내가 발견한 망치이다. 철 부분이 온통 피 범벅이다.
 	어떻게 처리할까?
 	-> 쓰레기통에 쑤셔 넣는다.
+		<<playSound SoundManager 25>>
+		<<wait 1>>
+		<<stopSound SoundManager>>
 		쓰레기는 쓰레기통에!
 		쓰레기통에 쑤셔 넣었다.
 		<<set $FloorHammer = true>> //망치 숨김
@@ -204,14 +211,16 @@ title: KitchenFloor
 		<<objectDelete KitchenFloor KitchenFloor>>
 	-> 침대 밑에 숨긴다.
 		침대 밑에 숨기면 아무도 찾지 못할 것이다.
-		침대 밑에 숨기려고 이불을 들췄는데, 무언가 반짝이는 것이 보였다. 
-		화장실 문 열쇠를 발견했다.
+		침대 밑에 숨기려고 이불을 들췄는데, 무언가 반짝이는 것이 보인다. 
 		<<ringAppear Key1>>
+		<<playSound SoundManager 26>>
+		<<wait 0.5>>
+		화장실 문 열쇠를 발견했다.
+		<<objectDelete Key1 Key1>>
 		<<set $FloorHammer = true>> //망치 숨김
 		<<set $BathRoomKey = true>> //화장실 열쇠 발견
 		<<objectDelete KitchenFloor KitchenFloor>>
-		<<wait 1>>
-		<<objectDelete Key1 Key1>>
+		
 	-> 이대로 둔다.
 		아직은 처리 방법이 떠오르지 않는다. 일단 이대로 내버려 두자.
 <<else>> //망치가 없으면
@@ -225,8 +234,10 @@ title: Window
 	창문에 손모양의 핏자국이 있다.
 	일단 닦아낼까?
 	-> 당연하지!
+		<<playSound SoundManager 17>>
 		생각보다 높이 있어 닦기가 어려웠다.
 		침대 위에 올라가 핏자국을 닦아냈다.
+		<<stopSound SoundManager>>
 		<<set $BloodHandprint = true>> //손자국 지워짐
 		<<objectDelete HandPrint HandPrint>>
 	-> 굳이?
@@ -242,6 +253,8 @@ title: StalkingPicture
 	스토킹의 흔적이다. 심재환의 사진이 잔뜩 붙어있다.
 	어떻게 할까?
 	-> 떼어내어 정리한 후 옷장 속 옷 주머니 안에 숨긴다.
+		<<playSound SoundManager 22>>
+		<<wait 1>>
 		옷장 속 옷 주머니 안에 사진을 넣으려다 무언가를 발견했다. 
 		라이터와 담배가 들어있다. 
 		<<set $StalkingPicture = true>> //스토킹 사진 옷 속에 숨김
@@ -249,6 +262,8 @@ title: StalkingPicture
 		<<set $LighterAndCigarette = true>> //라이터와 담배 발견
 		이걸로 무엇을 할까?
 		-> 라이터로 사진을 태운다.
+			<<playSound SoundManager 23>>
+			<<wait 0.5>>
 			라이터를 켠 뒤 사진을 라이터에 갖다 댔다.
 			타는 냄새와 함께 사진이 형체도 남기지 않고 사라졌다.
 			라이터를 다시 켜보려 하니 그게 마지막 기름이었는지 더 이상 켜지지 않는다.
@@ -261,6 +276,8 @@ title: StalkingPicture
 			건강하게 살자!
 			<<set $LighterAndCigarette = false>> //라이터와 담배 모두 버림
 	-> 떼어내어 책 속에 숨긴다.
+		<<playSound SoundManager 22>>
+		<<wait 1>>
 		제일 두꺼운 책을 꺼내 그 안에 사진을 넣었다.
 		<<set $StalkingPicture = true>> //스토커 사진 책 속에 숨김
 		<<objectDelete StalkingPicture StalkingPicture>>
@@ -277,6 +294,7 @@ title: Rug
 	피가 흥건히 묻어 있는 러그다.
 	닦을까?
 	-> 예.
+		<<playSound SoundManager 24>>
 		열심히 문질러 지우자 약간의 자국은 남았지만 크게 눈에 띄지는 않는다.
 		<<set $BloodOnRug = true>>
 		<<objectDelete Rug Rug>>
@@ -289,6 +307,7 @@ title: Rug
 title: BookShelf
 ---
 아무래도 전공 교재인 듯하다. 
+<<playSound SoundManager 19>>
 순서대로 표지에 <color=yellow>‘인지심리학, 자료구조, 데이터베이스 개론과 실습, 사회심리학의 이해’</color>라고 적혀있다.
 <<if $CheckTheMajor == false>>
 	그런데 내 전공이… 뭐였더라?
@@ -314,12 +333,15 @@ title: BookShelf
 ===
 title: BathRoom
 ---
+<<playSound SoundManager 9>>
 화장실 문을 열고 들어섰다. 
 <<if $SmellOfBlood == false>> //화장실 피냄새
 	희미한 쇠 냄새가 감돈다.
 	이 희미한 쇠 냄새는 아마도 피 냄새겠지…
 	찜찜하다. 냄새를 어떻게 지울까?
 	-> 방 창문을 열고 환기시킨다.
+		<<playSound SoundManager 32>>
+		<<wait 1>>
 		창문과 문을 모두 열고 환기를 시작했다.
 		큰 효과는 없었다.
 		결국 창문을 다시 닫았다.
@@ -327,6 +349,8 @@ title: BathRoom
 		냄새가 좀 나지만… 별 수 없다. 이대로 두자.
 	
 	-> 담배를 피워 냄새를 없앤다. <<if $LighterAndCigarette == true>>
+		<<playSound SoundManager 23>>
+		<<wait 1>>
 		담배에 불을 붙였다. 
 		독한 담배향 덕분에 냄새가 금방 지워진다. 
 		라이터의 기름이 다 떨어졌는지 라이터가 더 이상 켜지지 않는다.
@@ -345,9 +369,12 @@ title: BathRoomLocked
 title: Basin
 ---
 <<if $BloodOnCloth == false>>
-	아무래도 쇠냄새의 원인을 찾은 것 같다. 
+	아무래도 쇠냄새의 원인을 찾은 것 같다.
+	<<playSound SoundManager 20>>
+	<<wait 1>>
 	옷을 뒤적거리는데 주머니에서 무언가 나온다.
 	<<ringAppear ring1>>
+	<<playSound SoundManager 26>>
 	이건... <color=orange>반지</color>?
 	주인을 알 수 없는 반지를 주웠다.
 	<<set $Ring1 = true>>
@@ -363,18 +390,22 @@ title: Basin
 	<<objectDelete BloodCloth BloodCloth>>
 	<<objectDelete BloodCloth2 BloodCloth2>>
 	옷을 숨기고 세면대로 돌아오자 무언가 반짝이는 것이 보인다. 
-	화장대 서랍 열쇠를 발견했다.
+	<<playSound SoundManager 20>>
 	<<ringAppear Key2>>
+	화장대 서랍 열쇠를 발견했다.
 	<<set $DresserKey = true>>
-	<<wait 1>>
+	<<wait 0.5>>
 	<<objectDelete Key2 Key2>>
 <<endif>>
 ===
 title: BathRoomTrashCan
 ---
 <<if $Ring2 == false>>
+	<<playSound SoundManager 20>>
+	<<wait 0.5>>
 	쓰레기통 속에서 무언가 반짝거린다.
 	<<ringAppear ring22>>
+	<<playSound SoundManager 26>>
 	은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
 	<<set $Ring2 = true>>
 	<<objectDelete ring22 ring22>>
@@ -389,15 +420,20 @@ title: TrashCan
 	아까 넣은 망치 손잡이도 살짝 보인다.
 <<endif>>
 <<if $BloodTissue == false>>
+	<<playSound SoundManager 20>>
 	조금 뒤적거리자 <color=red>피 묻은 휴지</color>들이 나왔다.
 	어떻게 하지?
+	<<stopSound SoundManager>>
 	-> 쓰레기통 안에 그대로 두자.
 		정말 그대로 두기엔 신경 쓰인다... 다른 방법이 있지 않을까?
 	-> 내가 먹어버리자.
 		우웩... 맛없어. 다 뱉어냈다. 다른 방법이 있지 않을까?
 	-> 변기에 넣고 내리자. <<if $BathRoomKey == true>>
+		<<playSound SoundManager 21>>
+		<<wait 1>>
 		변기에 넣고 물을 내렸다.
 		<<set $BloodTissue = true>>
+		<<stopSound SoundManager>>
 <<endif>>
 ===
 title: CakeBox
@@ -406,7 +442,10 @@ title: CakeBox
 한번 열어볼까?
 -> 예.
 	<<if $FingerInCakeBox == false>>
-		<<ringAppear Finger>>	
+		<<playSound SoundManager 20>>
+		<<wait 0.5>>
+		<<stopSound SoundManager>>
+		<<ringAppear Finger>>
 		케이크 상자 안에는 잘린 손가락이 들어 있었다.
 		역했다. 토할 것 같았지만 애써 억눌렀다.
 		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
@@ -470,9 +509,11 @@ title: LaptopAndPencilHolder
 연필꽂이는 텅 비어있다.
 나: 하긴, 요즘 연필이나 펜 잘 안 쓰지...
 노트북을 켜볼까?
--> 그러자.
+-> 예.
+	<<playSound SoundManager 27>>
+	<<wait 0.5>>
 	고장이 났는지 켜지지 않는다. 그러고 보니 수리를 맡기려 했던 것 같기도...
--> 음......
+-> 아니오.
 	이 상황에서 굳이 켤 필요는 없어.
 ===
 title: Event1

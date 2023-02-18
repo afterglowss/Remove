@@ -14,17 +14,19 @@ public class TimeController : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
 
-    int a = 0;
+    int a = 0, b = 0;
 
     float photoDelete;
     bool bloodTissue, fingerInCakeBox, floorHammer, stalkingPicture;
     bool bloodHandprint, smellOfBlood, cigaretteInBathroom, bloodOnCloth, bloodOnRug;
 
     int hour = 1;
-    int min = 45;
-    float sec = 0f;
+    int min = 59;
+    float sec = 30f;
     public void Start()
     {
+        a = 0;
+        b = 0;
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         variableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
@@ -34,8 +36,9 @@ public class TimeController : MonoBehaviour
     void Update()
     {
         PhoneTime();
-        if (hour == 2 && min == 0 && sec == 0f)
+        if (hour == 2 && min == 0 && sec == 0f && b == 0)
         {
+            b++;
             TimeOut();
         }
 
@@ -55,8 +58,8 @@ public class TimeController : MonoBehaviour
             floorHammer == true && stalkingPicture == true && smellOfBlood == true &&
             cigaretteInBathroom == true && a == 0)
         {
-            Remove();
             a++;
+            Remove();
         }
         
     }
@@ -79,6 +82,7 @@ public class TimeController : MonoBehaviour
 
     public void TimeOut()
     {
+        dialogueRunner.Stop();
         dialogueRunner.StartDialogue("Intersection");
     }
     public void Remove()

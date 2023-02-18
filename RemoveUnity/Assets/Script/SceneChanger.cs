@@ -2,24 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class SceneChanger : MonoBehaviour
 {
-    Vector3 Target;
+    static Vector3 phonePosition;
     public GameObject Phone;
     public void Awake()
     {
-        Target = new Vector3(0,0,0);
-        Invoke("PhoneDown", 81.5f);
+        phonePosition = new Vector3(0,0,0);
     }
 
     private void Update()
     {
         Phone.transform.position = Vector3.Lerp(Phone.transform.position, 
-            Target, Time.deltaTime * 5);
+            phonePosition, Time.deltaTime * 2f);
     }
-    public void PhoneDown()
+
+    [YarnCommand("phonePositionDown")]
+    public static void PhonePositionDown()
     {
-        Target = new Vector3(0, -11, 0);
+        phonePosition = new Vector3(0, -11, 0);
     }
 }

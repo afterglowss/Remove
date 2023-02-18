@@ -1,19 +1,25 @@
 ﻿title: Start
 tags:
 ---
-<<wait 0.5>>
-<<playSound SoundManager door>>
+<<playSound SoundManager 2>>
+<<wait 1>>
 ......신고자 분 어디 계십......
 ......여기 피를 너무 많이 흘렸어요! 바닥이 온통 피바다예요!......
 ......괜찮으세요?......정신이......
 ......지만, 겉으로 보기엔 큰 외상은 없어 보......서둘러 주세요!
-......이송하겠습니다!......
+<<playSound SoundManager 3>>
 <<wait 0.5>>
+......이송하겠습니다!......
+<<wait 1>>
+<<stopSound SoundManager>>
+<<wait 1>>
 <<jump Hospital>>
 ===
 title: Hospital
 tags:
 ---
+<<playSound SoundManager 4>>
+<<wait 1>>
 ......이예영씨......
 ......정신이 드십......
 ......괜찮으십니까?
@@ -24,11 +30,15 @@ tags:
 ??: 여긴 병원입니다. 저는 최준재 의사라고 합니다.
 나: 제가 왜 병원에...?
 최준재 의사: 환자 분께서는 계단에 발을 헛디뎌 넘어지시면서 머리를 바닥에 세게 부딪혀 정신을 잃으셨습니다.<br>기억 안 나십니까?
-
+<<fadeIn FadeImage FadeImage>>
+<<playSound SoundManager 5>>
+<<wait 0.5>>
+<<fadeOut FadeImage FadeImage>>
+<<stopSound SoundManager>>
 <<wait 1>>
 
 나: 제가 계단에... 지금이 며칠이죠?
-
+<<wait 0.5>>
 최준재 의사: ......기억이 안 나시나 보군요. <br>환자 분 생년월일은 기억나십니까?
 이후 여러가지 간단한 문답형 진찰이 이어졌다.
 최준재 의사: 더 자세한 건 정밀 검사를 해 봐야 알겠지만, <br>환자 분께서는 뇌진탕으로 인한 일시적 기억 손실 증세가 있는 것으로 보입니다.
@@ -41,7 +51,8 @@ tags:
 간호사: 이예영 님! 정밀 검사 받으러 가실게요.
 나: 네, 네!
 여러가지 검사가 이어졌고, 다행히도 나는 기억 손실과 다리 골절 외 <br>큰 부상은 없다는 진단 결과를 받았다.
-
+<<playSound SoundManager 6>>
+<<wait 0.5>>
 그때, 띠링하는 소리와 함께 휴대폰이 울렸다.
 
 나: 누구지...이지연?

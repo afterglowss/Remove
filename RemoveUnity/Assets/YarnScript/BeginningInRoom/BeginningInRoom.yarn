@@ -5,15 +5,21 @@ tags:
 ->예
     <<objectDelete HammerBlockImage HammerBlockImage>>
     <<objectDelete Scene Scene>>
+    <<playMusic MusicManager 11>>
     <<stop>>
 ->아니오
     <<setNumber 1>>
+    <<optionBlock 0>>
+<<stopSound SoundManager>>
+<<playMusic MusicManager 11>>
 나: 이... 이게 다 뭐야...?
 나는 차마 말을 잇지 못했다.
 방 안은 온통 누군가의 사진으로 뒤덮여 있었고, 피 묻은 망치 따위가 나뒹굴고 있었다.
 <<fadeOut Scene Scene>>
 <<wait 1>>
+<<playSound SoundManager 25>>
 고민하던 나는, 피가 덕지덕지 붙어 굳어 있는 망치를 조심스레 들어올렸다.
+<<stopSound SoundManager>>
 <color=yellow>원룸에서는 증거를 없애거나 사건에 대한 힌트를 얻을 수 있습니다.</color>
 <color=yellow>망치를 클릭해 보세요.</color>
 <<hammerActive Hammer>>
@@ -35,21 +41,28 @@ title: Hammer
 나는 누군가를 스토킹했다.
 그것도, 친한 후배인 재환이를.
 게다가 스토킹에서 그치지 않고, 누군가를 <color=red>죽였다</color>. 바로 이 망치로.
+<<playSound SoundManager 15>>
 충격적인 사실에 나는 급히 숨을 몰아 쉬며 생각을 정리했다.
-<<setNumber 0>>
--띠리링! 띠리링!
+
+//-띠리링! 띠리링!
+<<pauseMusic MusicManager>>
+<<playRepeatSound SoundManager 7>>
+<<wait 1>>
 휴대폰이 울리기 시작한 것은 그 때였다.
 <<fadeOut Scene Scene>>
 <<wait 1>>
 <color=yellow>전화가 울리기 시작했네요! 전화를 받아 봅시다.</color>
 <color=yellow>Tab키를 눌러 스마트폰을 꺼내세요.</color>
+<<setNumber 0>>
 <<policeCallActive PoliceCall>>
 //<<blockActive HammerBlockImage>>
 ===
 title: PoliceCalling
 ---
 <<objectDelete HammerBlockImage HammerBlockImage>>
+<<stopSound SoundManager>>
 <<wait 1>>
+<<unPauseMusic MusicManager>>
 경찰: 안녕하십니까. 성하 경찰서 형사과 이선우입니다. 이예영씨 본인 맞으십니까?
 나: 네, 네... 맞습니다. 무슨 일이시죠?
 경찰: 오하나 씨의 지인 맞으십니까?
@@ -81,11 +94,14 @@ title: PoliceCalling
 나: 네... 네. 괜찮, 습니다.
 나는 결국 괜찮다는 답변을 하고야 말았다......
 경찰: 네, 그럼 <color=orange>15분</color> 뒤 뵙겠습니다.
+<<playSound SoundManager 31>>
 <<wait 0.5>>
+<<stopSound SoundManager>>
 <<objectDelete PoliceCall PoliceCall>>
 <<setNumber 1>>
 <color=yellow>다시 Tab키를 눌러 사용이 끝난 스마트폰을 집어 넣읍시다.</color>
 <color=yellow>추가로, 스마트폰 하단의 홈 버튼을 누를 시 어플을 종료하고 홈화면으로 돌아올 수 있습니다.</color>
+<<playMusic MusicManager 11>>
 나: 하나가 실종되었다니......
 충격적인 소식이다, 하나에게 무슨 일이 있었던 걸까.
 그리고 과연 나는 이 실종 사건과 어떤 연관이 있는걸까......
@@ -96,6 +112,7 @@ title: Memory
 ---
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
+<<playSound SoundManager 12>>
 ??: 꺄악!!!
 ??: 살려... 살려 줘 제발. 제발 살려 줘...
 <<ringAppear Scene>>
@@ -144,10 +161,12 @@ title: StartingGame
 <color=yellow>남은 시간은 스마트폰의 상단바를 통해 확인할 수 있습니다.</color>
 <color=yellow>그 전까지 모든 증거를 없애고 경찰에 붙잡히지 마세요.</color>
 <color=yellow>행운을 빕니다.</color>
+<<optionBlock 1>>
 ===
 title: Surrender
 ---
 <<fadeIn FadeImage FadeImage>>
+<<stopMusic MusicManager>>
 <<wait 1>>
 나: ...그래.
 나: 자수하자.
@@ -155,6 +174,9 @@ title: Surrender
 모든 일은 언젠가 결국 진실을 드러내기 마련이다.
 숨긴다는 선택지는 어쩌면...... 처음부터 존재하지 않는 것이다.
 나는 모든 것을 내려놓은 심정으로 스마트폰을 들었다.
+<<playSound SoundManager 7>>
+<<wait 1>>
+<<stopSound SoundManager>>
 경찰: 성하지구대입니다.
 나: ......아까 조사 관련으로 연락을 받은 사람인데요.
 나: 실은 제가......
@@ -164,6 +186,8 @@ title: Ending1
 ---
 <<fadeOut FadeImage FadeImage>>
 <<wait 2>>
+<<playMusic MusicManager 11>>
+<<playRepeatSound SoundManager 14>>
 나: ......잘은 모르지만, 그런 거 같아요.
 경찰: 여기 진술서입니다. 방금 말씀하신 내용 여기에 적어주시면 되고요.
 경찰: 잘 모르는 거 있으시면 저쪽으로 가서 질문하시면 됩니다.
@@ -177,6 +201,7 @@ title: Ending1
 과거는 이제 과거로 남겨두고, 새로 태어날 수 있기를.
 나는 그런 소원을 빌며 진술서를 채워 나갔다.
 <<fadeIn FadeImage FadeImage>>
+<<stopSound SoundManager>>
 <<wait 1.5>>
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
@@ -184,13 +209,7 @@ title: Ending1
 ===
 title: Ending2
 ---
-// 갑자기 머릿속이 복잡해진다.
-// 나: 난 지금 뭘 하고 있는 거지?
-// 나: 내...... 내가 살인을 저지른 게 맞지. 그치?
-// 나: 난 병원에서 퇴원을... 아, 아니. 사람을 죽여서......
-// 나: ...어라?
-// 나: 하, 하지만 죽이지 않으면 내가 죽는데 어떡해?
-// 나: 자꾸 내 음식에 독을 타잖아......
+<<playMusic MusicManager 36>>
 갑자기 머릿속이 복잡해진다.
 나: ...난 지금 뭘 하고 있는 거지?
 나: 내... 내가 살인을 저지른 게 맞지. 그치?
@@ -203,19 +222,26 @@ title: Ending2
 나: ......근데 여긴 어디야?
 나: 난 병원에 가야 하는데...... 왜 이러는 거야, 시끄러워!
 나: 자꾸 독을 넣어, 왜...... 해, 해독약을 먹어야겠어.
+<<playSound SoundManager 16>>
 나는 약병을 털어 약을 잔뜩 꺼낸 뒤, 몽땅 입 속에 집어 넣었다.
-
+<<wait 0.5>>
+<<playSound SoundManager 2>>
 <<fadeOut FadeImage FadeImage>>
-<<wait 2>>
-
+<<wait 1>>
+<<playSound SoundManager 3>>
+<<wait 1>>
+<<stopSound SoundManager>>
 ??: ...여기에요!
 ??: 이, 이 약은...... 이 약병에 있는 걸 전부 삼킨건가?
 ??: 이 약병에 있던 걸 다 먹었다고요? 이건 그렇게 많이 먹으면 위험한데!
+<<playSound SoundManager 3>>
 ??: 들 것 이쪽이요!
+<<stopSound SoundManager>>
 ??: 맥박 없습니다. 동공 반사 없습니다.
 ??: 호흡도 없습니다. 이 정도면 이미......
+<<playSound SoundManager 3>>
 ??: 위세척부터 해야해요! CPR도...!
-
+<<stopSound SoundManager>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>
 <<textFadeIn EndingText EndingText>>
@@ -226,43 +252,55 @@ title: Intersection
 ---
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
+<<jumpEnding3>>
+===
+title: Ending3
+---
+<<stopMusic MusicManager>>
+<<playSound SoundManager 28>>
+<<wait 1>>
+<<playSound SoundManager 29>>
+<<wait 0.5>>
 ??: 경찰입니다. 문 열어주세요.
 큰일이다.
 아직 모든 단서를 지우지 못했는데, 벌써 경찰이......
+<<playSound SoundManager 29>>
+<<wait 0.5>>
 경찰: 어서 문 열어주세요.
+<<playSound SoundManager 28>>
 <<wait 1>>
 나: ......네, 열게요.
 나는 눈을 질끈 감고 문을 천천히 열었다.
 ...더 이상 내가 할 수 있는 것은 없다.
 제발, 경찰이 아무것도 눈치채지 못하고 지나가길......
+<<playSound SoundManager 9>>
 <<wait 1>>
 경찰: 시간 내주셔서 감사합니다. 이예영 씨.
 경찰: 현재 오하나 양 실종 사건과 관련하여,
+<<playSound SoundManager 7>>
 <<wait 2>>
+<<stopSound SoundManager>>
 경찰: 아 잠시 죄송합니다. 전화 좀 받고 오겠습니다.
+<<playSound SoundManager 3>>
 <<wait 1>>
+<<stopSound SoundManager>>
+<<wait 0.5>>
 경찰: .......아, 예. 예, 알겠습니다.
 경찰: 그럼 그렇게...... 예.
 무슨 말을 주고 받는 거지? 멀어서 잘 들리지 않는다.
-<<wait 2>>
+<<playSound SoundManager 3>>
+<<wait 1>>
+<<stopSound SoundManager>>
 경찰: 피해자의 시신이 인근 강변에서 발견되었다고 합니다.
 경찰: 시신의 소지품에서 이예영 씨의 소지품으로 추측되는 것이 발견되어......
 경찰: 같이 서로 가주셔야겠습니다.
 <<wait 0.5>>
 나: ......네.
 
-<<if $InferingEnter == true>>
-    <<jumpScene Ending4>>
-<<else>>
-    <<jumpEnding3>>
-<<endif>>
-
-===
-title: Ending3
----
 <<fadeOut FadeImage FadeImage>>
+<<playMusic MusicManager 11>>
 <<wait 1>>
-
+<<playRepeatSound SoundManager 14>>
 나: 전 진짜 기억나는 게 없어요...
 나: 제가 저질렀을지도 모르지만, 정말 기억나는 게 없어요.
 경찰: 그렇다면 원룸에서의 증거 인멸 시도는 어떻게 해명하실 겁니까?
@@ -278,10 +316,14 @@ title: Ending3
 원룸에서 발견된 혈흔과 메신저 내용은 결정적인 증거가 되었다.
 
 <<fadeIn Arrest Arrest>>
-<<wait 0.5>>
-
+<<stopSound SoundManager>>
+<<playMusic MusicManager 1>>
+<<wait 1>>
 나는 더이상의 해명이 의미없음을 깨닫고 현실에 순응했다.
+<<playSound SoundManager 30>>
+<<wait 0.5>>
 경찰이 내 손목에 수갑을 채우고, 판사가 재판장에서 선고를 내릴 때 까지도.
+<<stopSound SoundManager>>
 나는 이 모든 일이 믿기지가 않아 잠자코 입을 다물었다.
 이전까지의 평화로웠던 일상은 이제 다른 세계 이야기처럼 느껴지기 시작했다.
 내가 좀 더 민첩하게 움직였더라면......
@@ -299,16 +341,65 @@ title: Ending3
 ===
 title: Ending4
 ---
+<<stopMusic MusicManager>>
+<<playSound SoundManager 28>>
+<<wait 1>>
+<<playSound SoundManager 29>>
+<<wait 0.5>>
+??: 경찰입니다. 문 열어주세요.
+드디어 올 것이 왔다.
+일단 눈에 보이는 증거들은 모두 인멸했다.
+......남은 건, 자연스러운 연기 뿐이다.
+<<playSound SoundManager 29>>
+<<wait 0.5>>
+경찰: 어서 문 열어주세요.
+<<playSound SoundManager 28>>
+<<wait 1>>
+나: ......네, 열게요.
+나는 눈을 질끈 감고 문을 천천히 열었다.
+...더 이상 내가 할 수 있는 것은 없다.
+제발, 경찰이 아무것도 눈치채지 못하고 지나가길......
+<<playSound SoundManager 9>>
+<<wait 1>>
+경찰: 시간 내주셔서 감사합니다. 이예영 씨.
+경찰: 현재 오하나 양 실종 사건과 관련하여,
+<<playSound SoundManager 7>>
+<<wait 2>>
+<<stopSound SoundManager>>
+경찰: 아 잠시 죄송합니다. 전화 좀 받고 오겠습니다.
+<<playSound SoundManager 3>>
+<<wait 1>>
+<<stopSound SoundManager>>
+<<wait 0.5>>
+경찰: .......아, 예. 예, 알겠습니다.
+경찰: 그럼 그렇게...... 예.
+무슨 말을 주고 받는 거지? 멀어서 잘 들리지 않는다.
+<<playSound SoundManager 3>>
+<<wait 1>>
+<<stopSound SoundManager>>
+경찰: 피해자의 시신이 인근 강변에서 발견되었다고 합니다.
+경찰: 시신의 소지품에서 이예영 씨의 소지품으로 추측되는 것이 발견되어......
+경찰: 같이 서로 가주셔야겠습니다.
+<<wait 0.5>>
+나: ......네.
 
+<<playMusic MusicManager 37>>
+<<wait 1>>
 서에서는 여러가지 조사가 이어졌지만,<br>워낙 증거를 꼼꼼히 없앤 탓인지 소지품 외에 별다른 소득은 없는 듯 했다.
 나는 결국 증거 불충분으로 풀려났고, 일상을 이어나갈 수 있게 되었다.
-나: 하... 정말 아슬아슬했어.
+나: 하...... 정말 아슬아슬했어.
 아직 기억이 완전히 돌아오진 않았지만, 일상을 영위하는 데에는 큰 어려움이 없었다.
 <<fadeOut FadeImage FadeImage>>
 <<wait 1>>
-다만 내가 학교 주변 자취방 앞에서 경찰차를 타는 모습이 몇몇 학우들에게 포착되어
-학교 커뮤니티 등에서 내가 사람을 죽였다느니 사기를 쳤다느니- 하는<br> 나에 대한 음침한 소문이 학내에 돌긴 했다.
-하지만 이정도는 어쩔 수 없지.
+다만 내가 학교 주변 자취방 앞에서 경찰차를 타는 모습이 몇몇 학우들에게 포착되면서,
+<<playSound SoundManager 6>>
+<<wait 0.5>>
+<<playSound SoundManager 6>>
+<<wait 0.5>>
+<<playSound SoundManager 6>>
+<<wait 0.5>>
+덕분에 학교 커뮤니티 등에서 내가 사람을 죽였다느니 사기를 쳤다느니- 하는<br> 나에 대한 음침한 소문이 학내에 돌았지만,
+이정도는 어쩔 수 없지.
 감당해야 한다.
 나: 그래도 이정도로 끝나서 다행이야.
 ......그래도 가끔, 의문이 들 때가 있다.
@@ -330,7 +421,11 @@ title: Ending5
 ---
 
 집주인이 돌아가고 잠시 뒤.
+<<playSound SoundManager 7>>
+<<wait 1>>
 갑자기 전화벨이 울렸다.
+<<stopSound SoundManager>>
+<<wait 0.5>>
 나: 여보세요?
 ??: ......
 나: ...여보세요?
@@ -343,19 +438,27 @@ title: Ending5
 ??: ......찾았나 보네?
 ??: 생각보다 빠른데......
 <<wait 0.5>>
--뚝.
+<<playSound SoundManager 31>>
+<<wait 0.5>>
 
+-뚝.
 갑자기 전화가 끊겼다.
 나: (어떡하지...... 뭘 해야 하는 거지.)
 나는 안절부절 못하며 손톱을 물어뜯기 시작했다.
 
+<<playSound SoundManager 29>>
 <<wait 1>>
 
 갑자기 누군가가 문을 두들긴다.
 이번에야 말로 진짜 그 놈이다.
+<<playSound SoundManager 8>>
 그런 확신이 섰다.
+<<wait 1>>
+
 문을 막을 도구를 찾는데, 문이 벌컥 열렸다.
+<<stopSound SoundManager>>
 <<fadeOut FadeImage FadeImage>>
+<<playMusic MusicManager 38>>
 <<wait 1>>
 심재환: 제가 비밀번호도 모를거라고 생각했어요?
 심재환: 아직도 나를 모르네......
@@ -372,7 +475,8 @@ title: Ending5
 나: 아무도 없어요? 살려주세요!
 나는 악을 지르며 도움을 요청했다.
 우린 한동안 몸싸움을 이어나갔다.
-<<wait 1>>
+<<wait 0.5>>
+<<stopMusic MusicManager>>
 ??: 멈춰! 움직이지마!
 
 <<fadeIn FadeImage FadeImage>>
@@ -382,15 +486,17 @@ title: Ending5
 그때, 기적처럼 경찰이 도착했다.
 심재환의 얼굴에 당혹감이 스쳐 지나갔다.
 나: (이건 예상 못했겠지, 15분 전에 갑자기 결정된 사안이었으니까.)
+<<playSound SoundManager 15>>
 나는 안도의 한숨을 내쉬며 몸을 일으켰다.
 <<wait 0.5>>
 우리는 함께 서로 가 조사를 받았다.
 나는 내가 본 것과 기억하는 것, 짐작하는 것을 모두 경찰에게 전달했다.
-심재환은 자신의 결백을 증명하려 애썼고
+심재환은 자신의 결백을 증명하려 애썼고,
 또 어찌나 계획적으로 행동했는지 증거 불충분으로 풀려날 뻔 했으나,
 심재환이 문을 두들긴 순간부터 켜놓았던 스마트폰 녹음이 결정적인 증거가 되어 유죄 선고를 받았다.
 
 <<fadeOut FadeImage FadeImage>>
+<<playMusic MusicManager 39>>
 <<wait 1.5>>
 나는 다시 일상으로 복귀했다.
 아직도 그 수많은 일들이 나에게 벌어졌다는 것이 믿기지가 않지만......

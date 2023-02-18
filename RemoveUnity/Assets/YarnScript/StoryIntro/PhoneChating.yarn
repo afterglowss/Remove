@@ -13,45 +13,53 @@ position: 0,0
     
 <<Them>>
 <<wait 4>>
+<<playSound SoundManager 6>>
 심재환이 말해줬어요!! 약 받아올게잇어서 잠깐 병원 들럿는데 언니를 본거 같다구ㅠㅠㅠ
-<<wait 1>>
+<<wait 2>>
 <<monologue DialogueRunner Monologue1>>
-<<wait 3>>
+<<wait 2>>
 
 <<Me>>
 <<wait 2>>
 아 그래?? 난 못 봤는데...
-<<wait 3>>
+<<wait 2>>
 왜 말도 안 걸고 그냥 갔대😅
 
 <<Them>>
-<<wait 3>>
+<<wait 2>>
+<<playSound SoundManager 6>>
 혹시 다른 사람일까봐 그냥 왓대요
-<<wait 3>>
+<<wait 2>>
+<<playSound SoundManager 6>>
 걔 원래 그러잔아욬ㅋㅎ 진짜 극극 I
-<<wait 4>>
+<<wait 3>>
+<<playSound SoundManager 6>>
 아 근데 언니!! 그래서 다친곳은 괜찮아요??ㅠㅠ
 
 <<Me>>
 <<wait 3>>
 어 부러진 곳도 없고 괜찮아 ㅋㅋ
-<<wait 3>>
+<<wait 2>>
 근데 기억이 좀 가물가물하네
 
 <<Them>>
-<<wait 3>>
+<<wait 2.5>>
+<<playSound SoundManager 6>>
 진짜요???!!?? 아니큰병이면어떡해요ㅜㅜㅠㅠ
-<<wait 3>>
+<<wait 2.5>>
+<<playSound SoundManager 6>>
 의사는괜찮대요?? 그러게 조심좀하지ㅡㅡ
-<<wait 3>>
+<<wait 2.5>>
+<<playSound SoundManager 6>>
 지금 심재환도 옆에서 언니 기억 가물가물하단거 듣고 진짜괜찮은거맞냐고 기억 뭐 안나는지 물어보라고 자꾸 닦달해요ㅠㅠ
 
 <<Me>>
-<<wait 5>>
+<<wait 4>>
 난리네😅😅 사고 전후랑 몇 가지 사소한 기억 말고는 괜찮아 걱정마ㅎㅎ
 
 <<Them>>
-<<wait 4>>
+<<wait 2>>
+<<playSound SoundManager 6>>
 네 언니! 근ㄷㅇㅇ러ㅣ갸ㅑ
 
 <<Me>>
@@ -60,29 +68,33 @@ position: 0,0
 
 <<Them>>
 <<wait 2>>
+<<playSound SoundManager 6>>
 누나. 많이 다쳤어요? 기억 어떤 거 안나요?
-<<wait 1>>
+<<wait 1.5>>
 <<monologue DialogueRunner Monologue2>>
-<<wait 3>>
+<<wait 2>>
 
 <<Me>>
-<<wait 3>>
+<<wait 2>>
 괜찮아ㅋㅋ 아까 말한 게 다야
 
 <<Them>>
-<<wait 3>>
+<<wait 2>>
+<<playSound SoundManager 6>>
 걱정 많이 했는데 다행이에요. 어쩌다 사고 난 건지도 기억 안나요?
 
 <<Me>>
-<<wait 4>>
+<<wait 3>>
 음...
 <<wait 2>>
 기억 안 나😅
 
 <<Them>>
 <<wait 3>>
+<<playSound SoundManager 6>>
 큰일이네요… 빨리 회복이 되ㄴㅇㅗ댜니이ㅏㄴ
 <<wait 3>>
+<<playSound SoundManager 6>>
 제가 다시 뺏어왔어요;;심재환 저 싹바가지업는놈
 
 <<Me>>
@@ -104,6 +116,7 @@ title: Monologue3
 ---
 아이고...정신 없어
 그래도 활기차고 귀여운 후배들을 보고 있으니 기운이 좀 나는 것 같다.
+<<phonePositionDown>>
 나는 후배들과 몇 가지 이야기를 마저 주고받은 뒤 휴대폰을 내려 놓았다.
 <<fadeOut Hospital Hospital>>
 <<wait 1.5>>
