@@ -21,6 +21,10 @@ public class PhoneMove : MonoBehaviour
 
     ObjectDialogueManager objectDialogueManager;
 
+    private DialogueRunner dialogueRunner;
+    private InMemoryVariableStorage variableStorage;
+
+
     public static int i = 1;
     [YarnCommand("setNumber")]
     public static void SetNumber(int newNumber)
@@ -37,15 +41,17 @@ public class PhoneMove : MonoBehaviour
         policeCall = GameObject.Find("PhoneImage").transform.Find("PoliceCall").gameObject;
         mentalHospital = GameObject.Find("PhoneImage").transform.Find("MentalHospital").gameObject;
         objectDialogueManager = GetComponent<ObjectDialogueManager>();
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        variableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
-
+    [YarnCommand("phoneUp")]
     public void PhoneUp()
     {
         Target = new Vector3(0, 0, 100);
         phoneBlack.SetActive(false);
         GameObject.Find("PhoneCanvas").transform.Find("PhoneBlockImage").gameObject.SetActive(true);
     }
-
+    [YarnCommand("phoneDown")]
     public void PhoneDown()
     {
         Target = new Vector3(0, -11, 100);
@@ -57,9 +63,10 @@ public class PhoneMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (i == 3) return;
+            
             if (std.x - Target.x == 0 && std.y - Target.y == 0 && std.z - Target.z == 0)
             {
+                if (i == 3) return;
                 PhoneUp();
                 if (i == 0)
                 {
@@ -72,6 +79,7 @@ public class PhoneMove : MonoBehaviour
                     objectDialogueManager.DialogueStop();
                     objectDialogueManager.MentalHospitalCallStart();
                 }
+                
             }
             else
             {
@@ -80,6 +88,10 @@ public class PhoneMove : MonoBehaviour
                     return;
                 }
                 PhoneDown();
+                if(i == 4)
+                {
+                    dialogueRunner.StartDialogue("Clear");
+                }
             }
 
         }

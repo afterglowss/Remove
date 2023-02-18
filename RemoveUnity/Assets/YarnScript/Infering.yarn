@@ -2,13 +2,15 @@
 ---
 <<set $TotalChance = 0>>
 <<set $chance = 0>>
-<<set $InferingEnter= false>>
+<<set $InferingEnter = false>>
 ===
 title: InferingStart
 tags:
 ---
 <<setNumber 3>>
+<<fadeOut FadeImage FadeImage>>
 <<set $InferingEnter = true>>
+<<wait 1>>
 이제 눈에 보이는 단서는 다 지웠다.
 경찰이 곧 들이닥칠 것이다.
 ......그런데, 자꾸 거슬리는 것이 있다.
@@ -34,9 +36,7 @@ tags:
 기억이 아주 드문드문 나지만, 아예 안 나는 것은 아냐. 
 그날 행인과 구급대원들이 했던 말을 회상해 보자.
 
-그래. 이런 대화가 오갔었지. 
-그런데 이 대화, 어딘가 이상하네......
-어디가 수상한걸까?
+그런데 이 대화, 어디가 수상한걸까?
 <<jump InferingStorystart>>
 ===
 title: InferingStorystart
@@ -311,7 +311,7 @@ title: InferingProof
     <<else>>
         <<jump InferingProof>>
     <<endif>>
--> 화장실 앞 러그 위
+-> 침대 옆 러그
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -379,7 +379,6 @@ title: InferingOther
     <<messageIn>>
     스마트폰을 뒤지다 보니, 협박 문자를 발견했었지.
     <<messageOut>>
-    지워버렸었는데......
     그런데 그 협박 문자, 이상해.
     그리고 그 수상한 점은 이 어플 속 단서와 연관지을 수 있었어.
     <<jump InferingMessage>>
@@ -388,6 +387,7 @@ title: InferingMessage
 ---
 <<setNumber 1>>
 협박 문자는 이 어플 속 단서와 연관지을 때 이상한데......
+<color=yellow>Tab을 누르면 스마트폰을 탐색할 수 있습니다.</color>
 -> 캘린더
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
@@ -412,7 +412,7 @@ title: InferingGallery
 ---
 <<setNumber 1>>
 갤러리의 이 사진과 연관지을 수 있는데......
--> 4번 사진
+-> 한강공원 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -428,7 +428,7 @@ title: InferingGallery
     <<else>>
         <<jump InferingGallery>>
     <<endif>>
--> 7번 사진
+-> 진단서 사진
     <<setNumber 3>>
     <<medicalCertificateIn>>
     맞아. 진단서.
@@ -474,7 +474,7 @@ title: Etc
 ---
 <<setNumber 1>>
 그 외에, 날짜와 시간대가 이상한 것들은......
--> 4번 사진
+-> 심재환 공부하는 뒷모습 사진
     <<setNumber 3>>
     <<picture4In>>
     맞아. 이 사진
@@ -518,7 +518,7 @@ title: ComparingWithPicture4
     <<else>>
         <<jump ComparingWithPicture4>>
     <<endif>>
--> 3번 사진
+-> 한강공원 사진
     <<setNumber 3>>
     그래.
     <<picture34In>>
@@ -539,7 +539,7 @@ title: InferingFakePicture
 ---
 이 중 조작된 사진은......
 <<setNumber 1>>
--> 4번 사진
+-> 한강공원 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -547,7 +547,7 @@ title: InferingFakePicture
     <<else>>
         <<jump InferingFakePicture>>
     <<endif>>
--> 3번 사진
+-> 심재환 공부하는 뒷모습 사진
     <<setNumber 3>>
     <<hanriverIn>>
     그래. 지연이는 분명 하나가 나랑 한강에서 만난 걸 들었다고 했어.
@@ -560,7 +560,7 @@ title: InferingPictureTime
 ---
 <<setNumber 1>>
 시간대가 이상한 사진은......
--> 8-2번 사진
+-> 심재환 도서관 사진
     <<setNumber 3>>
     <<picture8_2In>>
     그래. 이 사진.
@@ -1073,11 +1073,16 @@ title: PasswordCorrect
 케이크, 꼬깔 모자, 선물, 마치 누군가의 생일을 준비하는 듯 했어.
 <<Memo_8_28Out>>
 
-<<setNumber 1>>
 핸드폰을 열어 비밀번호를 입력해보자!
-
-......모든 것이 선명해진다.
+<color=yellow>스마트폰에서 L앱의 비밀번호를 쳐봅시다.</color>
+<<setNumber 4>>
+<<phoneUp PhoneUpButton>>
+===
+title: Clear
+---
 <<setNumber 3>>
+<<wait 1>>
+......모든 것이 선명해진다.
 나는 하나의 물건들이 왜 내 원룸에 많았는지 기억한다.
 <<TwoRingsIn>>
 나는 반지의 의미를 기억한다.
@@ -1107,12 +1112,12 @@ title: DCorrect
 
 충격에 머리가 얼얼했다.
 ......그런데, 나와 하나의 관계를 알고 있는 사람이 한 사람 있다.
-그리고 이걸 알 수 있는 어플은......
+
 <<jump InferingApplication>>
 ===
 title: InferingApplication
 ---
-그 어플은......
+그리고 이걸 알 수 있는 어플은......
 <<setNumber 1>>
 -> L
     <<set $TotalChance = $TotalChance+1>>
@@ -1168,7 +1173,7 @@ title: Truth
 -> 심재환
 
 찬장 속 수면제의 의미는......
--> 누군가 나를 스토킹했고, 그 스트레스에 불면증을 겪어 받아온 것이다.
+-> 누군가 나를 스토킹했고,<br>그 스트레스에 불면증을 겪어 받아온 것이다.
 
 그렇다면 나를 스토킹한 사람은......
 -> 심재환
@@ -1181,7 +1186,8 @@ title: Truth
 
 나를 스토킹하다가, 질투에 하나를 죽인 사람은......
 -> 심재환
-
+<<fadeIn FadeImage FadeImage>>
+<<wait 1>>
 띵동. 띵동.
 쾅쾅쾅!!!
 갑자기 문 밖에서 큰소리가 나기 시작했다. 아무래도 누군가 온 모양이다.
@@ -1204,5 +1210,5 @@ title: Fail
 이게 아니야......분명 무언가를 놓치고 있어......
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
-<<jump Intersection>>
+<<jumpScene Ending4>>
 ===

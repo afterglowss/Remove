@@ -18,9 +18,8 @@ public class SoundManager : MonoBehaviour
 
     public SoundType[] SoundList;
 
-    public static float volume = 0.5f;
+    public static float volume = 0.2f;
     public static SoundManager instance;
-
 
     public void SetSoundVolume(float volume)
     {
@@ -54,5 +53,33 @@ public class SoundManager : MonoBehaviour
                 break;
             }
         }
+    }
+    [YarnCommand("playRepeatSound")]
+    public void PlayRepeatSound(string str)
+    {
+        for (int i = 0; i < SoundList.Length; i++)
+        {
+            if (str == SoundList[i].name)
+            {
+                soundSource.clip = SoundList[i].sound;
+                if (!soundSource.isPlaying)
+                {
+                    soundSource.loop = true;
+                    soundSource.Play();
+                    Debug.Log("playingSound");
+                }
+                break;
+            }
+        }
+    }
+    [YarnCommand("stopSound")]
+    public void StopSound()
+    {
+        soundSource.loop = false;
+        soundSource.Stop();
+    }
+    private void Update()
+    {
+        
     }
 }

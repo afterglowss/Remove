@@ -31,10 +31,20 @@ public class BTNManager : MonoBehaviour
 
 
     private GameObject obj;
+
+    private static int optionBlockNumber = 1;
+    [YarnCommand("optionBlock")]
+    public static void OptionBlock(int number)
+    {
+        optionBlockNumber = number;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (optionBlockNumber == 0)
+                return;
             if (optionGroup.alpha == 1)
             {
                 OptionCanvasOff();
@@ -124,6 +134,7 @@ public class BTNManager : MonoBehaviour
     [YarnCommand("jumpMainScene")]
     public static void JumpMainScene()
     {
+        MusicManager.instance.musicSource.Stop();
         SceneManager.LoadScene("StartScene");
     }
     [YarnCommand("jumpGameScene")]
@@ -134,16 +145,19 @@ public class BTNManager : MonoBehaviour
     
     public void JumpStoryStart()
     {
+        MusicManager.instance.musicSource.Stop();
         SceneManager.LoadScene("StoryStart");
     }
     [YarnCommand("jumpPhone")]
     public static void JumpPhone()
     {
+        MusicManager.instance.musicSource.Stop();
         SceneManager.LoadScene("Phone");
     }
     [YarnCommand("jumpStoryEnd")]
     public static void JumpStoryEnd()
     {
+        MusicManager.instance.musicSource.Stop();
         SceneManager.LoadScene("StoryEnd");
     }
     [YarnCommand("jumpEnding1")]
