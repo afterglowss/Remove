@@ -60,6 +60,7 @@ public class ObjectDialogueManager : MonoBehaviour
     }
     public void PoliceCallingStart()
     {
+        dialogueRunner.Stop();
         dialogueRunner.StartDialogue("PoliceCalling");
     }
     public void MentalHospitalCallStart()
