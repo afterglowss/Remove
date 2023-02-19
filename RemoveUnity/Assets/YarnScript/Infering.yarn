@@ -7,7 +7,6 @@
 title: InferingStart
 tags:
 ---
-<<fadeIn FadeImage FadeImage>>
 <<setNumber 3>>
 <<playMusic MusicManager 35>>
 <<set $InferingEnter = true>>
@@ -1313,8 +1312,8 @@ title: Truth
 <<playSound SoundManager 28>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>
-<<playSound SoundManager 29>>
 띵동. 띵동.
+<<playSound SoundManager 29>>
 쾅쾅쾅!!!
 갑자기 문 밖에서 큰소리가 나기 시작했다. 아무래도 누군가 온 모양이다.
 벌써 경찰이 찾아온 걸까?

@@ -8,7 +8,7 @@ tags:
     <<playMusic MusicManager 33>>
     <<stop>>
 ->아니오
-    <<setNumber 1>>
+    <<setNumber 3>>
     <<optionBlock 0>>
 <<stopSound SoundManager>>
 <<playMusic MusicManager 11>>
@@ -98,7 +98,7 @@ title: PoliceCalling
 <<wait 0.5>>
 <<stopSound SoundManager>>
 <<objectDelete PoliceCall PoliceCall>>
-<<setNumber 1>>
+<<setNumber 3>>
 <color=yellow>다시 Tab키를 눌러 사용이 끝난 스마트폰을 집어 넣읍시다.</color>
 <color=yellow>추가로, 스마트폰 하단의 홈 버튼을 누를 시 어플을 종료하고 홈화면으로 돌아올 수 있습니다.</color>
 <<playMusic MusicManager 11>>
@@ -162,6 +162,7 @@ title: StartingGame
 <color=yellow>그 전까지 모든 증거를 없애고 경찰에 붙잡히지 마세요.</color>
 <color=yellow>행운을 빕니다.</color>
 <<optionBlock 1>>
+<<setNumber 1>>
 <<playMusic MusicManager 33>>
 ===
 title: Surrender
@@ -207,6 +208,13 @@ title: Ending1
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
 <<textAppear MainText>>
+===
+
+title: Ending2Enter
+---
+<<fadeIn FadeImage FadeImage>>
+<<wait 1.5>>
+<<jumpEnding2>>
 ===
 title: Ending2
 ---
@@ -440,7 +448,7 @@ title: Ending5
 <<wait 0.5>>
 <<playSound SoundManager 31>>
 <<wait 0.5>>
-
+<<stopSound SoundManager>>
 -뚝.
 갑자기 전화가 끊겼다.
 나: (어떡하지...... 뭘 해야 하는 거지.)
@@ -519,6 +527,7 @@ title: Ending5
 <<textFadeOut EndingText EndingText>>
 <<wait 3>>
 <<textFadeIn EndingCredit EndingCredit>>
+<<fadeIn Logo Logo>>
 <<wait 3>>
 <<textAppear MainText>>
 ===

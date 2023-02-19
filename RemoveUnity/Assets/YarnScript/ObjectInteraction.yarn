@@ -23,10 +23,13 @@
 <<set $HammerInTrashCan = 0>>
 <<set $BloodOnClothInCloset = false>>
 
-<<set $BathRoomKey = false>> //진실증거
+<<set $BathRoomKey = false>> 
 <<set $DresserKey = false>>
-<<set $ClueToTheTruth = true>>
 <<set $CheckTheMajor = false>>
+
+<<set $ClueToTheTruth = false>> //진실증거
+<<set $OhHanaTalk = false>>
+<<set $ShimJaehwanTalk = false>>
 
 <<set $Ring1 = false>>
 <<set $Ring2 = false>>
@@ -87,11 +90,13 @@ title: Diagnosis
 ===
 title: OhHana
 ---
+<<set $OhHanaTalk = true>>
 ...어라? 메신저함이 깔끔하게 비워져 있다.
 지운 이유가 있을까?
 ===
 title: ShimJaehwan
 ---
+<<set $ShimJaehwanTalk = true>>
 ...협박 문자다.
 아마 살인 사건이 있었던 날 보낸 거겠지.
 심재환이 이 사건을 목격이라도 한 걸까?
@@ -155,6 +160,7 @@ title: DresserDrawerOpen
 ===
 title: DresserDrawerLocked
 ---
+<<playSound SoundManager 42>>
 화장대 서랍이다. 잠겨있다.
 ===
 title: MentalHospitalCall
@@ -179,6 +185,7 @@ title: MentalHospitalCall
 ===
 title: KitchenCabinetLocked
 ---
+<<playSound SoundManager 42>>
 부엌 찬장이다. 잠겨있다.
 ===
 title: Drug
@@ -193,7 +200,7 @@ title: Drug
 -> 누군가가 나를 스토킹했기 때문에.
 	......응? 그 반대 아닌가?
 -> 망상 때문에 잠에 들지 못해서. <<if $MentalHospitalCall == true>>
-	<<jump Ending2>>
+	<<jump Ending2Enter>>
 ===
 
 title: KitchenFloor
@@ -364,6 +371,7 @@ title: BathRoom
 ===
 title: BathRoomLocked
 ---
+<<playSound SoundManager 42>>
 화장실 문이 잠겨있다.
 따로 열쇠가 있는 모양이다.
 ===
@@ -430,11 +438,11 @@ title: TrashCan
 	-> 내가 먹어버리자.
 		우웩... 맛없어. 다 뱉어냈다. 다른 방법이 있지 않을까?
 	-> 변기에 넣고 내리자. <<if $BathRoomKey == true>>
+		<<objectDelete TrashCan BloodTrash>>
 		<<playSound SoundManager 21>>
 		<<wait 1>>
 		변기에 넣고 물을 내렸다.
 		<<set $BloodTissue = true>>
-		<<stopSound SoundManager>>
 <<endif>>
 ===
 title: CakeBox
@@ -451,8 +459,8 @@ title: CakeBox
 		역했다. 토할 것 같았지만 애써 억눌렀다.
 		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
 		그럼 어떻게 하지?
-		-> 그래도 그냥 변기에 버리자. 이대로 뒀다가 들키면 끝장이다.
-			변기에 버리고 물을 내렸다.
+		-> 휴지에 감싸서 쓰레기통에 버리자.
+			쓰레기통에 넣었다.
 			<<set $FingerInCakeBox = true>>
 			<<objectDelete Finger Finger>>
 		-> 방법도 없으니 일단 이대로 둘까.
@@ -542,6 +550,7 @@ title: Water
 물이 담겨있는 물병이다.
 마실까?
 -> 그냥 마시자.
+	<<playSound SoundManager 40>>
 	마침 목이 말랐는데 잘 됐다. 시원하다.
 -> 됐어.
 	그래. 언제 사둔 건지 기억도 안 나는데 마시지 말자.
