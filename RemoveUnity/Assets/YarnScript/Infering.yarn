@@ -1297,7 +1297,7 @@ title: Truth
 -> 심재환
 
 찬장 속 수면제의 의미는......
--> 누군가 나를 스토킹했고,<br>그 스트레스에 불면증을 겪어 받아온 것이다.
+-> 누군가 나를 스토킹했고, 그 스트레스 때문에
 
 그렇다면 나를 스토킹한 사람은......
 -> 심재환
@@ -1313,8 +1313,8 @@ title: Truth
 <<playSound SoundManager 28>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>
-<<playSound SoundManager 29>>
 띵동. 띵동.
+<<playSound SoundManager 29>>
 쾅쾅쾅!!!
 갑자기 문 밖에서 큰소리가 나기 시작했다. 아무래도 누군가 온 모양이다.
 벌써 경찰이 찾아온 걸까?

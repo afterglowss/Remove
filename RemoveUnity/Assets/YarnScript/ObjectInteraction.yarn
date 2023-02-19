@@ -200,7 +200,7 @@ title: Drug
 -> 누군가가 나를 스토킹했기 때문에.
 	......응? 그 반대 아닌가?
 -> 망상 때문에 잠에 들지 못해서. <<if $MentalHospitalCall == true>>
-	<<jump Ending2>>
+	<<jump Ending2Enter>>
 ===
 
 title: KitchenFloor
@@ -438,6 +438,7 @@ title: TrashCan
 	-> 내가 먹어버리자.
 		우웩... 맛없어. 다 뱉어냈다. 다른 방법이 있지 않을까?
 	-> 변기에 넣고 내리자. <<if $BathRoomKey == true>>
+		<<objectDelete TrashCan BloodTrash>>
 		<<playSound SoundManager 21>>
 		<<wait 1>>
 		변기에 넣고 물을 내렸다.

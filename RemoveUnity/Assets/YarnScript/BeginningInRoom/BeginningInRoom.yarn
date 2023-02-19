@@ -209,6 +209,13 @@ title: Ending1
 <<wait 3>>
 <<textAppear MainText>>
 ===
+
+title: Ending2Enter
+---
+<<fadeIn FadeImage FadeImage>>
+<<wait 1.5>>
+<<jumpEnding2>>
+===
 title: Ending2
 ---
 <<playMusic MusicManager 36>>
