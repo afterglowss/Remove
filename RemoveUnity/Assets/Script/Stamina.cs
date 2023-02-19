@@ -8,7 +8,11 @@ public class Stamina : MonoBehaviour
     [YarnCommand("stamina")]
     public static void StaminaControl()
     {
-        if (GameObject.Find("Stamina").transform.Find("Chance4").gameObject.activeSelf == true)
+        if (GameObject.Find("Stamina").transform.Find("Chance5").gameObject.activeSelf == true)
+        {
+            GameObject.Find("Chance5").SetActive(false);
+        }
+        else if (GameObject.Find("Stamina").transform.Find("Chance4").gameObject.activeSelf == true)
         {
             GameObject.Find("Chance4").SetActive(false);
         }
