@@ -15,13 +15,14 @@ public class DMeaningScript : MonoBehaviour
     public GameObject DMeaningImage;
 
     private string DMeaning = "Date";
+    private string Dmeaning_small = "date";
     public void Start()
     {
         Runner = FindObjectOfType<DialogueRunner>();
     }
     public void Entering()
     {
-        if (inputfield_input.text.Equals(DMeaning))
+        if (inputfield_input.text.Equals(DMeaning)||inputfield_input.text.Equals(Dmeaning_small)||inputfield_input.text.Equals("DATE"))
         {
             Debug.Log("¼º°ø");
             GameObject.Find("DMeaningImage").SetActive(false);
