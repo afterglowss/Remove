@@ -1,6 +1,6 @@
 ﻿title: variables
 ---
-
+<<set $IsSkip = false>>
 
 
 <<set $DeskEvidence = false>> //안쓰는 거
@@ -245,7 +245,6 @@ title: Window
 		<<playSound SoundManager 17>>
 		생각보다 높이 있어 닦기가 어려웠다.
 		침대 위에 올라가 핏자국을 닦아냈다.
-		<<stopSound SoundManager>>
 		<<set $BloodHandprint = true>> //손자국 지워짐
 		<<objectDelete HandPrint HandPrint>>
 	-> 굳이?
@@ -524,16 +523,6 @@ title: LaptopAndPencilHolder
 	고장이 났는지 켜지지 않는다. 그러고 보니 수리를 맡기려 했던 것 같기도...
 -> 아니오.
 	이 상황에서 굳이 켤 필요는 없어.
-===
-title: Event1
----
-띵동. 띵동.
-쾅쾅쾅!!!
-갑자기 문 밖에서 큰소리가 나기 시작했다. 아무래도 누군가 온 모양이다.
-벌써 경찰이 찾아온 걸까? 심장이 떨린다.
-나: 누구세요?
-???: 아가씨! 나예요! 아휴, 여기서 담배를 피우면 어떡해!!!
-다행히도 집주인인 모양이다.
 ===
 
 title: KitchenDrawer

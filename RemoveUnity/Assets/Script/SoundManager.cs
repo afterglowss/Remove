@@ -48,7 +48,6 @@ public class SoundManager : MonoBehaviour
                 if (!soundSource.isPlaying)
                 {
                     soundSource.Play();
-                    Debug.Log("playingSound");
                 }
                 break;
             }
@@ -66,7 +65,6 @@ public class SoundManager : MonoBehaviour
                 {
                     soundSource.loop = true;
                     soundSource.Play();
-                    Debug.Log("playingSound");
                 }
                 break;
             }

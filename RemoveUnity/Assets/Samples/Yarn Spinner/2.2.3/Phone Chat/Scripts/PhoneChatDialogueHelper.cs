@@ -70,6 +70,7 @@ namespace Yarn.Unity.Example
         [YarnCommand("monologue")]
         public void Monologue(string nodeName)
         {
+            dialogueRunner.Stop();
             dialogueRunner.StartDialogue(nodeName);
         }
 
