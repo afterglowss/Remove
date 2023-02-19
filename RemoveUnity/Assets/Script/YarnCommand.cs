@@ -458,6 +458,20 @@ public class YarnCommand : MonoBehaviour
         GameObject.Find("FadeCanvas").transform.Find("CalenderD").gameObject.SetActive(false);
     }
 
+    //사진 5 캘린더 동시 사진
+    [YarnCommand("picture5CalenderIn")]
+    public static void picture5CalenderDIn()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture5Calendar").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("picture5CalenderOut")]
+    public static void picture5CalenderDOut()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("Picture5Calendar").gameObject.SetActive(false);
+    }
+
+
     //의문의 어플 사진
     [YarnCommand("ApplicationLIn")]
     public static void ApplicationLIn()
