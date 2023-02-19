@@ -7,7 +7,6 @@
 title: InferingStart
 tags:
 ---
-<<fadeIn FadeImage FadeImage>>
 <<setNumber 3>>
 <<playMusic MusicManager 35>>
 <<set $InferingEnter = true>>

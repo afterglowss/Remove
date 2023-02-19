@@ -448,7 +448,7 @@ title: Ending5
 <<wait 0.5>>
 <<playSound SoundManager 31>>
 <<wait 0.5>>
-
+<<stopSound SoundManager>>
 -뚝.
 갑자기 전화가 끊겼다.
 나: (어떡하지...... 뭘 해야 하는 거지.)
@@ -527,6 +527,7 @@ title: Ending5
 <<textFadeOut EndingText EndingText>>
 <<wait 3>>
 <<textFadeIn EndingCredit EndingCredit>>
+<<fadeIn Logo Logo>>
 <<wait 3>>
 <<textAppear MainText>>
 ===
