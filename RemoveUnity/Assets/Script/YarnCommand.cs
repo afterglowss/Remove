@@ -142,6 +142,19 @@ public class YarnCommand : MonoBehaviour
         GameObject.Find("FadeCanvas").transform.Find("Knife").gameObject.SetActive(false);
     }
 
+    //부엌식칼 확대 사진
+    [YarnCommand("knifeZoomIn")]
+    public static void KnifeZoomIn()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("KnifeZoom").gameObject.SetActive(true);
+    }
+
+    [YarnCommand("knifeZoomOut")]
+    public static void KnifeZoomOut()
+    {
+        GameObject.Find("FadeCanvas").transform.Find("KnifeZoom").gameObject.SetActive(false);
+    }
+
     //창문 위 손자국 사진
     [YarnCommand("handprintIn")]
     public static void HandprintIn()
