@@ -7,9 +7,9 @@
 title: InferingStart
 tags:
 ---
+<<fadeIn FadeImage FadeImage>>
 <<setNumber 3>>
 <<playMusic MusicManager 35>>
-<<fadeIn FadeImage FadeImage>>
 <<set $InferingEnter = true>>
 <<wait 1>>
 이제 눈에 보이는 단서는 다 지웠다.
@@ -23,6 +23,7 @@ tags:
 어쩌면 지금이 마지막 기회일지도 모른다.
 대체 무엇이 거슬렸는지 찾아낼 기회.
 그래, 다시 처음부터 천천히 되짚어보자.
+<<fadeOut FadeImage FadeImage>>
 
 어디부터 되짚어 봐야 좋을까.
 감이 전혀 잡히지 않아......
@@ -36,6 +37,7 @@ tags:
 기억이 아주 드문드문 나지만, 아예 안 나는 것은 아냐. 
 그날 행인과 구급대원들이 했던 말을 회상해 보자.
 
+<<fadeIn FadeImage FadeImage>>
 <<playSound SoundManager 2>>
 <<wait 1>>
 ......신고자 분 어디 계십......
