@@ -420,7 +420,7 @@ title: InferingGallery
 ---
 <<setNumber 1>>
 갤러리의 이 사진과 연관지을 수 있는데......
--> 한강공원 사진
+-> 노트북으로 작업을 하는 누군가의 뒷모습 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -428,7 +428,7 @@ title: InferingGallery
     <<else>>
         <<jump InferingGallery>>
     <<endif>>
--> 8-3번 사진
+-> 캠퍼스에서 사진을 찍는 누군가의 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -436,7 +436,7 @@ title: InferingGallery
     <<else>>
         <<jump InferingGallery>>
     <<endif>>
--> 진단서 사진
+-> 병원 진단서 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<medicalCertificateIn>>
@@ -485,7 +485,7 @@ title: Etc
 ---
 <<setNumber 1>>
 그 외에, 날짜와 시간대가 이상한 것들은......
--> 심재환 공부하는 뒷모습 사진
+-> 노트북으로 작업을 하는 누군가의 뒷모습 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<picture4In>>
@@ -493,7 +493,7 @@ title: Etc
     <<picture4Out>>
     이 사진과 비교했을 때, 이걸 10월 15일에 찍었다는 건 말이 안 돼.
     <<jump ComparingWithPicture4>>
--> 5번 사진
+-> 도서관에서 공부를 하는 누군가의 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -501,7 +501,7 @@ title: Etc
     <<else>>
         <<jump Etc>>
     <<endif>>
--> 9번 사진
+-> 벚꽃 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -514,7 +514,7 @@ title: ComparingWithPicture4
 ---
 비교할 만한 사진은......
 <<setNumber 1>>
--> 10번 사진
+-> 캘리포니아롤 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -522,7 +522,7 @@ title: ComparingWithPicture4
     <<else>>
         <<jump ComparingWithPicture4>>
     <<endif>>
--> 14번 사진
+-> 한강 불꽃축제 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -530,7 +530,7 @@ title: ComparingWithPicture4
     <<else>>
         <<jump ComparingWithPicture4>>
     <<endif>>
--> 한강공원 사진
+-> 벤치에 앉은 누군가의 사진
     <<setNumber 3>>
     그래.
     <<playSound SoundManager 34>>
@@ -554,7 +554,7 @@ title: InferingFakePicture
 ---
 이 중 조작된 사진은......
 <<setNumber 1>>
--> 한강공원 사진
+-> 노트북으로 작업을 하는 누군가의 뒷모습 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -562,7 +562,7 @@ title: InferingFakePicture
     <<else>>
         <<jump InferingFakePicture>>
     <<endif>>
--> 심재환 공부하는 뒷모습 사진
+-> 벤치에 앉은 누군가의 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<hanriverIn>>
@@ -576,7 +576,7 @@ title: InferingPictureTime
 ---
 <<setNumber 1>>
 시간대가 이상한 사진은......
--> 심재환 도서관 사진
+-> 서점에서 책을 고르는 누군가의 사진
     <<setNumber 3>>
     <<picture8_2In>>
     <<playSound SoundManager 34>>
@@ -586,7 +586,7 @@ title: InferingPictureTime
     근데 내가 10월 10일에 찍을 수 없었던 이유가 있어.
     이것도 다른 곳에 힌트가 있었지.
     <<jump InferingImpossible>>
--> 12번 사진
+-> 초점이 흔들린 도시 건물 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -594,7 +594,7 @@ title: InferingPictureTime
     <<else>>
         <<jump InferingPictureTime>>
     <<endif>>
--> 6번 사진
+-> 브이를 하는 누군가의 손 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -967,7 +967,7 @@ title: InferingD
 ---
 D의 힌트가 되는 사진은......
 <<setNumber 1>>
--> 1번 사진
+-> 카페 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
@@ -975,7 +975,7 @@ D의 힌트가 되는 사진은......
     <<else>>
         <<jump InferingD>>
     <<endif>>
--> 5번 사진
+-> 도서관에서 공부를 하는 누군가의 사진
     <<setNumber 3>>
     맞아. 아까 그 사진.
     <<picture5In>><<CalenderDIn>>
@@ -990,7 +990,7 @@ D의 힌트가 되는 사진은......
     그리고 D와 관련되어 보이는 듯한 사진들이 더 있었지.
     거기서 자주 등장했던 것들이 있었는데.
     <<jump InferingPictureD>>
--> 14번 사진
+-> 한강 불꽃축제 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=4>>
