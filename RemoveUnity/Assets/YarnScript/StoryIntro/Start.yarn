@@ -32,7 +32,7 @@ tags:
 최준재 의사: 환자 분께서는 계단에 발을 헛디뎌 넘어지시면서 머리를 바닥에 세게 부딪혀 정신을 잃으셨습니다.<br>기억 안 나십니까?
 <<fadeIn FadeImage FadeImage>>
 <<playSound SoundManager 5>>
-<<wait 0.5>>
+<<wait 2>>
 <<fadeOut FadeImage FadeImage>>
 <<stopSound SoundManager>>
 <<wait 1>>

@@ -19,6 +19,7 @@ public class TimeController : MonoBehaviour
     float photoDelete;
     bool bloodTissue, fingerInCakeBox, floorHammer, stalkingPicture;
     bool bloodHandprint, smellOfBlood, cigaretteInBathroom, bloodOnCloth, bloodOnRug;
+    bool ohHanaTalk, shimJaehwanTalk, clueToTheTruth, ring1, ring2;
 
     int hour = 1;
     int min = 45;
@@ -53,10 +54,17 @@ public class TimeController : MonoBehaviour
         variableStorage.TryGetValue("$BloodOnCloth", out bloodOnCloth);
         variableStorage.TryGetValue("$BloodOnRug", out bloodOnRug);
 
+        variableStorage.TryGetValue("$OhHanaTalk", out ohHanaTalk);
+        variableStorage.TryGetValue("$ShimJaehwanTalk", out shimJaehwanTalk);
+        variableStorage.TryGetValue("$ClueToTheTruth", out clueToTheTruth);
+        variableStorage.TryGetValue("$Ring1", out ring1);
+        variableStorage.TryGetValue("$Ring2", out ring2);
+
         if (photoDelete == 4 && bloodTissue == true && bloodOnRug == true && 
             bloodOnCloth == true && bloodHandprint == true && fingerInCakeBox == true &&
             floorHammer == true && stalkingPicture == true && smellOfBlood == true &&
-            cigaretteInBathroom == true && a == 0)
+            cigaretteInBathroom == true && ohHanaTalk == true && shimJaehwanTalk == true &&
+            clueToTheTruth == true && ring1 == true && ring2 == true && a == 0)
         {
             a++;
             Remove();

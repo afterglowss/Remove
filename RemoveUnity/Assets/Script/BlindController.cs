@@ -17,6 +17,7 @@ public class BlindController : MonoBehaviour
     
     public void Up()
     {
+        SoundManager.instance.PlaySound("18");
         if (Target == new Vector3(38.842f, 3.509f, 0))
         {
             Target = new Vector3(38.842f, 5.61f, 0);
