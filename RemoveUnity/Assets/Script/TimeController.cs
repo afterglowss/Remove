@@ -21,8 +21,8 @@ public class TimeController : MonoBehaviour
     bool bloodHandprint, smellOfBlood, cigaretteInBathroom, bloodOnCloth, bloodOnRug;
 
     int hour = 1;
-    int min = 59;
-    float sec = 30f;
+    int min = 45;
+    float sec = 0f;
     public void Start()
     {
         a = 0;

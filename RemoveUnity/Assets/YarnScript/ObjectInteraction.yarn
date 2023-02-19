@@ -159,6 +159,7 @@ title: DresserDrawerLocked
 ===
 title: MentalHospitalCall
 ---
+<<stopSound SoundManager>>
 <<wait 1>>
 ??: ......에요?
 ??: 어? 받으셨네.
@@ -192,7 +193,7 @@ title: Drug
 -> 누군가가 나를 스토킹했기 때문에.
 	......응? 그 반대 아닌가?
 -> 망상 때문에 잠에 들지 못해서. <<if $MentalHospitalCall == true>>
-	<<jumpEnding2>>
+	<<jump Ending2>>
 ===
 
 title: KitchenFloor

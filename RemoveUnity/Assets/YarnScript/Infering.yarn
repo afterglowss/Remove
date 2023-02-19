@@ -8,6 +8,7 @@ title: InferingStart
 tags:
 ---
 <<setNumber 3>>
+<<playMusic MusicManager 35>>
 <<fadeOut FadeImage FadeImage>>
 <<set $InferingEnter = true>>
 <<wait 1>>
@@ -26,7 +27,6 @@ tags:
 어디부터 되짚어 봐야 좋을까.
 감이 전혀 잡히지 않아......
 그렇다면 내 마지막 기억인, 사고가 났던 날부터 시작해 봐야겠다.
-
 <<bluebox1_In>>
 <<wait 1>>
 <<bluebox1_Out>>
@@ -93,6 +93,7 @@ title: InferingBlood
     <<bluebox2_In>>
     <<wait 1>>
     <<bluebox2_Out>>
+    <<playSound SoundManager 34>>
     <<hammerIn>>
     왜 흉기를 시신과 함께 처리하지 않았을까?
     흉기를 도로 원룸으로 가지고 돌아온 이유가 뭐지?
@@ -131,6 +132,7 @@ title: InferingRoomobject
     <<endif>>
 -> 냉장고 안에 있었다
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<fingerIn>>
     맞아. 손가락.
     <<fingerOut>>
@@ -210,6 +212,7 @@ title: InferingWeapon2
 -> 부엌에 있었다
     <<setNumber 3>>
     맞아, 부엌이야.
+    <<playSound SoundManager 34>>
     <<knifeIn>>
     부엌에 있던 그 큰 식칼.
     아마도 고기 자를 때 쓰는 칼처럼 생겼었지.
@@ -226,9 +229,11 @@ title: InferingKnife
 -> 칼날 부분
     <<setNumber 3>>
     맞아! 칼날이 이상해.
+    <<playSound SoundManager 34>>
     <<hammerIn>>
     망치에는 피가 잔득 묻어있었잖아.
     <<hammerOut>>
+    <<playSound SoundManager 34>>
     <<knifeIn>>
     근데 칼날엔 피가 묻어있지 않았어.
     <<knifeOut>>
@@ -321,6 +326,7 @@ title: InferingProof
     <<endif>>
 -> 창문
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<handprintIn>>
     맞아. 창문이야.
     창문에 찍혀 있던 손자국...... 이상해.
@@ -342,6 +348,7 @@ title: InferingHandprint
 -> 위치
     <<setNumber 3>>
     그래! 위치가 이상했어.
+    <<playSound SoundManager 34>>
     <<handprintTxtIn>>
     손자국은 높이 있어서 침대 위에 올라가 손자국을 닦아야 했을 정도였지.
     <<handprintTxtOut>>
@@ -376,6 +383,7 @@ title: InferingOther
     원룸에는 더 없었던 거 같다.
     그렇다면 스마트폰에서 그런 증거를 찾을 수 있지 않을까?
     스마트폰에서 수상한 것이 있었는지 생각해 보자......
+    <<playSound SoundManager 34>>
     <<messageIn>>
     스마트폰을 뒤지다 보니, 협박 문자를 발견했었지.
     <<messageOut>>
@@ -430,6 +438,7 @@ title: InferingGallery
     <<endif>>
 -> 진단서 사진
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<medicalCertificateIn>>
     맞아. 진단서.
     <<medicalCertificateOut>>
@@ -451,10 +460,12 @@ title: InferingCombining
 -> 문자를 보낸 시간대
     <<setNumber 3>>
     그래. 날짜가 이상하다.
+    <<playSound SoundManager 34>>
     <<medicalCertificateZoomIn>>
     나는 11월 3일에 진료를 받았어.
     그렇다는 건 최소 11월 4일 자정부터는 의식이 없었어야 정상이야.
     <<medicalCertificateZoomOut>>
+    <<playSound SoundManager 34>>
     <<messageZoomIn>>
     이 시간에 내가 협박 문자를 보내는 것은 불가능해.
     <<messageZoomOut>>
@@ -476,6 +487,7 @@ title: Etc
 그 외에, 날짜와 시간대가 이상한 것들은......
 -> 심재환 공부하는 뒷모습 사진
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<picture4In>>
     맞아. 이 사진
     <<picture4Out>>
@@ -521,13 +533,16 @@ title: ComparingWithPicture4
 -> 한강공원 사진
     <<setNumber 3>>
     그래.
+    <<playSound SoundManager 34>>
     <<picture34In>>
     이 두 사진은 같은 날짜에 찍혔어.
     <<picture34Out>>
+    <<playSound SoundManager 34>>
     <<picture34DetailIn>>
     하지만 장소는 서로 다른 곳이야. 
     우리 학교와 한강공원은 그다지 가까운 거리도 아니고.
     <<picture34DetailOut>>
+    <<playSound SoundManager 34>>
     <<picture34In>>
     내가 누군가와 만나면서 심재환을 스토킹했단 건 말이 안 돼......
     <<picture34Out>>
@@ -549,6 +564,7 @@ title: InferingFakePicture
     <<endif>>
 -> 심재환 공부하는 뒷모습 사진
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<hanriverIn>>
     그래. 지연이는 분명 하나가 나랑 한강에서 만난 걸 들었다고 했어.
     <<hanriverOut>>
@@ -563,6 +579,7 @@ title: InferingPictureTime
 -> 심재환 도서관 사진
     <<setNumber 3>>
     <<picture8_2In>>
+    <<playSound SoundManager 34>>
     그래. 이 사진.
     내가 10월 10일에 찍었다고 했지?
     <<picture8_2Out>>
@@ -608,6 +625,7 @@ title: InferingImpossible
     <<endif>>
 -> 이지연
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<mainhouseIn>>
     그래. 일이 있어 본가에 내려갔었어.
     게다가 지연이가 그걸 봤다고 했지.
@@ -622,6 +640,7 @@ title: InferingMessageMore
 -> 내가 말하지 말라고 했잖아 ㅋㅋ...
     <<setNumber 3>>
     맞아. 이 부분.
+    <<playSound SoundManager 34>>
     <<WordspacingIn>>
     나는 이모티콘이나 초성을 쓸 때 앞 말과 띄어쓰지 않아.
     <<WordspacingOut>>
@@ -717,6 +736,7 @@ title: InferingObjects
 -> 신발장과 책장에 있었다
     <<setNumber 3>>
     응. 각각 신발장과 책장이었지.
+    <<playSound SoundManager 34>>
     <<MajorbookIn>>
     일단 책장에 꽂혀있던 책은 내 것이 아닌 거 같았어.
     <<MajorbookOut>>
@@ -779,9 +799,11 @@ title: InferingBookOwner
     <<endif>>
 -> 오하나
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<SocialpsyIn>>
     갤러리에 사회심리학이 찍힌 사진이 있었지.
     <<SocialpsyOut>>
+    <<playSound SoundManager 34>>
     <<SocialpsyTxtIn>>
     그리고 그게 찍힌 날짜와 같은 날짜에 심재환과 문자를 주고 받았어.
     심재환이 나보고 어디냐고 묻고 있었으니 나와 다른 장소에 있었단 거겠지.
@@ -789,6 +811,7 @@ title: InferingBookOwner
     그럼 그 때 나와 같이 공부하던 사람은 오하나.
     그 책들은 하나 것이었겠네.
     <<SneakerIn>>
+    <<playSound SoundManager 34>>
     그리고 그 운동화.
     <<SneakerOut>>
     내 것이 아니란 단서를 여기서 찾을 수 있었지.
@@ -825,10 +848,12 @@ title: InferingSneaker
 -> 갤러리
     <<setNumber 3>>
     맞아. 갤러리.
+    <<playSound SoundManager 34>>
     <<ShoesIn>>
     갤러리에 있던 구두 판매사이트 캡쳐본.
     사이즈가 240이었어.
     <<ShoesOut>>
+    <<playSound SoundManager 34>>
     <<SneakerIn>>
     운동화의 사이즈는 260이었고.
     <<SneakerOut>>
@@ -879,10 +904,12 @@ title: RoomGallery
     <<endif>>
 -> 반지
     <<setNumber 3>>
+    <<playSound SoundManager 34>>
     <<RingIn>>
     그래. 반지.
     그 반지의 주인을 찾아야 해.
     <<RingOut>>
+    <<playSound SoundManager 34>>
     <<bluebox5_In>>
     <<wait 1>>
     <<bluebox5_Out>>
@@ -905,19 +932,23 @@ title: InferingRing
     <<setNumber 3>>
     응.
     한 개는 딱 맞고 한 개는 조금 헐렁거리네.
+    <<playSound SoundManager 34>>
     <<RingAnotherIn>>
     그렇다는 건 이것의 주인은 다른 사람이겠어.
     <<RingAnotherOut>>
     누가 주인이었을까?
     그 전에 스마트폰에서 발견할 수 있었던 수상한 흔적을 떠올려 보자.
     아직 의문이 풀리지 않은 것들이 몇 개 있어.
+    <<playSound SoundManager 34>>
     <<TxtWithHanaIn>>
     일단, 하나와의 대화 내역이 모두 지워져 있었다는 것.
     <<TxtWithHanaOut>>
     <<CalenderDIn>>
+    <<playSound SoundManager 34>>
     그리고 캘린더의 'D'일정이 무엇을 의미하는지 알 수 없다는 점.
     <<CalenderDOut>>
     <<ApplicationLIn>>
+    <<playSound SoundManager 34>>
     또 비밀번호가 걸려 있어 열 수 없었던 그 어플.
     <<ApplicationLOut>>
     일단 'D'가 무엇인지 알 수 있는 힌트가 갤러리에 있었던 것 같아.
@@ -948,9 +979,11 @@ D의 힌트가 되는 사진은......
     <<setNumber 3>>
     맞아. 아까 그 사진.
     <<picture5In>><<CalenderDIn>>
+    <<playSound SoundManager 34>>
     이게 D랑 같은 날짜에 찍혀 있었어.
     <<picture5Out>><<CalenderDOut>>
     <<picture5In>>
+    <<playSound SoundManager 34>>
     그리고 아까 추측에 의하면, 이 사진 속 손의 주인은 아마도 하나였을거야.
     <<picture5Out>>
     그렇다는 건, D는 하나와 연관이 있는 일정이겠네.
@@ -1001,16 +1034,19 @@ title: InferingPictureD
 ===
 title: RingToFinger
 ---
+<<stopMusic MusicManager>>
 검증을 도울 수 있는 도구는......
 <<setNumber 1>>
 -> 케이크 상자 속
     <<setNumber 3>>
     ......그래.
+    <<playSound SoundManager 34>>
     <<fingerIn>>
     나는 아까 숨겨두었던 하나의 손가락을 조심스레 꺼냈다.
     끔찍한 냄새가 콧 속을 후비는 것 같다.
     <<fingerOut>>
     나는 구역질을 참으며 그 손가락에 남은 반지를 끼웠다.
+    <<playSound SoundManager 34>>
     <<FingerInRingIn>>
     ......반지는 손가락에 딱 맞았다.
     <<jump KeepGoing>>
@@ -1033,6 +1069,7 @@ title: RingToFinger
 ===
 title: KeepGoing
 ---
+<<playMusic MusicManager 34>>
 ......그래. 하나의 것이 맞아.
 <<FingerInRingOut>>
 그렇다는 건, 나랑 하나가 우정 반지라도 맞춘 걸까?
@@ -1068,6 +1105,7 @@ title: PasswordCorrect
 
 <<set $chance = 0>>
 맞아. 8월 28일이야.
+<<playSound SoundManager 34>>
 <<Memo_8_28In>>
 8월 28일, 메모장에 적힌 내용들이 있었지.
 케이크, 꼬깔 모자, 선물, 마치 누군가의 생일을 준비하는 듯 했어.
@@ -1081,12 +1119,15 @@ title: PasswordCorrect
 title: Clear
 ---
 <<setNumber 3>>
+<<stopMusic MusicManager>>
 <<wait 1>>
 ......모든 것이 선명해진다.
 나는 하나의 물건들이 왜 내 원룸에 많았는지 기억한다.
+<<playSound SoundManager 34>>
 <<TwoRingsIn>>
 나는 반지의 의미를 기억한다.
 <<TwoRingsOut>>
+<<playSound SoundManager 34>>
 <<CalenderDIn>>
 ......나는 'D'가 무엇의 약자인지 기억한다.
 <<CalenderDOut>>
@@ -1155,7 +1196,8 @@ title: PersonWhoKnows
     <<endif>>
 -> 심재환
     <<setNumber 3>>
-    그래. 
+    그래.
+    <<playSound SoundManager 34>>
     <<TxtWithJaeIn>>
     심재환과의 대화 내역에 아무에게도 말하지 말아달라고 신신당부하는......
     그런 내용의 대화가 있었어.
@@ -1186,8 +1228,10 @@ title: Truth
 
 나를 스토킹하다가, 질투에 하나를 죽인 사람은......
 -> 심재환
+<<playSound SoundManager 28>>
 <<fadeIn FadeImage FadeImage>>
-<<wait 1>>
+<<wait 1.5>>
+<<playSound SoundManager 29>>
 띵동. 띵동.
 쾅쾅쾅!!!
 갑자기 문 밖에서 큰소리가 나기 시작했다. 아무래도 누군가 온 모양이다.
@@ -1196,11 +1240,12 @@ title: Truth
 심장이 떨린다.
 
 나: 누구세요?
+<<wait 1>>
 ???: 아가씨! 나예요! 아휴, 여기서 담배를 피우면 어떡해!!!
 
 다행히도 집주인인 모양이다.
 나는 평정심을 되찾기 위해 심호흡하며 집주인에게 사과했다.
-<<wait 2>>
+<<wait 1>>
 <<jumpEnding5>>
 ===
 title: Fail
