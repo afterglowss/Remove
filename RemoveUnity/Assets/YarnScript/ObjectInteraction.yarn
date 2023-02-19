@@ -90,16 +90,16 @@ title: Diagnosis
 ===
 title: OhHana
 ---
-<<set $OhHanaTalk = true>>
 ...어라? 메신저함이 깔끔하게 비워져 있다.
 지운 이유가 있을까?
+<<set $OhHanaTalk = true>>
 ===
 title: ShimJaehwan
 ---
-<<set $ShimJaehwanTalk = true>>
 ...협박 문자다.
 아마 살인 사건이 있었던 날 보낸 거겠지.
 심재환이 이 사건을 목격이라도 한 걸까?
+<<set $ShimJaehwanTalk = true>>
 ===
 
 title: Blood
