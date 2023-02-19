@@ -16,7 +16,7 @@ public class SceneChanger : MonoBehaviour
     private void Update()
     {
         Phone.transform.position = Vector3.Lerp(Phone.transform.position, 
-            phonePosition, Time.deltaTime * 2f);
+            phonePosition, Time.deltaTime * 2.5f);
     }
 
     [YarnCommand("phonePositionDown")]

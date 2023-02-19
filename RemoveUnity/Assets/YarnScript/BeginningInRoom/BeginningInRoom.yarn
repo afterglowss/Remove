@@ -5,7 +5,7 @@ tags:
 ->예
     <<objectDelete HammerBlockImage HammerBlockImage>>
     <<objectDelete Scene Scene>>
-    <<playMusic MusicManager 11>>
+    <<playMusic MusicManager 33>>
     <<stop>>
 ->아니오
     <<setNumber 1>>
@@ -162,6 +162,7 @@ title: StartingGame
 <color=yellow>그 전까지 모든 증거를 없애고 경찰에 붙잡히지 마세요.</color>
 <color=yellow>행운을 빕니다.</color>
 <<optionBlock 1>>
+<<playMusic MusicManager 33>>
 ===
 title: Surrender
 ---
@@ -186,7 +187,7 @@ title: Ending1
 ---
 <<fadeOut FadeImage FadeImage>>
 <<wait 2>>
-<<playMusic MusicManager 11>>
+<<playMusic MusicManager 13>>
 <<playRepeatSound SoundManager 14>>
 나: ......잘은 모르지만, 그런 거 같아요.
 경찰: 여기 진술서입니다. 방금 말씀하신 내용 여기에 적어주시면 되고요.
@@ -225,7 +226,6 @@ title: Ending2
 <<playSound SoundManager 16>>
 나는 약병을 털어 약을 잔뜩 꺼낸 뒤, 몽땅 입 속에 집어 넣었다.
 <<wait 0.5>>
-<<playSound SoundManager 2>>
 <<fadeOut FadeImage FadeImage>>
 <<wait 1>>
 <<playSound SoundManager 3>>
@@ -298,7 +298,7 @@ title: Ending3
 나: ......네.
 
 <<fadeOut FadeImage FadeImage>>
-<<playMusic MusicManager 11>>
+<<playMusic MusicManager 13>>
 <<wait 1>>
 <<playRepeatSound SoundManager 14>>
 나: 전 진짜 기억나는 게 없어요...

@@ -521,6 +521,10 @@ MonoBehaviour:
     bgm: {fileID: 8300000, guid: 6a50cdc3e791c034baca3d46f1419d49, type: 3}
   - name: 11
     bgm: {fileID: 8300000, guid: 3bdd8f965c3f7f1458f3f1a100c68e06, type: 3}
+  - name: 33
+    bgm: {fileID: 8300000, guid: 200365310b0796448b14ec91ed780eaa, type: 3}
+  - name: 35
+    bgm: {fileID: 8300000, guid: b56142573214c334d8a2fc29368f72c9, type: 3}
   - name: 36
     bgm: {fileID: 8300000, guid: 710bdd75c3404f44aa588cc540bb433f, type: 3}
   - name: 37
@@ -1805,6 +1809,8 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 5d158bec8b4ab454b806365a5e02aa23, type: 3}
   - name: 39
     sound: {fileID: 8300000, guid: f60306e04eede11469d6700389dfc377, type: 3}
+  - name: 40
+    sound: {fileID: 8300000, guid: 6bfe7273565916745b06410c582044b5, type: 3}
 --- !u!1 &1067914726
 GameObject:
   m_ObjectHideFlags: 0
