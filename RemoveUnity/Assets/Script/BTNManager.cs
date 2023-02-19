@@ -53,7 +53,44 @@ public class BTNManager : MonoBehaviour
                 OptionCanvasOn();
         }
     }
-
+    public void Awake()
+    {
+        if (BTNType.SkipToPhone == type)
+        {
+            gameObject.SetActive(GameManager.isScene[0]);
+        }
+        else if (BTNType.SkipToStoryEnd == type)
+        {
+            gameObject.SetActive(GameManager.isScene[1]);
+        }
+        else if (BTNType.SkipToGamescene == type)
+        {
+            gameObject.SetActive(GameManager.isScene[2]);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+    }
+    //public void Awake()
+    //{
+    //    if (BTNType.SkipToPhone == type && GameManager.isSeen == false)
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //    else if (BTNType.SkipToStoryEnd == type && GameManager.isSeen == false)
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //    else if (BTNType.SkipToGamescene == type && GameManager.isSeen == false)
+    //    {
+    //        gameObject.SetActive(true);
+    //    }
+    //    else if (BTNType.SkipToPhone == type && GameManager.isSeen == false)
+    //    {
+    //        gameObject.SetActive(false);
+    //    }
+    //}
     public void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();

@@ -7,8 +7,10 @@ position: 0,0
 <<Them>>
 언니!! 다쳤다는 거 진짜예요??!!?
 
+<<playSound SoundManager 41>>
 <<Me>>
 <<wait 3>>
+<<stopSound SoundManager>>
 괜찮아ㅋㅋ 그나저나 소식이 빠르네ㅋㅋ 나 아직 아무한테도 말 안했는데
     
 <<Them>>
@@ -19,10 +21,14 @@ position: 0,0
 <<monologue DialogueRunner Monologue1>>
 <<wait 2>>
 
+<<playSound SoundManager 41>>
 <<Me>>
 <<wait 2>>
+<<stopSound SoundManager>>
 아 그래?? 난 못 봤는데...
+<<playSound SoundManager 41>>
 <<wait 2>>
+<<stopSound SoundManager>>
 왜 말도 안 걸고 그냥 갔대😅
 
 <<Them>>
@@ -30,16 +36,22 @@ position: 0,0
 <<playSound SoundManager 6>>
 혹시 다른 사람일까봐 그냥 왓대요
 <<wait 2>>
+<<stopSound SoundManager>>
 <<playSound SoundManager 6>>
 걔 원래 그러잔아욬ㅋㅎ 진짜 극극 I
 <<wait 3>>
+<<stopSound SoundManager>>
 <<playSound SoundManager 6>>
 아 근데 언니!! 그래서 다친곳은 괜찮아요??ㅠㅠ
-
+<<wait 1>>
+<<playSound SoundManager 41>>
 <<Me>>
-<<wait 3>>
-어 부러진 곳도 없고 괜찮아 ㅋㅋ
 <<wait 2>>
+<<stopSound SoundManager>>
+어 부러진 곳도 없고 괜찮아 ㅋㅋ
+<<playSound SoundManager 41>>
+<<wait 2>>
+<<stopSound SoundManager>>
 근데 기억이 좀 가물가물하네
 
 <<Them>>
@@ -47,23 +59,30 @@ position: 0,0
 <<playSound SoundManager 6>>
 진짜요???!!?? 아니큰병이면어떡해요ㅜㅜㅠㅠ
 <<wait 2.5>>
+<<stopSound SoundManager>>
 <<playSound SoundManager 6>>
 의사는괜찮대요?? 그러게 조심좀하지ㅡㅡ
 <<wait 2.5>>
+<<stopSound SoundManager>>
 <<playSound SoundManager 6>>
 지금 심재환도 옆에서 언니 기억 가물가물하단거 듣고 진짜괜찮은거맞냐고 기억 뭐 안나는지 물어보라고 자꾸 닦달해요ㅠㅠ
 
+<<wait 1>>
+<<playSound SoundManager 41>>
 <<Me>>
-<<wait 4>>
+<<wait 3>>
+<<stopSound SoundManager>>
 난리네😅😅 사고 전후랑 몇 가지 사소한 기억 말고는 괜찮아 걱정마ㅎㅎ
 
 <<Them>>
 <<wait 2>>
 <<playSound SoundManager 6>>
 네 언니! 근ㄷㅇㅇ러ㅣ갸ㅑ
-
-<<Me>>
 <<wait 1>>
+
+<<playSound SoundManager 41>>
+<<Me>>
+<<stopSound SoundManager>>
 ?
 
 <<Them>>
@@ -74,19 +93,27 @@ position: 0,0
 <<monologue DialogueRunner Monologue2>>
 <<wait 2>>
 
+<<playSound SoundManager 41>>
 <<Me>>
 <<wait 2>>
+<<stopSound SoundManager>>
 괜찮아ㅋㅋ 아까 말한 게 다야
 
 <<Them>>
 <<wait 2>>
+<<stopSound SoundManager>>
 <<playSound SoundManager 6>>
 걱정 많이 했는데 다행이에요. 어쩌다 사고 난 건지도 기억 안나요?
 
+<<wait 1>>
+<<playSound SoundManager 41>>
 <<Me>>
-<<wait 3>>
-음...
 <<wait 2>>
+<<stopSound SoundManager>>
+음...
+<<playSound SoundManager 41>>
+<<wait 2>>
+<<stopSound SoundManager>>
 기억 안 나😅
 
 <<Them>>
@@ -96,9 +123,11 @@ position: 0,0
 <<wait 3>>
 <<playSound SoundManager 6>>
 제가 다시 뺏어왔어요;;심재환 저 싹바가지업는놈
-
+<<wait 1>>
+<<playSound SoundManager 41>>
 <<Me>>
-<<wait 2>>
+<<wait 1>>
+<<stopSound SoundManager>>
 잘했어ㅋㅋ
 <<wait 1>>
 <<monologue DialogueRunner Monologue3>>
@@ -120,5 +149,6 @@ title: Monologue3
 나는 후배들과 몇 가지 이야기를 마저 주고받은 뒤 휴대폰을 내려 놓았다.
 <<fadeOut Hospital Hospital>>
 <<wait 1.5>>
+
 <<jumpStoryEnd>>
 ===

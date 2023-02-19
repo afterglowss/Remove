@@ -52,6 +52,7 @@ tags:
 <<fadeOut FadeImage FadeImage>>
 
 그런데 이 대화, 어디가 수상한걸까?
+<color=yellow>선택지가 뜰 때마다 Tab을 눌러 스마트폰을 확인할 수 있습니다.</color>
 <<jump InferingStorystart>>
 ===
 title: InferingStorystart
@@ -600,7 +601,7 @@ title: InferingFakePicture
 ---
 이 중 조작된 사진은......
 <<setNumber 1>>
--> 노트북으로 작업을 하는 누군가의 뒷모습 사진
+-> 벤치에 앉은 누군가의 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -609,7 +610,7 @@ title: InferingFakePicture
         으음...... 이게 아닌 거 같은데.
         <<jump InferingFakePicture>>
     <<endif>>
--> 벤치에 앉은 누군가의 사진
+-> 노트북으로 작업을 하는 누군가의 뒷모습 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<hanriverIn>>
