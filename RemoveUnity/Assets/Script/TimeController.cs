@@ -17,13 +17,16 @@ public class TimeController : MonoBehaviour
     int a = 0, b = 0;
 
     float photoDelete;
-    bool bloodTissue, fingerInCakeBox, floorHammer, stalkingPicture;
-    bool bloodHandprint, smellOfBlood, cigaretteInBathroom, bloodOnCloth, bloodOnRug;
-    bool ohHanaTalk, shimJaehwanTalk, clueToTheTruth, ring1, ring2;
+    float bloodTissue, fingerInCakeBox, floorHammer, stalkingPicture;
+    float bloodHandprint, smellOfBlood, cigaretteInBathroom, bloodOnCloth, bloodOnRug;
+    float ohHanaTalk, shimJaehwanTalk, clueToTheTruth, ring1, ring2;
 
-    int hour = 1;
-    int min = 45;
-    float sec = 0f;
+    float bloodEvidence = 0;
+    float trueEvidence = 0;
+
+    static int hour = 1;
+    static int min = 45;
+    static float sec = 0f;
     public void Start()
     {
         a = 0;
@@ -54,17 +57,20 @@ public class TimeController : MonoBehaviour
         variableStorage.TryGetValue("$BloodOnCloth", out bloodOnCloth);
         variableStorage.TryGetValue("$BloodOnRug", out bloodOnRug);
 
+        bloodEvidence = photoDelete + bloodTissue + bloodOnRug +
+            bloodOnCloth + bloodHandprint + fingerInCakeBox +
+            floorHammer + stalkingPicture + smellOfBlood +
+            cigaretteInBathroom;
+
         variableStorage.TryGetValue("$OhHanaTalk", out ohHanaTalk);
         variableStorage.TryGetValue("$ShimJaehwanTalk", out shimJaehwanTalk);
         variableStorage.TryGetValue("$ClueToTheTruth", out clueToTheTruth);
         variableStorage.TryGetValue("$Ring1", out ring1);
         variableStorage.TryGetValue("$Ring2", out ring2);
 
-        if (photoDelete == 4 && bloodTissue == true && bloodOnRug == true && 
-            bloodOnCloth == true && bloodHandprint == true && fingerInCakeBox == true &&
-            floorHammer == true && stalkingPicture == true && smellOfBlood == true &&
-            cigaretteInBathroom == true && ohHanaTalk == true && shimJaehwanTalk == true &&
-            clueToTheTruth == true && ring1 == true && ring2 == true && a == 0)
+        trueEvidence = ohHanaTalk + shimJaehwanTalk + clueToTheTruth + ring1 + ring2;
+
+        if (bloodEvidence == 13 && trueEvidence == 5 && a == 0)
         {
             a++;
             Remove();
@@ -91,12 +97,28 @@ public class TimeController : MonoBehaviour
     public void TimeOut()
     {
         dialogueRunner.Stop();
-        dialogueRunner.StartDialogue("Intersection");
+        if (bloodEvidence != 13)
+        {
+            dialogueRunner.StartDialogue("Ending3Enter");
+        }
+        else if (bloodEvidence == 13 && trueEvidence != 5)
+        {
+            dialogueRunner.StartDialogue("Ending4Enter");
+        }
+        
     }
     public void Remove()
     {
         dialogueRunner.Stop();
         dialogueRunner.StartDialogue("ToInfering");
+    }
+
+    [YarnCommand("timeSet")]
+    public static void TimeSet()
+    {
+        hour = 1;
+        min = 45;
+        sec = 0f;
     }
 }
 
