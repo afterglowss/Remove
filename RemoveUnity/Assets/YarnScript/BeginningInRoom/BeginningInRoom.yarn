@@ -165,6 +165,8 @@ title: StartingGame
 <color=yellow>그 전까지 모든 증거를 없애고 경찰에 붙잡히지 마세요.</color>
 <color=yellow>행운을 빕니다.</color>
 <<optionBlock 1>>
+<<timeSet>>
+<<textAppear TimeText>>
 <<setNumber 1>>
 <<playMusic MusicManager 33>>
 ===
@@ -259,7 +261,7 @@ title: Ending2
 <<wait 3>>
 <<textAppear MainText>>
 ===
-title: Intersection
+title: Ending3Enter
 ---
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
@@ -349,6 +351,12 @@ title: Ending3
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
 <<textAppear MainText>>
+===
+title: Ending4Enter
+---
+<<fadeIn FadeImage FadeImage>>
+<<wait 1>>
+<<jumpEnding4>>
 ===
 title: Ending4
 ---
