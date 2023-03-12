@@ -197,7 +197,7 @@ title: KitchenCabinetLocked
 ===
 title: Drug
 ---
-부엌 찬장 안에 수면제가 들어 있다.
+부엌 찬장 안에 수면제가 들어 있다. 
 이건 약효가 강해 의사가 처방 없이 살 수 없다.
 나는 이 사실을 잘 알고 있다.
 내가 이 수면제를 처방받은 이유도 알고 있다.
@@ -268,11 +268,11 @@ title: StalkingPicture
 	어떻게 할까?
 	-> 떼어내어 정리한 후 옷장 속 옷 주머니 안에 숨긴다.
 		<<playSound SoundManager 22>>
+		<<objectDelete StalkingPicture StalkingPicture>>
 		<<wait 1>>
 		옷장 속 옷 주머니 안에 사진을 넣으려다 무언가를 발견했다. 
 		라이터와 담배가 들어있다. 
 		<<set $StalkingPicture = 1>> //스토킹 사진 옷 속에 숨김
-		<<objectDelete StalkingPicture StalkingPicture>>
 		<<set $LighterAndCigarette = true>> //라이터와 담배 발견
 		이걸로 무엇을 할까?
 		-> 라이터로 사진을 태운다.
@@ -461,12 +461,12 @@ title: CakeBox
 		<<wait 0.5>>
 		<<stopSound SoundManager>>
 		<<ringAppear Finger>>
-		케이크 상자 안에는 잘린 손가락이 들어 있었다.
+		케이크 상자 안에는 <color=red>잘린 손가락</color>이 들어 있었다.
 		역했다. 토할 것 같았지만 애써 억눌렀다.
 		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
 		그럼 어떻게 하지?
 		-> 휴지에 감싸서 쓰레기통에 버리자.
-			쓰레기통에 넣었다.
+			쓰레기통에 버렸다.
 			<<set $FingerInCakeBox = 1>>
 			<<objectDelete Finger Finger>>
 		-> 방법도 없으니 일단 이대로 둘까.

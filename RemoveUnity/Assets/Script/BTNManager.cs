@@ -50,7 +50,10 @@ public class BTNManager : MonoBehaviour
                 OptionCanvasOff();
             }
             else
+            {
                 OptionCanvasOn();
+            }
+                
         }
     }
     public void Awake()
@@ -72,25 +75,6 @@ public class BTNManager : MonoBehaviour
             gameObject.SetActive(true);
         }
     }
-    //public void Awake()
-    //{
-    //    if (BTNType.SkipToPhone == type && GameManager.isSeen == false)
-    //    {
-    //        gameObject.SetActive(true);
-    //    }
-    //    else if (BTNType.SkipToStoryEnd == type && GameManager.isSeen == false)
-    //    {
-    //        gameObject.SetActive(true);
-    //    }
-    //    else if (BTNType.SkipToGamescene == type && GameManager.isSeen == false)
-    //    {
-    //        gameObject.SetActive(true);
-    //    }
-    //    else if (BTNType.SkipToPhone == type && GameManager.isSeen == false)
-    //    {
-    //        gameObject.SetActive(false);
-    //    }
-    //}
     public void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
@@ -105,21 +89,13 @@ public class BTNManager : MonoBehaviour
                 Invoke("JumpStoryStart", 1f);
                 break;
             case BTNType.Option:
-                CanvasGroupOn(optionGroup);
-                optionGroup.alpha = 1;
-                CanvasGroupOff(mainGroup);
-                CanvasGroupOff(phoneGroup);
-                phoneGroup.alpha = 0;   
+                OptionCanvasOn();
                 break;
             case BTNType.Quit:
                 Application.Quit();
                 break;
             case BTNType.Back:
-                CanvasGroupOff(optionGroup);
-                optionGroup.alpha = 0;
-                CanvasGroupOn(mainGroup);
-                CanvasGroupOn(phoneGroup);
-                phoneGroup.alpha = 1;
+                OptionCanvasOff();
                 break;
             case BTNType.SkipToPhone:
                 dialogueRunner.Stop();
@@ -140,6 +116,7 @@ public class BTNManager : MonoBehaviour
 
     private void OptionCanvasOn()
     {
+        IsPause();
         CanvasGroupOn(optionGroup);
         optionGroup.alpha = 1;
         CanvasGroupOff(mainGroup);
@@ -148,11 +125,21 @@ public class BTNManager : MonoBehaviour
     }
     private void OptionCanvasOff()
     {
+        UnPause();
         CanvasGroupOff(optionGroup);
         optionGroup.alpha = 0;
         CanvasGroupOn(mainGroup);
         CanvasGroupOn(phoneGroup);
         phoneGroup.alpha = 1;
+    }
+
+    public void IsPause()
+    {
+        Time.timeScale = 0;
+    }
+    public void UnPause()
+    {
+        Time.timeScale = 1;
     }
 
     private void CanvasGroupOn(CanvasGroup cg)
