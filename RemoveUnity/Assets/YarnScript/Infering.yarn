@@ -27,9 +27,12 @@ tags:
 어디부터 되짚어 봐야 좋을까.
 감이 전혀 잡히지 않아......
 그렇다면 내 마지막 기억인, 사고가 났던 날부터 시작해 봐야겠다.
-<<bluebox1_In>>
-<<wait 3>>
-<<bluebox1_Out>>
+<<fadeIn Accident1 Accident1>>
+<<wait 2>>
+<<fadeIn Accident2 Accident2>>
+<<wait 4>>
+<<fadeOut Accident1 Accident1>>
+<<fadeOut Accident2 Accident2>>
 
 
 내가 사고가 났던 날.
@@ -109,9 +112,13 @@ title: InferingBlood
     그렇다면, 하나는 이 원룸 안이 아닌 원룸 바깥에서 죽었겠네.
     행인과 구급대원이 시신에 대해 언급하지 않은 걸로 봐선 이미 시신을 처리한 후였을테고.
     음, 그렇다면 다시 이상한 것이 생기는데......
-    <<bluebox2_In>>
-    <<wait 3>>
-    <<bluebox2_Out>>
+    <<fadeIn Weapon1 Weapon1>>
+    <<wait 2>>
+    <<fadeIn Weapon2 Weapon2>>
+    <<wait 4>>
+    <<fadeOut Weapon1 Weapon1>>
+    <<fadeOut Weapon2 Weapon2>>
+    <<wait 1>>
     <<playSound SoundManager 34>>
     <<hammerIn>>
     왜 흉기를 시신과 함께 처리하지 않았을까?
@@ -299,9 +306,12 @@ title: InferingCleanKnife
     그 사건 현장에 내가 아닌 누군가가 또 있었어.
     그리고...... 증거를 조작했어.
     이거말고도 사건 조작 증거를 찾을 수 있을까?
-    <<bluebox3_In>>
-    <<wait 3>>
-    <<bluebox3_Out>>
+    <<fadeIn Faking1 Faking1>>
+    <<wait 2>>
+    <<fadeIn Faking2 Faking2>>
+    <<wait 4>>
+    <<fadeOut Faking1 Faking1>>
+    <<fadeOut Faking2 Faking2>>
     일단 원룸부터 생각해 보자.
     누군가 내 원룸을 건드렸다는 증거가 있을까?
     <<jump InferingRoom>>
@@ -779,9 +789,12 @@ title: InferingReason
     하지만 뒤집어 생각해보면, 나에게도 오하나를 살해할 동기는 없지.
     과연 누가, 왜 죽인걸까?
     우리들의 관계가 어땠는지부터 떠올리면 좋겠네.
-    <<bluebox4_In>>
-    <<wait 3>>
-    <<bluebox4_Out>>
+    <<fadeIn Relationship1 Relationship1>>
+    <<wait 2>>
+    <<fadeIn Relationship2 Relationship2>>
+    <<wait 4>>
+    <<fadeOut Relationship1 Relationship1>>
+    <<fadeOut Relationship2 Relationship2>>
     우선 원룸에 있었던 수상한 물건부터 생각해 보자.
     그게 왠지 도움을 줄 수 있을 것 같네.
     원룸에는, 내 것이 아닌 듯한 물건이 몇 개 있었지.
@@ -979,9 +992,12 @@ title: RoomGallery
     그 반지의 주인을 찾아야 해.
     <<RingOut>>
     <<playSound SoundManager 34>>
-    <<bluebox5_In>>
-    <<wait 3>>
-    <<bluebox5_Out>>
+    <<fadeIn Ring1 Ring1>>
+    <<wait 2>>
+    <<fadeIn Ring2 Ring2>>
+    <<wait 4>>
+    <<fadeOut Ring1 Ring1>>
+    <<fadeOut Ring2 Ring2>>
     일단 반지 두 개를 모두 껴볼까?
     <<jump InferingRing>>
 -> 열쇠
@@ -1152,9 +1168,12 @@ title: KeepGoing
 그렇다는 건, 나랑 하나가 우정 반지라도 맞춘 걸까?
 그 때, 갑자기 어떤 생각이 머릿속을 빠르게 스쳐 지나갔다.
 
-<<bluebox6_In>>
-<<wait 3>>
-<<bluebox6_Out>>
+<<fadeIn Application1 Application1>>
+<<wait 2>>
+<<fadeIn Application2 Application2>>
+<<wait 4>>
+<<fadeOut Application2 Application2>>
+<<fadeOut Ring2 Ring2>>
 
 아, 비밀번호!!!
 그 어플의 비밀번호가 뭔지 기억났어.
