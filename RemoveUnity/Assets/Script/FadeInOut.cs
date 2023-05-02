@@ -66,8 +66,8 @@ public class FadeInOut : MonoBehaviour
         color = obj.GetComponent<TextMeshProUGUI>().color;
         while (FadeCount < 1.0f)
         {
-            FadeCount += 0.01f;
-            yield return new WaitForSeconds(0.02f);
+            FadeCount += 0.03f;
+            yield return new WaitForSeconds(0.0005f);
             color.a = FadeCount;
             obj.GetComponent<TextMeshProUGUI>().color = color;
         }
@@ -84,8 +84,8 @@ public class FadeInOut : MonoBehaviour
         color = obj.GetComponent<TextMeshProUGUI>().color;
         while (FadeCount > 0)
         {
-            FadeCount -= 0.01f;
-            yield return new WaitForSeconds(0.02f);
+            FadeCount -= 0.03f;
+            yield return new WaitForSeconds(0.0005f);
             color.a = FadeCount;
             obj.GetComponent<TextMeshProUGUI>().color = color;
         }
