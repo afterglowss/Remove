@@ -30,8 +30,8 @@ public class FadeInOut : MonoBehaviour
         color = obj.GetComponent<Image>().color;
         while (FadeCount < 1.0f)
         {
-            FadeCount += 0.01f;
-            yield return new WaitForSeconds(0.005f);
+            FadeCount += 0.03f;
+            yield return new WaitForSeconds(0.0005f);
             color.a = FadeCount;
             obj.GetComponent<Image>().color = color;
         }
@@ -48,8 +48,8 @@ public class FadeInOut : MonoBehaviour
         color = obj.GetComponent<Image>().color;
         while (FadeCount > 0)
         {
-            FadeCount -= 0.01f;
-            yield return new WaitForSeconds(0.005f);
+            FadeCount -= 0.03f;
+            yield return new WaitForSeconds(0.0005f);
             color.a = FadeCount;
             obj.GetComponent<Image>().color = color;
         }

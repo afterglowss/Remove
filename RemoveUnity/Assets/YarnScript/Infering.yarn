@@ -28,9 +28,9 @@ tags:
 감이 전혀 잡히지 않아......
 그렇다면 내 마지막 기억인, 사고가 났던 날부터 시작해 봐야겠다.
 <<fadeIn Accident1 Accident1>>
-<<wait 2>>
+<<wait 0.5>>
 <<fadeIn Accident2 Accident2>>
-<<wait 4>>
+<<wait 1>>
 <<fadeOut Accident1 Accident1>>
 <<fadeOut Accident2 Accident2>>
 
