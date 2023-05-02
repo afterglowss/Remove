@@ -92,7 +92,7 @@ public class BTNManager : MonoBehaviour
                 OptionCanvasOn();
                 break;
             case BTNType.Quit:
-                Application.Quit();
+                dialogueRunner.StartDialogue("AppExit");
                 break;
             case BTNType.Back:
                 OptionCanvasOff();
@@ -112,6 +112,11 @@ public class BTNManager : MonoBehaviour
                 dialogueRunner.StartDialogue("GameExit");
                 break;
         }
+    }
+    [YarnCommand("quit")]
+    public static void Quit()
+    {
+        Application.Quit();
     }
 
     private void OptionCanvasOn()
