@@ -1,6 +1,7 @@
 ﻿title: Surprising
 tags:
 ---
+<<musicFadeIn MusicManager>>
 <<playMusic MusicManager 11>>
 <<stopSound SoundManager>>
 <<if getSkip() == true>>
@@ -158,6 +159,7 @@ title: StartingGame
 정말 미안하지만, 산 사람은 살아야지.
 나는 증거를 모두 없애고 경찰에 붙잡히지 않을 것이다.
 <color=\#74F0FF>15분</color>이면 충분하다. 반드시 해낼 것이다.
+<<musicFadeOut MusicManager>>
 <<fadeOut Scene Scene>>
 <<wait 1>>
 <color=yellow>지금으로부터 15분 뒤, 정확히 2시에 경찰이 집에 도착합니다.</color>
@@ -168,12 +170,13 @@ title: StartingGame
 <<timeSet>>
 <<textAppear TimeText>>
 <<setNumber 1>>
+<<musicFadeIn MusicManager>>
 <<playMusic MusicManager 33>>
 ===
 title: Surrender
 ---
 <<fadeIn FadeImage FadeImage>>
-<<stopMusic MusicManager>>
+<<musicFadeOut MusicManager>>
 <<wait 1>>
 나: ...그래.
 나: 자수하자.
@@ -533,9 +536,9 @@ title: Ending5
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>
 <<textFadeIn EndingText EndingText>>
-<<wait 3>>
+<<wait 2>>
 <<textFadeOut EndingText EndingText>>
-<<wait 3>>
+<<wait 2>>
 <<textFadeIn EndingCredit EndingCredit>>
 <<fadeIn Logo Logo>>
 <<wait 3>>

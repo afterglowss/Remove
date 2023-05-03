@@ -40,6 +40,7 @@ tags:
 그날 행인과 구급대원들이 했던 말을 회상해 보자.
 
 <<fadeIn FadeImage FadeImage>>
+<<soundFadeIn SoundManager>>
 <<playSound SoundManager 2>>
 <<wait 1>>
 ......신고자 분 어디 계십......
@@ -56,6 +57,7 @@ tags:
 
 그런데 이 대화, 어디가 수상한걸까?
 <color=yellow>선택지가 뜰 때마다 Tab을 눌러 스마트폰을 확인할 수 있습니다.</color>
+//<<jump InferingPictureD>>
 <<jump InferingStorystart>>
 ===
 title: InferingStorystart
@@ -272,7 +274,6 @@ title: InferingKnife
     근데 칼날엔 피가 묻어있지 않았어.
     <<knifeZoomOut>>
     어째서지?
-    이게 가리키는 것은......
     <<jump InferingCleanKnife>>
 -> 손잡이 부분
     <<set $TotalChance = $TotalChance+1>>
@@ -333,7 +334,6 @@ title: InferingRoom
 -> 있다
     <<setNumber 3>>
     있었어.
-    그리고 그 증거는......
     <<jump InferingProof>>
 -> 없다
     <<set $TotalChance = $TotalChance+1>>
@@ -626,13 +626,12 @@ title: InferingFakePicture
     그래. 지연이는 분명 하나가 나랑 한강에서 만난 걸 들었다고 했어.
     <<hanriverOut>>
     그렇다면 저 사람은 하나겠구나.
-    또, 시간대가 이상한 사진이 있었던 거 같은데......
     <<jump InferingPictureTime>>
 ===
 title: InferingPictureTime
 ---
 <<setNumber 1>>
-시간대가 이상한 사진은......
+또, 시간대가 이상한 사진이 있었던 거 같은데......
 -> 서점에서 책을 고르는 누군가의 사진
     <<setNumber 3>>
     <<picture8_2In>>
@@ -939,7 +938,6 @@ title: InferingSneaker
     심재환은 대략 270 정도를 신는 걸로 알아.
     아마 하나의 것이야.
     원룸에 하나 물건이 생각보다 많아.
-    그렇다는 건......
     <<jump InferingHana>>
 ===
 title: InferingHana
@@ -1037,7 +1035,6 @@ title: InferingRing
     또 비밀번호가 걸려 있어 열 수 없었던 그 어플.
     <<ApplicationLOut>>
     일단 'D'가 무엇인지 알 수 있는 힌트가 갤러리에 있었던 것 같아.
-    그 힌트가 되는 사진은......
     <<jump InferingD>>
 -> 착용하지 말자
     <<set $TotalChance = $TotalChance+1>>
@@ -1124,7 +1121,8 @@ title: InferingPictureD
 ===
 title: RingToFinger
 ---
-<<stopMusic MusicManager>>
+<<musicFadeOut MusicManager>>
+//<<pauseMusic MusicManager>>
 검증을 도울 수 있는 도구는......
 <<setNumber 1>>
 -> 케이크 상자 속
@@ -1161,7 +1159,8 @@ title: RingToFinger
 ===
 title: KeepGoing
 ---
-<<playMusic MusicManager 34>>
+<<musicFadeIn MusicManager>>
+//<<unPauseMusic MusicManager>>
 ......그래. 하나의 것이 맞아.
 <<FingerInRingOut>>
 그렇다는 건, 나랑 하나가 우정 반지라도 맞춘 걸까?
@@ -1173,7 +1172,6 @@ title: KeepGoing
 <<wait 1>>
 <<fadeOut Application1 Application1>>
 <<fadeOut Application2 Application2>>
-<<fadeOut Ring2 Ring2>>
 
 아, 비밀번호!!!
 그 어플의 비밀번호가 뭔지 기억났어.
@@ -1216,7 +1214,7 @@ title: PasswordCorrect
 title: Clear
 ---
 <<setNumber 3>>
-<<stopMusic MusicManager>>
+<<musicFadeOut MusicManager>>
 <<wait 1>>
 ......모든 것이 선명해진다.
 나는 하나의 물건들이 왜 내 원룸에 많았는지 기억한다.
@@ -1256,7 +1254,7 @@ title: DCorrect
 ===
 title: InferingApplication
 ---
-그리고 이걸 알 수 있는 어플은......
+그리고 누가 알고 있는지 알 수 있는 어플은......
 <<setNumber 1>>
 -> L
     <<set $TotalChance = $TotalChance+1>>
@@ -1269,7 +1267,6 @@ title: InferingApplication
     <<endif>>
 -> 메신저
     <<setNumber 3>>
-    그리고, 그걸 알고 있는 사람은......
     <<jump PersonWhoKnows>>
 -> 통화 기록
     <<set $TotalChance = $TotalChance+1>>
@@ -1283,7 +1280,7 @@ title: InferingApplication
 ===
 title: PersonWhoKnows
 ---
-그 사람은......
+나와 하나의 관계를 알고 있는 사람은......
 <<setNumber 1>>
 
 -> 이지연
