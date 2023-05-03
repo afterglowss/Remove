@@ -113,12 +113,12 @@ title: InferingBlood
     행인과 구급대원이 시신에 대해 언급하지 않은 걸로 봐선 이미 시신을 처리한 후였을테고.
     음, 그렇다면 다시 이상한 것이 생기는데......
     <<fadeIn Weapon1 Weapon1>>
-    <<wait 2>>
+    <<wait 0.5>>
     <<fadeIn Weapon2 Weapon2>>
-    <<wait 4>>
+    <<wait 1>>
     <<fadeOut Weapon1 Weapon1>>
     <<fadeOut Weapon2 Weapon2>>
-    <<wait 1>>
+    <<wait 0.5>>
     <<playSound SoundManager 34>>
     <<hammerIn>>
     왜 흉기를 시신과 함께 처리하지 않았을까?
@@ -307,9 +307,9 @@ title: InferingCleanKnife
     그리고...... 증거를 조작했어.
     이거말고도 사건 조작 증거를 찾을 수 있을까?
     <<fadeIn Faking1 Faking1>>
-    <<wait 2>>
+    <<wait 0.5>>
     <<fadeIn Faking2 Faking2>>
-    <<wait 4>>
+    <<wait 1>>
     <<fadeOut Faking1 Faking1>>
     <<fadeOut Faking2 Faking2>>
     일단 원룸부터 생각해 보자.
@@ -789,9 +789,9 @@ title: InferingReason
     과연 누가, 왜 죽인걸까?
     우리들의 관계가 어땠는지부터 떠올리면 좋겠네.
     <<fadeIn Relationship1 Relationship1>>
-    <<wait 2>>
+    <<wait 0.5>>
     <<fadeIn Relationship2 Relationship2>>
-    <<wait 4>>
+    <<wait 1>>
     <<fadeOut Relationship1 Relationship1>>
     <<fadeOut Relationship2 Relationship2>>
     우선 원룸에 있었던 수상한 물건부터 생각해 보자.
@@ -992,9 +992,9 @@ title: RoomGallery
     <<RingOut>>
     <<playSound SoundManager 34>>
     <<fadeIn Ring1 Ring1>>
-    <<wait 2>>
+    <<wait 0.5>>
     <<fadeIn Ring2 Ring2>>
-    <<wait 4>>
+    <<wait 1>>
     <<fadeOut Ring1 Ring1>>
     <<fadeOut Ring2 Ring2>>
     일단 반지 두 개를 모두 껴볼까?
@@ -1168,9 +1168,10 @@ title: KeepGoing
 그 때, 갑자기 어떤 생각이 머릿속을 빠르게 스쳐 지나갔다.
 
 <<fadeIn Application1 Application1>>
-<<wait 2>>
+<<wait 0.5>>
 <<fadeIn Application2 Application2>>
-<<wait 4>>
+<<wait 1>>
+<<fadeOut Application1 Application1>>
 <<fadeOut Application2 Application2>>
 <<fadeOut Ring2 Ring2>>
 
