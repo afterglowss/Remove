@@ -390,7 +390,7 @@ title: Basin
 	옷을 뒤적거리는데 주머니에서 무언가 나온다.
 	<<ringAppear ring1>>
 	<<playSound SoundManager 26>>
-	이건... <color=orange>반지</color>?
+	이건... <color=\#74F0FF>반지</color>?
 	주인을 알 수 없는 반지를 주웠다.
 	<<set $Ring1 = 1>>
 	은색에 검은 진주가 박힌 예쁜 반지다.
@@ -421,7 +421,7 @@ title: BathRoomTrashCan
 	쓰레기통 속에서 무언가 반짝거린다.
 	<<ringAppear ring22>>
 	<<playSound SoundManager 26>>
-	은색에 검은 진주가 박힌 예쁜 <color=orange>반지</color>다.
+	은색에 검은 진주가 박힌 예쁜 <color=\#74F0FF>반지</color>다.
 	<<set $Ring2 = 1>>
 	<<objectDelete ring22 ring22>>
 <<else>>
