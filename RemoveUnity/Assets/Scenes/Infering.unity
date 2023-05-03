@@ -18602,7 +18602,7 @@ GameObject:
   - component: {fileID: 435903718}
   - component: {fileID: 435903720}
   - component: {fileID: 435903719}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53074,7 +53074,7 @@ GameObject:
   - component: {fileID: 1302213921}
   - component: {fileID: 1302213920}
   - component: {fileID: 1302213919}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56795,7 +56795,7 @@ GameObject:
   - component: {fileID: 1389755568}
   - component: {fileID: 1389755567}
   - component: {fileID: 1389755569}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DMeaningImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
