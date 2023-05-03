@@ -48,7 +48,7 @@ position: 0,0
 <<Me>>
 <<wait 2>>
 <<stopSound SoundManager>>
-어 부러진 곳도 없고 괜찮아 ㅋㅋ
+어 부러진 곳도 없고 괜찮아ㅋㅋ
 <<playSound SoundManager 41>>
 <<wait 2>>
 <<stopSound SoundManager>>
