@@ -119,6 +119,8 @@ namespace Yarn.Unity.Example
         }
 
         Coroutine currentTypewriterEffect;
+        //DialogueAdvanceInput dialogueAdvanceInput;
+        //DialogueViewBase dialogueViewBase;
 
         public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
@@ -126,7 +128,7 @@ namespace Yarn.Unity.Example
             {
                 StopCoroutine(currentTypewriterEffect);
             }
-
+            
             CloneMessageBoxToHistory();
 
             text.text = dialogueLine.TextWithoutCharacterName.Text;
@@ -139,6 +141,20 @@ namespace Yarn.Unity.Example
                 onDialogueLineFinished();
             }
         }
+        //static bool leftMouseClick = false;
+        //private void Update()
+        //{
+        //    if (Input.GetMouseButtonDown(0)) 
+        //    { 
+        //        leftMouseClick = true;
+        //        GetLeftMouseClick();
+        //    }
+        //}
+        //[YarnFunction("getLeftMouseClick")]
+        //public static bool GetLeftMouseClick()
+        //{
+        //    return leftMouseClick;
+        //}
 
         public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
         {
