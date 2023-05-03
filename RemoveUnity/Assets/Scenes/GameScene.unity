@@ -2519,7 +2519,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1919.9999, y: 1079.9999}
+  m_SizeDelta: {x: 1920.0001, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &45948197
 CanvasGroup:
@@ -30816,7 +30816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b02d71e16b7f54a81faaa02cf65a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Open: {fileID: 21300000, guid: dde81c605945d9f4bb8fe7cb44eb240f, type: 3}
+  Open: {fileID: 21300000, guid: 860f5627c74288641bd35101bbb9e407, type: 3}
   Close: {fileID: 21300000, guid: a520fc3f0161d9b479c665ded8c1bb93, type: 3}
 --- !u!1 &731431585
 GameObject:
@@ -32740,7 +32740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 238155550, guid: 60f5bfe2dba5ea94f952e3b352fdd750, type: 3}
+  m_Sprite: {fileID: -1105805022, guid: d99d04c35f0b72c42883c82b97c89be1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33116,6 +33116,22 @@ PrefabInstance:
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: onNodeComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 35541448}
+    - target: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1713156339
       objectReference: {fileID: 0}
     - target: {fileID: 4540255442126730747, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_IsActive
