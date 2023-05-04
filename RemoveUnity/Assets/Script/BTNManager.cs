@@ -86,6 +86,7 @@ public class BTNManager : MonoBehaviour
         switch (type)
         {
             case BTNType.Start:
+                MusicManager.instance.MusicFadeOut();
                 Invoke("JumpStoryStart", 1f);
                 break;
             case BTNType.Option:

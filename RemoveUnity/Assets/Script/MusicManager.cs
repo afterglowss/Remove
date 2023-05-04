@@ -24,6 +24,10 @@ public class MusicManager : MonoBehaviour
         musicSource.volume = volume;
         MusicManager.volume = volume;
     }
+    public float GetMusicVolume()
+    {
+        return musicSource.volume;
+    }
     
 
     private void Awake()
@@ -42,18 +46,19 @@ public class MusicManager : MonoBehaviour
         Scene nowScene = SceneManager.GetActiveScene();
         if (nowScene.name == "StartScene" && musicSource.isPlaying == false)
         {
-            for (int i = 0; i < BgmList.Length; i++)
-            {
-                if (BgmList[i].name == "1")
-                {
-                    musicSource.clip = BgmList[i].bgm;
-                    if (!musicSource.isPlaying)
-                    {
-                        musicSource.Play();
-                    }
-                    break;
-                }
-            }
+            //for (int i = 0; i < BgmList.Length; i++)
+            //{
+            //    if (BgmList[i].name == "1")
+            //    {
+            //        musicSource.clip = BgmList[i].bgm;
+            //        if (!musicSource.isPlaying)
+            //        {
+            //            musicSource.Play();
+            //        }
+            //        break;
+            //    }
+            //}
+            PlayMusic("1");
         }
     }
 
@@ -75,24 +80,6 @@ public class MusicManager : MonoBehaviour
             }
         }
     }
-    //[YarnCommand("playRepeatMusic")]
-    //public void PlayRepeatMusic(string str)
-    //{
-    //    for (int i = 0; i < BgmList.Length; i++)
-    //    {
-    //        if (str == BgmList[i].name)
-    //        {
-    //            musicSource.clip = BgmList[i].bgm;
-    //            if (!musicSource.isPlaying)
-    //            {
-    //                musicSource.loop = true;
-    //                musicSource.Play();
-    //                Debug.Log("playingMusic");
-    //            }
-    //            break;
-    //        }
-    //    }
-    //}
     [YarnCommand("stopMusic")]
     public void StopMusic()
     {
@@ -107,5 +94,42 @@ public class MusicManager : MonoBehaviour
     public void UnPauseMusic()
     {
         musicSource.UnPause();
+    }
+    private float previousVolume;
+
+    [YarnCommand("musicFadeOut")]
+    public void MusicFadeOut()      //¼Ò¸® Á¡Á¡ ÀÛ¾ÆÁü
+    {
+        previousVolume = GetMusicVolume();
+        StartCoroutine(MusicFadeOutCoroutine());
+    }
+    IEnumerator MusicFadeOutCoroutine()     
+    {
+        float FadeCount = previousVolume;
+        while (FadeCount > 0)
+        {
+            FadeCount -= 0.01f;
+            yield return new WaitForSeconds(0.0005f);
+            SetMusicVolume(FadeCount);
+        }
+        PauseMusic();
+        SetMusicVolume(previousVolume);
+    }
+    [YarnCommand("musicFadeIn")]
+    public void MusicFadeIn()       //¼Ò¸® Á¡Á¡ Ä¿Áü
+    {
+        previousVolume = GetMusicVolume();
+        StartCoroutine(MusicFadeInCoroutine());
+    }
+    IEnumerator MusicFadeInCoroutine()
+    {
+        float FadeCount = 0;
+        UnPauseMusic();
+        while (FadeCount < previousVolume)
+        {
+            FadeCount += 0.01f;
+            yield return new WaitForSeconds(0.0005f);
+            SetMusicVolume(FadeCount);
+        }
     }
 }

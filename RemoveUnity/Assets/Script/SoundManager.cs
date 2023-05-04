@@ -26,6 +26,10 @@ public class SoundManager : MonoBehaviour
         SoundManager.volume = volume;
         soundSource.volume = volume;
     }
+    public float GetSoundVolume()
+    {
+        return soundSource.volume;
+    }
     private void Awake()
     {
         if (instance == null)
@@ -76,8 +80,52 @@ public class SoundManager : MonoBehaviour
         soundSource.loop = false;
         soundSource.Stop();
     }
+    [YarnCommand("unPauseSound")]
+    public void UnPauseSound()
+    {
+        soundSource.UnPause();
+    }
+
     private void Update()
     {
         
+    }
+
+    private float previousVolume;
+
+    [YarnCommand("soundFadeOut")]
+    public void SoundFadeOut()
+    {
+        previousVolume = GetSoundVolume();
+        StartCoroutine(SoundFadeOutCoroutine());
+    }
+    IEnumerator SoundFadeOutCoroutine()
+    {
+        float FadeCount = previousVolume;
+        while (FadeCount > 0)
+        {
+            FadeCount -= 0.01f;
+            yield return new WaitForSeconds(0.0005f);
+            SetSoundVolume(FadeCount);
+        }
+        StopSound();
+        SetSoundVolume(previousVolume);
+    }
+    [YarnCommand("soundFadeIn")]
+    public void SoundFadeIn()
+    {
+        previousVolume = GetSoundVolume();
+        StartCoroutine(SoundFadeInCoroutine());
+    }
+    IEnumerator SoundFadeInCoroutine()
+    {
+        float FadeCount = 0;
+        UnPauseSound();
+        while (FadeCount < previousVolume)
+        {
+            FadeCount += 0.01f;
+            yield return new WaitForSeconds(0.0005f);
+            SetSoundVolume(FadeCount);
+        }
     }
 }
