@@ -1226,11 +1226,11 @@ title: Clear
 <<CalenderDIn>>
 ......나는 'D'가 무엇의 약자인지 기억한다.
 <<CalenderDOut>>
+D가 의미하는 단어는......
 <<jump DMeaning>>
 ===
 title: DMeaning
 ---
-D가 의미하는 단어는......
 <<setNumber 1>>
 <<DMeaningIn>>
 <<set $chance = $chance+1>>

@@ -165,6 +165,7 @@ public class BTNManager : MonoBehaviour
     public static void JumpMainScene()
     {
         MusicManager.instance.musicSource.Stop();
+        UnPause();
         SceneManager.LoadScene("StartScene");
     }
     [YarnCommand("jumpGameScene")]
