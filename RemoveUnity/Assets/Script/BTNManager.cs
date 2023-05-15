@@ -139,11 +139,11 @@ public class BTNManager : MonoBehaviour
         phoneGroup.alpha = 1;
     }
 
-    public void IsPause()
+    public static void IsPause()
     {
         Time.timeScale = 0;
     }
-    public void UnPause()
+    public static void UnPause()
     {
         Time.timeScale = 1;
     }
