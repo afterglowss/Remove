@@ -28,6 +28,11 @@ public class PasswordManager : MonoBehaviour
     public GameObject error;
     public GameObject PasswordScreen;
     public GameObject ShoutScreen;
+
+    public void Start()
+    {
+        password = "";
+    }
     public void NumberBtnClick()
     {
         switch (number)
@@ -71,6 +76,7 @@ public class PasswordManager : MonoBehaviour
                 {
                     PasswordScreen.SetActive(false);
                     ShoutScreen.SetActive(true);
+                    password = "";
                 }
                 else
                 {

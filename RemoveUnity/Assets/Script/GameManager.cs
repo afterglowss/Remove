@@ -23,11 +23,19 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 60;
+
+        isSkip = true;
+
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
             isScene = new bool[3];
+
+            isScene[0] = true;
+            isScene[1] = true;
+            isScene[2] = true;
+
         }
         else 
             Destroy(gameObject);

@@ -8,7 +8,7 @@ tags:
     <color=yellow>스킵하시겠습니까?</color>
     ->예.
         <<objectDelete HammerBlockImage HammerBlockImage>>
-        <<jump Confusing>>
+        <<jump Select>>
     ->아니오.
 <<endif>>
 <<setNumber 3>>
@@ -141,6 +141,10 @@ title: Confusing
 그렇지만...
 나: 그래도... 기억도 나지 않는 범죄로 잡혀가는 것은 너무 억울해...
 생각이 계속 이어졌다.
+<<jump Select>>
+===
+title: Select
+---
 역시 자수하는 것이 옳을까? 그냥 숨겨버리면 아무도 모르지 않을까?
 -> 자수한다 (지금이라도 늦지 않았다. 경찰에 자초지종을 설명하자!)
     <<jump Surrender>>
