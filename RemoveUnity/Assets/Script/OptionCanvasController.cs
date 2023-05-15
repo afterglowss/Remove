@@ -17,12 +17,14 @@ public class OptionCanvasController : MonoBehaviour
         {
             if (optionGroup.alpha == 1)
             {
+                BTNManager.UnPause();
                 optionGroup.alpha = 0;
                 optionGroup.interactable = false;
                 optionGroup.blocksRaycasts = false;
             }
             else
             {
+                BTNManager.IsPause();
                 optionGroup.alpha = 1;
                 optionGroup.interactable = true;
                 optionGroup.blocksRaycasts = true;
