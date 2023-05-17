@@ -120,5 +120,12 @@ public class TimeController : MonoBehaviour
         min = 45;
         sec = 0f;
     }
+    [YarnCommand("timeSkip")]
+    public static void TimeSkip()
+    {
+        hour = 1;
+        min = 59;
+        sec = 59f;
+    }
 }
 

@@ -82,6 +82,13 @@ title: StalkingPhoto4
 -> 아니야.
 	그래, 그냥 두자.
 ===
+title: Clock
+---
+<color=yellow>시간을 2시로 넘길까요?</color>
+-> 예.
+	<<timeSkip>>
+-> 아니오.
+===
 
 title: Diagnosis
 ---
