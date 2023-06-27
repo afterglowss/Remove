@@ -83,7 +83,7 @@ public class PhoneMove : MonoBehaviour
             }
             else
             {
-                if (i == 0 || i == 2)
+                if (i == 0 || i == 2 || i == 5)
                 {
                     return;
                 }

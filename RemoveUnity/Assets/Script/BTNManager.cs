@@ -58,17 +58,36 @@ public class BTNManager : MonoBehaviour
     }
     public void Awake()
     {
+        //if (BTNType.SkipToPhone == type)
+        //{
+        //    gameObject.SetActive(GameManager.isScene[0]);
+        //}
+        //else if (BTNType.SkipToStoryEnd == type)
+        //{
+        //    gameObject.SetActive(GameManager.isScene[1]);
+        //}
+        //else if (BTNType.SkipToGamescene == type)
+        //{
+        //    gameObject.SetActive(GameManager.isScene[2]);
+        //}
+        //else
+        //{
+        //    gameObject.SetActive(true);
+        //}
         if (BTNType.SkipToPhone == type)
         {
-            gameObject.SetActive(GameManager.isScene[0]);
+            //gameObject.GetComponent<Button>().interactable = DataManager.GetSawStoryScene();
+            gameObject.SetActive(DataManager.GetSawStoryScene());
         }
         else if (BTNType.SkipToStoryEnd == type)
         {
-            gameObject.SetActive(GameManager.isScene[1]);
+            gameObject.SetActive(DataManager.GetSawStoryScene());
+            //gameObject.GetComponent<Button>().interactable = DataManager.GetSawStoryScene();
         }
         else if (BTNType.SkipToGamescene == type)
         {
-            gameObject.SetActive(GameManager.isScene[2]);
+            gameObject.SetActive(DataManager.GetSawStoryScene());
+            //gameObject.GetComponent<Button>().interactable = DataManager.GetSawStoryScene();
         }
         else
         {

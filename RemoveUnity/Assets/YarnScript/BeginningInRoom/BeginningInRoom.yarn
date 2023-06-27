@@ -4,17 +4,18 @@ tags:
 <<musicFadeIn MusicManager>>
 <<playMusic MusicManager 11>>
 <<stopSound SoundManager>>
-<<if getSkip() == true>>
+<<setNumber 3>>
+<<if getSawStoryScene() == true>>
     <color=yellow>스킵하시겠습니까?</color>
     ->예.
         <<objectDelete HammerBlockImage HammerBlockImage>>
         <<jump Select>>
     ->아니오.
 <<endif>>
-<<setNumber 3>>
 <<optionBlock 0>>
-<<seeScene 2>>
-<<isSkip true>>
+<<setTrueSawStoryScene>>
+//<<seeScene 2>>
+//<<isSkip true>>
 <<stopSound SoundManager>>
 나: 이... 이게 다 뭐야...?
 나는 차마 말을 잇지 못했다.
@@ -445,7 +446,7 @@ title: Ending4
 ===
 title: Ending5
 ---
-
+<<setTrueSawTrueEnding>>
 집주인이 돌아가고 잠시 뒤.
 <<playSound SoundManager 7>>
 <<wait 1>>
