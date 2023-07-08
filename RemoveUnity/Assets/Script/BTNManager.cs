@@ -112,7 +112,8 @@ public class BTNManager : MonoBehaviour
                 OptionCanvasOn();
                 break;
             case BTNType.Quit:
-                dialogueRunner.StartDialogue("AppExit");
+                //dialogueRunner.StartDialogue("AppExit");
+                Quit();
                 break;
             case BTNType.Back:
                 OptionCanvasOff();
@@ -139,7 +140,7 @@ public class BTNManager : MonoBehaviour
         Application.Quit();
     }
 
-    private void OptionCanvasOn()
+    public void OptionCanvasOn()
     {
         IsPause();
         CanvasGroupOn(optionGroup);
@@ -148,7 +149,7 @@ public class BTNManager : MonoBehaviour
         CanvasGroupOff(phoneGroup);
         phoneGroup.alpha = 0;
     }
-    private void OptionCanvasOff()
+    public void OptionCanvasOff()
     {
         UnPause();
         CanvasGroupOff(optionGroup);
@@ -167,13 +168,13 @@ public class BTNManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void CanvasGroupOn(CanvasGroup cg)
+    public void CanvasGroupOn(CanvasGroup cg)
     {
         //cg.alpha = 1;
         cg.interactable = true;
         cg.blocksRaycasts = true;
     }
-    private void CanvasGroupOff(CanvasGroup cg)
+    public void CanvasGroupOff(CanvasGroup cg)
     {
         //cg.alpha = 0;
         cg.interactable = false;

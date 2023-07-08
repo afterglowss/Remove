@@ -181,6 +181,7 @@ title: StartingGame
 ===
 title: Surrender
 ---
+<<setTrueSawEnding1>>
 <<fadeIn FadeImage FadeImage>>
 <<musicFadeOut MusicManager>>
 <<wait 1>>
@@ -226,6 +227,7 @@ title: Ending1
 
 title: Ending2Enter
 ---
+<<setTrueSawEnding2>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>
 <<jumpEnding2>>
@@ -272,6 +274,7 @@ title: Ending2
 ===
 title: Ending3Enter
 ---
+<<setTrueSawEnding3>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
 <<jumpEnding3>>
@@ -363,6 +366,7 @@ title: Ending3
 ===
 title: Ending4Enter
 ---
+<<setTrueSawEnding4>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
 <<jumpEnding4>>

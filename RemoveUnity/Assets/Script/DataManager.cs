@@ -7,6 +7,10 @@ public class Data
 {
     public bool sawStoryScene;
     public bool sawTrueEnding;
+    public bool sawEnding1;
+    public bool sawEnding2;
+    public bool sawEnding3;
+    public bool sawEnding4;
 }
 
 public class DataManager : MonoBehaviour
@@ -65,10 +69,64 @@ public class DataManager : MonoBehaviour
         return instance.data.sawTrueEnding;
     }
     [YarnCommand("setTrueSawTrueEnding")]
-    public static void SetTrueIsBlizzardCleared()
+    public static void SetTrueSawTrueEnding()
     {
         instance.data.sawTrueEnding = true;
         instance.SaveData();
     }
-
+    [YarnCommand("setTrueSawEnding1")]
+    public static void SetTrueSawEnding1()
+    {
+        instance.data.sawEnding1 = true;
+        instance.SaveData();
+    }
+    [YarnCommand("setTrueSawEnding2")]
+    public static void SetTrueSawEnding2()
+    {
+        instance.data.sawEnding2 = true;
+        instance.SaveData();
+    }
+    [YarnCommand("setTrueSawEnding3")]
+    public static void SetTrueSawEnding3()
+    {
+        instance.data.sawEnding3 = true;
+        instance.SaveData();
+    }
+    [YarnCommand("setTrueSawEnding4")]
+    public static void SetTrueSawEnding4()
+    {
+        instance.data.sawEnding4 = true;
+        instance.SaveData();
+    }
+    [YarnCommand("isSawEnding")]
+    public static bool IsSawEnding(int ending)
+    {
+        instance.LoadData();
+        switch (ending)
+        {
+            case 1:
+                if (instance.data.sawEnding1)
+                    return true;
+                break;
+            case 2:
+                if (instance.data.sawEnding2)
+                    return true;
+                break;
+            case 3:
+                if (instance.data.sawEnding3)
+                    return true;
+                break;
+            case 4:
+                if (instance.data.sawEnding4)
+                    return true;
+                break;
+            case 5:
+                if (instance.data.sawTrueEnding)
+                    return true;
+                break;
+            default:
+                return false;
+        }
+        return false;
+    }
 }
