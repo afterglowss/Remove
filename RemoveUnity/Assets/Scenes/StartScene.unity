@@ -2346,7 +2346,6 @@ GameObject:
   - component: {fileID: 736798341}
   - component: {fileID: 736798340}
   - component: {fileID: 736798339}
-  - component: {fileID: 736798342}
   m_Layer: 5
   m_Name: AlbumButton
   m_TagString: Untagged
@@ -2419,7 +2418,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 736798342}
+      - m_Target: {fileID: 1625110450}
         m_TargetAssemblyTypeName: AlbumController, Assembly-CSharp
         m_MethodName: AlbumCanvasGroupOn
         m_Mode: 1
@@ -2469,20 +2468,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736798337}
   m_CullTransparentMesh: 1
---- !u!114 &736798342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736798337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a2d49ccd1796e4b806eb5a8debd21e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  album: {fileID: 348120381}
-  btn: {fileID: 1080026352}
 --- !u!1 &790434843
 GameObject:
   m_ObjectHideFlags: 0

@@ -229,11 +229,13 @@ title: Ending2Enter
 ---
 <<setTrueSawEnding2>>
 <<fadeIn FadeImage FadeImage>>
+<<musicFadeOut MusicManager>>
 <<wait 1.5>>
 <<jumpEnding2>>
 ===
 title: Ending2
 ---
+<<musicFadeIn MusicManager>>
 <<playMusic MusicManager 36>>
 갑자기 머릿속이 복잡해진다.
 나: ...난 지금 뭘 하고 있는 거지?
@@ -323,6 +325,7 @@ title: Ending3
 나: ......네.
 
 <<fadeOut FadeImage FadeImage>>
+<<musicFadeIn MusicManager>>
 <<playMusic MusicManager 11>>
 <<wait 1>>
 <<playRepeatSound SoundManager 14>>
@@ -415,6 +418,8 @@ title: Ending4
 <<wait 0.5>>
 나: ......네.
 
+
+<<musicFadeIn MusicManager>>
 <<playMusic MusicManager 37>>
 <<wait 1>>
 서에서는 여러가지 조사가 이어졌지만, 워낙 증거를 꼼꼼히 없앤 탓인지 소지품 외에 별다른 소득은 없는 듯했다.
