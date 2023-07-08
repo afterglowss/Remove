@@ -34,6 +34,8 @@ public class AlbumImageController : MonoBehaviour
             color.a = 1f;
             Ending1.color = color;
             text1.text = "#1 자수";
+            AlbumController.isThereEnding = true;
+            //Debug.Log(AlbumController.isThereEnding);
         }
         if (DataManager.IsSawEnding(2))
         {
@@ -41,13 +43,15 @@ public class AlbumImageController : MonoBehaviour
             color.a = 1f;
             Ending2.color = color;
             text2.text = "#2 끝나버린 삶";
+            AlbumController.isThereEnding = true;
         }
         if (DataManager.IsSawEnding(3))
         {
             Color color = Ending3.color;
             color.a = 1f;
             Ending3.color = color;
-            text3.text = "#3 체포";
+            text3.text = "#3 검거";
+            AlbumController.isThereEnding = true;
         }
         if (DataManager.IsSawEnding(4))
         {
@@ -55,6 +59,7 @@ public class AlbumImageController : MonoBehaviour
             color.a = 1f;
             Ending4.color = color;
             text4.text = "#4 음침한 소문";
+            AlbumController.isThereEnding = true;
         }
         if (DataManager.IsSawEnding(5))
         {
@@ -62,6 +67,7 @@ public class AlbumImageController : MonoBehaviour
             color.a = 1f;
             Ending5.color = color;
             text5.text = "#5 추모";
+            AlbumController.isThereEnding = true;
         }
     }
 }

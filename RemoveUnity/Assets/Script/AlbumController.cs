@@ -9,11 +9,24 @@ public class AlbumController : MonoBehaviour
 
     public BTNManager btn;
 
-    
-    //public void Awake()
-    //{
-    //    btn = GetComponent<BTNManager>();
-    //}
+    public static bool isThereEnding;
+
+
+    public void Awake()
+    {
+        isThereEnding = false;
+    }
+    public void Update()
+    {
+        if (isThereEnding)
+        {
+            GameObject.Find("MainCanvas").transform.Find("AlbumButton").gameObject.SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("MainCanvas").transform.Find("AlbumButton").gameObject.SetActive(false);
+        }
+    }
 
     public void OnAlbumBtnClick()
     {

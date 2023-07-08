@@ -87,6 +87,7 @@ title: Clock
 <<setNumber 5>>
 <color=yellow>시간을 2시로 넘길까요?</color>
 -> 예.
+	<<musicFadeOut MusicManager>>
 	<<setNumber 1>>
 	<<timeSkip>>
 -> 아니오.
