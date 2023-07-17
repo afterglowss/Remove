@@ -227,7 +227,6 @@ title: Ending1
 
 title: Ending2Enter
 ---
-<<setTrueSawEnding2>>
 <<fadeIn FadeImage FadeImage>>
 <<musicFadeOut MusicManager>>
 <<wait 1.5>>
@@ -235,6 +234,7 @@ title: Ending2Enter
 ===
 title: Ending2
 ---
+<<setTrueSawEnding2>>
 <<musicFadeIn MusicManager>>
 <<playMusic MusicManager 36>>
 갑자기 머릿속이 복잡해진다.
@@ -276,13 +276,13 @@ title: Ending2
 ===
 title: Ending3Enter
 ---
-<<setTrueSawEnding3>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
 <<jumpEnding3>>
 ===
 title: Ending3
 ---
+<<setTrueSawEnding3>>
 <<stopMusic MusicManager>>
 <<playSound SoundManager 28>>
 <<wait 1>>
@@ -369,13 +369,14 @@ title: Ending3
 ===
 title: Ending4Enter
 ---
-<<setTrueSawEnding4>>
+//<<setTrueSawEnding4>>
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
 <<jumpEnding4>>
 ===
 title: Ending4
 ---
+<<setTrueSawEnding4>>
 <<stopMusic MusicManager>>
 <<playSound SoundManager 28>>
 <<wait 1>>

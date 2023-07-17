@@ -43,7 +43,10 @@ EditorBuildSettings:
     guid: 1abb9f020fd5d894b978b09c05f45f63
   - enabled: 1
     path: Assets/Scenes/Infering.unity
-    guid: 0a97c87409ebb6749aadf048b0431098
+    guid: 00a8aa6d4eef35f48b76b2b1a61385bd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

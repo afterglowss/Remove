@@ -98,6 +98,7 @@ public class DataManager : MonoBehaviour
         instance.data.sawEnding4 = true;
         instance.SaveData();
     }
+
     [YarnCommand("isSawEnding")]
     public static bool IsSawEnding(int ending)
     {
