@@ -12,6 +12,7 @@ public class AlbumController : MonoBehaviour
     public static bool isThereEnding;
 
 
+
     public void Awake()
     {
         isThereEnding = false;
