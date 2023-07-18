@@ -4482,8 +4482,9 @@ MonoBehaviour:
   afterTEndAlbumBtnSprite: {fileID: 21300000, guid: 0c6bae0dc1ddf334e95a9537a5e98486, type: 3}
   beforeTEndChangeSprite: {fileID: 21300000, guid: f425f1f7a3bceda43a53073f2d361747, type: 3}
   afterTEndChangeSprite: {fileID: 21300000, guid: 7d8fc4f8309ab9c46872d29880cf51d1, type: 3}
-  afterController: {fileID: 9100000, guid: b803a9b286a12e945b61042677228ca7, type: 2}
   startAnim: {fileID: 357516872}
+  beforeController: {fileID: 9100000, guid: f68595b3a7d98c74f9617ddcb848a95e, type: 2}
+  afterController: {fileID: 9100000, guid: b803a9b286a12e945b61042677228ca7, type: 2}
 --- !u!1 &1641700292
 GameObject:
   m_ObjectHideFlags: 0

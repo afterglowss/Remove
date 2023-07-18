@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,8 +20,9 @@ public class AlbumController : MonoBehaviour
     private Sprite albumBtnSprite;
     private Sprite albumChangeSprite;
 
-    public RuntimeAnimatorController afterController;
     public Animator startAnim;
+    public RuntimeAnimatorController beforeController;
+    public RuntimeAnimatorController afterController;
 
 
     public static bool isThereEnding;
@@ -31,6 +32,7 @@ public class AlbumController : MonoBehaviour
     public void Awake()
     {
         isThereEnding = false;
+        startAnim.runtimeAnimatorController = beforeController;
         albumBtnSprite = beforeTEndAlbumBtnSprite;
         albumChangeSprite = beforeTEndChangeSprite;
         albumBtn.GetComponent<Image>().sprite = albumBtnSprite;
@@ -49,9 +51,9 @@ public class AlbumController : MonoBehaviour
 
         if (DataManager.GetSawTrueEnding() && albumTransitionOnce == 0)
         {
-            //Áø¿£µù ÀÌÈÄ ¹Ù²î´Â °ÍÀº ´Ù ¿©±â¼­ ¹Ù²Ù±â
+            //ì§„ì—”ë”© ì´í›„ ë°”ë€ŒëŠ” ê²ƒì€ ë‹¤ ì—¬ê¸°ì„œ ë°”ê¾¸ê¸°
 
-            //¾Ù¹ü ¾ÆÀÌÄÜ Áø¿£µù ÀÌÈÄ ½ºÇÁ¶óÀÌÆ®·Î ¹Ù²Ù±â
+            //ì•¨ë²” ì•„ì´ì½˜ ì§„ì—”ë”© ì´í›„ ìŠ¤í”„ë¼ì´íŠ¸ë¡œ ë°”ê¾¸ê¸°
             albumTransitionOnce += 1;
             albumBtnSprite = afterTEndAlbumBtnSprite;
             albumBtn.GetComponent<Image>().sprite = albumBtnSprite;
