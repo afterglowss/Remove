@@ -66,7 +66,7 @@ public class AlbumImageController : MonoBehaviour
             Color color = Ending5.color;
             color.a = 1f;
             Ending5.color = color;
-            text5.text = "#5 추모";
+            text5.text = "#5 드러난 진실";
             AlbumController.isThereEnding = true;
         }
     }
