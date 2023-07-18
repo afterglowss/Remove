@@ -51,9 +51,9 @@ public class AlbumController : MonoBehaviour
 
         if (DataManager.GetSawTrueEnding() && albumTransitionOnce == 0)
         {
-            //Áø¿£µù ÀÌÈÄ ¹Ù²î´Â °ÍÀº ´Ù ¿©±â¼­ ¹Ù²Ù±â
+            //ì§„ì—”ë”© ì´í›„ ë°”ë€ŒëŠ” ê²ƒì€ ë‹¤ ì—¬ê¸°ì„œ ë°”ê¾¸ê¸°
 
-            //¾Ù¹ü ¾ÆÀÌÄÜ Áø¿£µù ÀÌÈÄ ½ºÇÁ¶óÀÌÆ®·Î ¹Ù²Ù±â
+            //ì•¨ë²” ì•„ì´ì½˜ ì§„ì—”ë”© ì´í›„ ìŠ¤í”„ë¼ì´íŠ¸ë¡œ ë°”ê¾¸ê¸°
             albumTransitionOnce += 1;
             albumBtnSprite = afterTEndAlbumBtnSprite;
             albumBtn.GetComponent<Image>().sprite = albumBtnSprite;
