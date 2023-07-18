@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,8 +20,9 @@ public class AlbumController : MonoBehaviour
     private Sprite albumBtnSprite;
     private Sprite albumChangeSprite;
 
-    public RuntimeAnimatorController afterController;
     public Animator startAnim;
+    public RuntimeAnimatorController beforeController;
+    public RuntimeAnimatorController afterController;
 
 
     public static bool isThereEnding;
@@ -31,6 +32,7 @@ public class AlbumController : MonoBehaviour
     public void Awake()
     {
         isThereEnding = false;
+        startAnim.runtimeAnimatorController = beforeController;
         albumBtnSprite = beforeTEndAlbumBtnSprite;
         albumChangeSprite = beforeTEndChangeSprite;
         albumBtn.GetComponent<Image>().sprite = albumBtnSprite;
