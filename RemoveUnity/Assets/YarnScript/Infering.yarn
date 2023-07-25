@@ -1,4 +1,4 @@
-﻿title: chance
+title: chance
 ---
 <<set $TotalChance = 0>>
 <<set $chance = 0>>
@@ -149,7 +149,8 @@ title: InferingRoomobject
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        잠시만... 다시 생각해보자.
+        시신을 깔끔히 처리해놓고 굳이 이것만 가져올 이유가 있을까?
         <<jump InferingRoomobject>>
     <<endif>>
 -> 화장실 세면대 위에 있었다
@@ -158,7 +159,8 @@ title: InferingRoomobject
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        잠시만... 다시 생각해보자.
+        시신을 깔끔히 처리해놓고 굳이 이것만 가져올 이유가 있을까?
         <<jump InferingRoomobject>>
     <<endif>>
 -> 냉장고 안에 있었다
@@ -181,7 +183,7 @@ title: InferingFinger
 -> 피묻은 망치
     <<setNumber 3>>
     그래.
-    망치로 손가락을 그렇게 잘라낼 수 있을까?
+    망치로 손가락을 그렇게 깔끔하게 잘라낼 수 있을까?
     그건 불가능해.
     그렇다는 건...... 내가 모르는 흉기가 또 있단 거겠지.
     <<jump InferingWeapon1>>
@@ -267,13 +269,14 @@ title: InferingKnife
     맞아! 칼날이 이상해.
     <<playSound SoundManager 34>>
     <<hammerIn>>
-    망치에는 피가 잔득 묻어있었잖아.
+    망치에는 피가 잔뜩 묻어있었잖아.
     <<hammerOut>>
     <<playSound SoundManager 34>>
     <<knifeZoomIn>>
     근데 칼날엔 피가 묻어있지 않았어.
     <<knifeZoomOut>>
     어째서지?
+    이게 가르키는 것은......
     <<jump InferingCleanKnife>>
 -> 손잡이 부분
     <<set $TotalChance = $TotalChance+1>>
@@ -302,6 +305,7 @@ title: InferingCleanKnife
 -> 내가 아닌 누군가가 사건 현장을 건드렸다
     <<setNumber 3>>
     그래. 이제 명확해진다.
+    손가락이 케이크 상자 속에 들어있었던 이유.
     망치를 시신과 함께 처리하지 않고 원룸에 가지고 온 이유.
     식칼은 망치와 달리 깨끗했던 이유.
     그 사건 현장에 내가 아닌 누군가가 또 있었어.
@@ -355,7 +359,8 @@ title: InferingProof
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        분명 이 곳에서 범인의 흔적을 발견했던 기억이 나.
+        그 사건과 관계있을 것 같았는데......
         <<jump InferingProof>>
     <<endif>>
 -> 침대 옆 러그
@@ -364,7 +369,8 @@ title: InferingProof
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        분명 이 곳에서 범인의 흔적을 발견했던 기억이 나.
+        그 사건과 관계있을 것 같았는데......
         <<jump InferingProof>>
     <<endif>>
 -> 창문
@@ -468,25 +474,25 @@ title: InferingGallery
 ---
 <<setNumber 1>>
 갤러리의 이 사진과 연관지을 수 있는데......
--> 노트북으로 작업을 하는 누군가의 뒷모습 사진
+-> 갤러리 속 11번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        헷갈린다면, 사진을 눌러 확대해 보는 건 어떨까?
         <<jump InferingGallery>>
     <<endif>>
--> 캠퍼스에서 사진을 찍는 누군가의 사진
+-> 갤러리 속 15번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        헷갈린다면, 사진을 눌러 확대해 보는 건 어떨까?
         <<jump InferingGallery>>
     <<endif>>
--> 병원 진단서 사진
+-> 갤러리 속 16번 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<medicalCertificateIn>>
@@ -537,7 +543,7 @@ title: Etc
 ---
 <<setNumber 1>>
 그 외에, 날짜와 시간대가 이상한 것들은......
--> 노트북으로 작업을 하는 누군가의 뒷모습 사진
+-> 갤러리 속 11번 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<picture4In>>
@@ -545,7 +551,7 @@ title: Etc
     <<picture4Out>>
     이 사진과 비교했을 때, 이걸 10월 15일에 찍었다는 건 말이 안 돼.
     <<jump ComparingWithPicture4>>
--> 도서관에서 공부를 하는 누군가의 사진
+-> 갤러리 속 13번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -554,7 +560,7 @@ title: Etc
         으음...... 이게 아닌 거 같은데.
         <<jump Etc>>
     <<endif>>
--> 벚꽃 사진
+-> 갤러리 속 1번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -568,25 +574,27 @@ title: ComparingWithPicture4
 ---
 비교할 만한 사진은......
 <<setNumber 1>>
--> 캘리포니아롤 사진
+-> 갤러리 속 4번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        흠, 어떤 점을 비교하면 좋을까?
+        사진을 눌러 상세 정보를 확인해 보는 것도 좋은 방법일 것 같은데......
         <<jump ComparingWithPicture4>>
     <<endif>>
--> 한강 불꽃축제 사진
+-> 갤러리 속 10번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        흠, 어떤 점을 비교하면 좋을까?
+        사진을 눌러 상세 정보를 확인해 보는 것도 좋은 방법일 것 같은데......
         <<jump ComparingWithPicture4>>
     <<endif>>
--> 벤치에 앉은 누군가의 사진
+-> 갤러리 속 12번 사진
     <<setNumber 3>>
     그래.
     <<playSound SoundManager 34>>
@@ -610,29 +618,32 @@ title: InferingFakePicture
 ---
 이 중 조작된 사진은......
 <<setNumber 1>>
--> 벤치에 앉은 누군가의 사진
+-> 갤러리 속 12번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        흠, 다시 생각해 보자.
+        내가 그 날 어디 있었는지 알고 있는 사람이 분명 있었는데......
+        사진의 날짜와 관련 있는 증거가 스마트폰 속에 없을까?
         <<jump InferingFakePicture>>
     <<endif>>
--> 노트북으로 작업을 하는 누군가의 뒷모습 사진
+-> 갤러리 속 11번 사진
     <<setNumber 3>>
     <<playSound SoundManager 34>>
     <<hanriverIn>>
-    그래. 지연이는 분명 하나가 나랑 한강에서 만난 걸 들었다고 했어.
+    그래. 지연이는 분명 하나랑 내가 한강에서 만난 걸 들었다고 했어.
     <<hanriverOut>>
     그렇다면 저 사람은 하나겠구나.
+    또, 시간대가 이상한 사진이 있었던 거 같은데......
     <<jump InferingPictureTime>>
 ===
 title: InferingPictureTime
 ---
 <<setNumber 1>>
-또, 시간대가 이상한 사진이 있었던 거 같은데......
--> 서점에서 책을 고르는 누군가의 사진
+시간대가 이상한 사진은......
+-> 갤러리 속 13번 사진
     <<setNumber 3>>
     <<picture8_2In>>
     <<playSound SoundManager 34>>
@@ -642,22 +653,22 @@ title: InferingPictureTime
     근데 내가 10월 10일에 찍을 수 없었던 이유가 있어.
     이것도 다른 곳에 힌트가 있었지.
     <<jump InferingImpossible>>
--> 초점이 흔들린 도시 건물 사진
+-> 갤러리 속 7번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        잘 생각해보자. 힌트는 갤러리 밖에도 있어.
         <<jump InferingPictureTime>>
     <<endif>>
--> 브이를 하는 누군가의 손 사진
+-> 갤러리 속 14번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        잘 생각해보자. 힌트는 갤러리 밖에도 있어.
         <<jump InferingPictureTime>>
     <<endif>>
 ===
@@ -714,7 +725,8 @@ title: InferingMessageMore
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        다시 천천히 생각해 보자.
+        내용이 아닌 말투에도 집중해 볼까? 아주 사소한 차이지만, 분명 이상한 점이 있었어.
         <<jump InferingMessageMore>>
     <<endif>>
 -> 나와 죽여버리기 전에
@@ -723,7 +735,8 @@ title: InferingMessageMore
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        다시 천천히 생각해 보자.
+        내용이 아닌 말투에도 집중해 볼까? 아주 사소한 차이지만, 분명 이상한 점이 있었어.
         <<jump InferingMessageMore>>
     <<endif>>
 ===
@@ -794,7 +807,7 @@ title: InferingReason
     <<fadeOut Relationship1 Relationship1>>
     <<fadeOut Relationship2 Relationship2>>
     우선 원룸에 있었던 수상한 물건부터 생각해 보자.
-    그게 왠지 도움을 줄 수 있을 것 같네.
+    그게 왠지 도움을 줄 수 있을 것 같아.
     원룸에는, 내 것이 아닌 듯한 물건이 몇 개 있었지.
     <<jump InferingObjects>>
 ===
@@ -818,7 +831,8 @@ title: InferingObjects
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        흠, 다시 생각해볼까?
+        원룸 안에서 그 물건들을 발견했을 때, 주인이 누구인지 궁금했던 물건이 있었어.
         <<jump InferingObjects>>
     <<endif>>
 -> 부엌 찬장 안과 화장대 서랍 안에 있었다
@@ -827,7 +841,8 @@ title: InferingObjects
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        흠, 다시 생각해볼까?
+        원룸 안에서 그 물건들을 발견했을 때, 주인이 누구인지 궁금했던 물건이 있었어.
         <<jump InferingObjects>>
     <<endif>>
 ===
@@ -841,7 +856,9 @@ title: InferingBook
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        음, 그게 아니야.
+        이 책을 사용한 흔적이 분명 스마트폰 속에 있었는데......
+        그 날 누구와 그 책을 사용했는지 알 수 있는 힌트도 스마트폰 속에 분명히 있었어.
         <<jump InferingBook>>
     <<endif>>
 -> 갤러리와 메신저
@@ -854,7 +871,9 @@ title: InferingBook
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        음, 그게 아니야.
+        이 책을 사용한 흔적이 분명 스마트폰 속에 있었는데......
+        그 날 누구와 그 책을 사용했는지 알 수 있는 힌트도 스마트폰 속에 분명히 있었어.
         <<jump InferingBook>>
     <<endif>>
 ===
@@ -910,7 +929,8 @@ title: InferingSneaker
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        운동화와 관련된 물건의 흔적이 스마트폰 속에 있었어!
+        메모장에도 그 힌트가 있었던 것 같은데......?
         <<jump InferingSneaker>>
     <<endif>>
 -> 통화 내역
@@ -919,7 +939,8 @@ title: InferingSneaker
     <<if $TotalChance>=5>>
         <<jump Fail>>
     <<else>>
-        으음...... 이게 아닌 거 같은데.
+        운동화와 관련된 물건의 흔적이 스마트폰 속에 있었어!
+        메모장에도 그 힌트가 있었던 것 같은데......?
         <<jump InferingSneaker>>
     <<endif>>
 -> 갤러리
@@ -1021,7 +1042,7 @@ title: InferingRing
     <<RingAnotherOut>>
     누가 주인이었을까?
     그 전에 스마트폰에서 발견할 수 있었던 수상한 흔적을 떠올려 보자.
-    아직 의문이 풀리지 않은 것들이 몇 개 있어.
+    아직 풀리지 않은 의문이 몇 개 있어.
     <<playSound SoundManager 34>>
     <<TxtWithHanaIn>>
     일단, 하나와의 대화 내역이 모두 지워져 있었다는 것.
@@ -1050,7 +1071,7 @@ title: InferingD
 ---
 D의 힌트가 되는 사진은......
 <<setNumber 1>>
--> 카페 사진
+-> 갤러리 속 2번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -1059,7 +1080,7 @@ D의 힌트가 되는 사진은......
         으음...... 이게 아닌 거 같은데.
         <<jump InferingD>>
     <<endif>>
--> 도서관에서 공부를 하는 누군가의 사진
+-> 갤러리 속 13번 사진
     <<setNumber 3>>
     맞아. 아까 그 사진.
     <<picture5CalenderIn>>
@@ -1074,7 +1095,7 @@ D의 힌트가 되는 사진은......
     그리고 D와 관련되어 보이는 듯한 사진들이 더 있었지.
     거기서 자주 등장했던 것들이 있었는데.
     <<jump InferingPictureD>>
--> 한강 불꽃축제 사진
+-> 갤러리 속 10번 사진
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -1112,18 +1133,18 @@ title: InferingPictureD
     반지의 주인이 짐작 간다.
     ......하지만 좀 더 확실하게 검증할 수 있는 방법이 있어.
     ......해볼까?
-    -> 해 보자
-        살짝 섬뜩한 방법이지만......
-        이 검증을 도울 수 있는 도구가 어디 있는지 난 알고 있어.
-        <<jump RingToFinger>>
-    -> 하지 말자
-        <<jump KeepGoing>>
+         -> 해 보자
+            살짝 섬뜩한 방법이지만......
+            이 검증을 도울 수 있는 도구가 어디 있었는지 난 알고 있어.
+            <<jump RingToFinger>>
+        -> 하지 말자
+            <<jump KeepGoing>>
 ===
 title: RingToFinger
 ---
 <<musicFadeOut MusicManager>>
 //<<pauseMusic MusicManager>>
-검증을 도울 수 있는 도구는......
+검증을 도울 수 있는 도구를 발견했던 곳은......
 <<setNumber 1>>
 -> 케이크 상자 속
     <<setNumber 3>>
@@ -1161,9 +1182,9 @@ title: KeepGoing
 ---
 <<musicFadeIn MusicManager>>
 //<<unPauseMusic MusicManager>>
-......그래. 하나의 것이 맞아.
+......어쨌든. 하나의 것이 맞아.
 <<FingerInRingOut>>
-그렇다는 건, 나랑 하나가 우정 반지라도 맞춘 걸까?
+그렇다는 건, 하나랑 내가 우정 반지라도 맞춘 걸까?
 그 때, 갑자기 어떤 생각이 머릿속을 빠르게 스쳐 지나갔다.
 
 <<fadeIn Application1 Application1>>
@@ -1176,7 +1197,7 @@ title: KeepGoing
 아, 비밀번호!!!
 그 어플의 비밀번호가 뭔지 기억났어.
 누군가의 생일이었어!
-그리고 생일과 관련된 정보는 분명 스마트폰에서 찾을 수 있었어......
+그리고 생일과 관련된 정보는 분명 스마트폰에서 찾을 수 있었는데......
 누군가의 생일은......
 <<jump InferingPassword>>
 ===
@@ -1186,7 +1207,8 @@ title: InferingPassword
 <<PasswordIn>>
 <<set $chance = $chance+1>>
 <<if $chance>=2>>
-    으음...... 이게 아닌 거 같은데.
+    다시 생각해 볼까?
+    내 기억이 맞다면, 힌트는 캘린더와 갤러리에는 없었던 것 같아.
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -1324,7 +1346,7 @@ title: Truth
 나와 하나의 관계를 알고 있는 사람은......
 -> 심재환
 
-나를 스토킹하다가, 질투에 하나를 죽인 사람은......
+나를 스토킹하다가, 질투심에 하나를 죽인 사람은......
 -> 심재환
 <<playSound SoundManager 28>>
 <<fadeIn FadeImage FadeImage>>
