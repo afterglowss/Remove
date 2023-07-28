@@ -51,6 +51,16 @@ public class PhoneMove : MonoBehaviour
         phoneBlack.SetActive(false);
         GameObject.Find("PhoneCanvas").transform.Find("PhoneBlockImage").gameObject.SetActive(true);
     }
+
+    [YarnCommand("phoneUpWithLOpen")]   //PhoneUp 그대로 수정하면 안될 수도 있을 것 같아서 커맨드 따로 추가함//L어플 열린채 올라옴
+    public void PhoneUpWithLOpen()
+    {
+        Target = new Vector3(0, 0, 100);
+        phoneBlack.SetActive(false);
+        GameObject.Find("PhoneCanvas").transform.Find("PhoneBlockImage").gameObject.SetActive(true);
+        GameObject.Find("PhoneImage").transform.Find("Password").gameObject.SetActive(true);
+    }
+
     [YarnCommand("phoneDown")]
     public void PhoneDown()
     {
@@ -88,10 +98,20 @@ public class PhoneMove : MonoBehaviour
                     return;
                 }
                 PhoneDown();
-                if(i == 4)
+
+                if(i == 4 && PasswordManager.opened == 0)
+                {
+                    dialogueRunner.StartDialogue("LNotOpenedButTab");
+                }
+                else if(i==4 && PasswordManager.opened == 1)
                 {
                     dialogueRunner.StartDialogue("Clear");
+
                 }
+                /*if(i == 4)
+                {
+                    dialogueRunner.StartDialogue("Clear");
+                }*/
             }
 
         }

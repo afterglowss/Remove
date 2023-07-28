@@ -3,6 +3,8 @@ title: chance
 <<set $TotalChance = 0>>
 <<set $chance = 0>>
 <<set $InferingEnter = false>>
+
+
 ===
 title: InferingStart
 tags:
@@ -446,7 +448,6 @@ title: InferingOther
 title: InferingMessage
 ---
 <<setNumber 1>>
-<color=yellow>Tab을 누르면 스마트폰을 탐색할 수 있습니다.</color>
 협박 문자는 이 어플 속 단서와 연관지을 때 이상한데......
 -> 캘린더
     <<set $TotalChance = $TotalChance+1>>
@@ -1132,13 +1133,18 @@ title: InferingPictureD
     ......반지.
     반지의 주인이 짐작 간다.
     ......하지만 좀 더 확실하게 검증할 수 있는 방법이 있어.
-    ......해볼까?
-         -> 해 보자
+    <<if getMyNumber() == 0>>
+        ......해볼까?
+        -> 해 보자
             살짝 섬뜩한 방법이지만......
             이 검증을 도울 수 있는 도구가 어디 있었는지 난 알고 있어.
             <<jump RingToFinger>>
         -> 하지 말자
             <<jump KeepGoing>>
+    <<else>>
+        그렇지만......이미 그 손가락을 하수구에 넣고 버린뒤라, 그 방법을 써보진 못 할 것 같아.
+        <<jump KeepGoing>>
+    <<endif>>
 ===
 title: RingToFinger
 ---
@@ -1229,9 +1235,13 @@ title: PasswordCorrect
 <<Memo_8_28Out>>
 
 핸드폰을 열어 비밀번호를 입력해보자!
+<<jump LNotOpenedButTab>>
+===
+title: LNotOpenedButTab
+---
 <color=yellow>스마트폰에서 L앱의 비밀번호를 쳐봅시다.</color>
 <<setNumber 4>>
-<<phoneUp PhoneUpButton>>
+<<phoneUpWithLOpen PhoneUpButton>>
 ===
 title: Clear
 ---

@@ -28,10 +28,12 @@ public class PasswordManager : MonoBehaviour
     public GameObject error;
     public GameObject PasswordScreen;
     public GameObject ShoutScreen;
+    public static int opened = 0;  //비밀번호 잠금 해제되었는지 확인하는 함수
 
     public void Start()
     {
         password = "";
+        opened = 0;
     }
     public void NumberBtnClick()
     {
@@ -74,12 +76,15 @@ public class PasswordManager : MonoBehaviour
             case Number.Enter:
                 if (password == "0828")
                 {
+                   // PhoneMove.i = 4;
+                    opened = 1;
                     PasswordScreen.SetActive(false);
                     ShoutScreen.SetActive(true);
                     password = "";
                 }
                 else
                 {
+                    opened = 0;
                     password = "";
                     error.SetActive(true);
                     Invoke("ErrorDelete", 2f);
