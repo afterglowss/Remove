@@ -1145,6 +1145,7 @@ title: InferingPictureD
         그렇지만......이미 그 손가락을 하수구에 넣고 버린뒤라, 그 방법을 써보진 못 할 것 같아.
         <<jump KeepGoing>>
     <<endif>>
+
 ===
 title: RingToFinger
 ---
