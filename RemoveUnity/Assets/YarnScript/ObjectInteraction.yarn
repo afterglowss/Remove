@@ -31,6 +31,9 @@
 <<set $OhHanaTalk = 0>>
 <<set $ShimJaehwanTalk = 0>>
 
+<<set $FingerFlush = 0>> //손가락 변기에 내렸는지 확인하는 변수
+
+
 <<set $Ring1 = 0>>
 <<set $Ring2 = 0>>
 ===
@@ -488,15 +491,18 @@ title: CakeBox
 		역했다. 토할 것 같았지만 애써 억눌렀다.
 		이걸 변기에 넣고 내리면 하수처리장에서 걸러져 범행을 들킬 것이다.
 		그럼 어떻게 하지?
-		-> 휴지에 감싸서 쓰레기통에 버리자.
-			쓰레기통에 버렸다.
+		-> 그래도 그냥 변기에 버리자. 이대로 뒀다가 들키면 끝장이다.
+			쏴아아아... 손가락이 내려갔다.
+			<<setMyNumber 1>> //변기에 내림
 			<<set $FingerInCakeBox = 1>>
 			<<objectDelete Finger Finger>>
 		-> 방법도 없으니 일단 이대로 둘까.
 			다시 상자에 숨겨뒀다.
+			<<setMyNumber 0>>
 			<<ringDisappear Finger>>
 		-> 음식물 쓰레기 사이에 숨겨 두자.
 			여기까지 찾아보진 않겠지.
+			<<setMyNumber 0>>
 			<<objectDelete Finger Finger>>
 			<<set $FingerInCakeBox = 1>>
 	<<else>>
