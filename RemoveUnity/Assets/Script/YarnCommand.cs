@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,13 @@ using Yarn.Unity;
 public class YarnCommand : MonoBehaviour
 {
     public GameObject script;
+
+
+   /* [YarnFunction("getNumberOpened")]   //추리씬 L어플 탐색을 했는지 확인하는 function
+    public static int GetNumberOpened()
+    {
+        return PasswordManager.opened;
+    }*/
 
     /*--------이 부분은 추리씬에서의 사진을 다루는 스크립트입니다------*/
 
