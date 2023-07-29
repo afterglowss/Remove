@@ -60,6 +60,7 @@ tags:
 그런데 이 대화, 어디가 수상한걸까?
 <color=yellow>선택지가 뜰 때마다 Tab을 눌러 스마트폰을 확인할 수 있습니다.</color>
 //<<jump InferingPictureD>>
+//<<jump InferingPassword>>
 <<jump InferingStorystart>>
 ===
 title: InferingStorystart
