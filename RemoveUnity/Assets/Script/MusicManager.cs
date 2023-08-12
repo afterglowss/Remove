@@ -4,6 +4,7 @@ using UnityEngine;
 using static Unity.VisualScripting.Member;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using System.Security.Cryptography;
 
 public class MusicManager : MonoBehaviour
 {
@@ -58,7 +59,15 @@ public class MusicManager : MonoBehaviour
             //        break;
             //    }
             //}
-            PlayMusic("1");
+
+            if (DataManager.IsSawEnding(5))
+            {
+                PlayMusic("100");
+            }
+            else
+            {
+                PlayMusic("1");
+            }
         }
     }
 
