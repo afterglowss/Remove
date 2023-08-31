@@ -13,6 +13,7 @@ public class DMeaningScript : MonoBehaviour
     public TMP_InputField inputfield_input;
     public Button Enter;
     public GameObject DMeaningImage;
+    private string input = "";
 
     private string DMeaning = "Date";
     private string Dmeaning_small = "date";
@@ -20,17 +21,33 @@ public class DMeaningScript : MonoBehaviour
     {
         Runner = FindObjectOfType<DialogueRunner>();
     }
+
+    private void Update()
+    {
+        input = inputfield_input.text;
+
+        if (Input.GetKeyDown(KeyCode.Return) && input.Length>0)
+        {
+            Entering();
+        }
+
+        if(input.Length>4)
+        {
+            inputfield_input.text = "";
+        }
+    }
     public void Entering()
     {
-        if (inputfield_input.text.Equals(DMeaning)||inputfield_input.text.Equals(Dmeaning_small)||inputfield_input.text.Equals("DATE"))
+        if (input.Length > 0 && (input.Equals(DMeaning)||input.Equals(Dmeaning_small)||input.Equals("DATE")))
         {
             Debug.Log("성공");
             GameObject.Find("DMeaningImage").SetActive(false);
             Runner.StartDialogue("DCorrect");
         }
 
-        else
+        else if(input.Length > 0)
         {
+            inputfield_input.text = "";
             Debug.Log("실패");
             Runner.StartDialogue("DMeaning");
         }
