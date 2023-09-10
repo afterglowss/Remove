@@ -645,7 +645,7 @@ title: InferingPictureTime
 ---
 <<setNumber 1>>
 시간대가 이상한 사진은......
--> 갤러리 속 13번 사진
+-> 갤러리 속 9번 사진
     <<setNumber 3>>
     <<picture8_2In>>
     <<playSound SoundManager 34>>
@@ -1217,6 +1217,7 @@ title: InferingPassword
 <<if $chance>=2>>
     다시 생각해 볼까?
     내 기억이 맞다면, 힌트는 캘린더와 갤러리에는 없었던 것 같아.
+    그리고 누군가의 생일이어야 해.
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>

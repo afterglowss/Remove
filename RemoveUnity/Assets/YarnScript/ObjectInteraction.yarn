@@ -36,6 +36,9 @@
 
 <<set $Ring1 = 0>>
 <<set $Ring2 = 0>>
+
+<<set $BookCheckOnce1 = 0>>
+<<set $BookCheckOnce2 = 0>>
 ===
 title: StalkingPhoto1
 ---
@@ -352,6 +355,14 @@ title: BookShelf
 <<if $CheckTheMajor == false>>
 	그런데 내 전공이… 뭐였더라?
 	-> 심리학과 학생이다.
+		<<if $BookCheckOnce1 == 0>>
+			정말 그렇게 생각해?
+			-> 응.
+				<<set $BookCheckOnce1 = 1>>
+			-> ...조금 더 생각해볼게.
+				<<set $BookCheckOnce1 = 1>>
+				<<stop>>
+		<<endif>>
 		그렇다면 이 <color=yellow>‘자료구조’</color>와 <color=yellow>‘데이터베이스 개론과 실습’</color>의 주인은 내가 아니겠군.
 		<<set $CheckTheMajor = true>>
 	-> 컴퓨터공학과 학생이다.
@@ -366,6 +377,14 @@ title: BookShelf
 		-> 이지연이 주인이다.
 			지연이는… 나와 같은 과 아니었나?
 	-> 심리학과와 컴퓨터공학과를 복수전공 중이다. 
+		<<if $BookCheckOnce2 == 0>>
+			정말 그렇게 생각해?
+			-> 응.
+				<<set $BookCheckOnce2 = 1>>
+			-> ...조금 더 생각해볼게.
+				<<set $BookCheckOnce2 = 1>>
+				<<stop>>
+		<<endif>>
 		그렇다면 이 책들 모두 내 것이겠군.
 		<<set $CheckTheMajor = true>>
 	-> 좀 더 생각해봐야겠어. 
