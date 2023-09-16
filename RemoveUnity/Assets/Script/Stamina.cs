@@ -1,10 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Yarn.Unity;
 
 public class Stamina : MonoBehaviour
 {
+
+    int currentHour = TimeController.hour;
+    int currentMinute = TimeController.min;
+    float currentSec = TimeController.sec;
+
+    private InMemoryVariableStorage variableStorage;
+    private void Start()
+    {
+  
+        variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
+        int staminaNum = 5;
+
+        if (51> currentMinute && currentMinute >= 48)
+        {
+            GameObject.Find("Chance5").SetActive(false);
+            GameObject.Find("Chance5_empty").SetActive(false);
+            variableStorage.TryGetValue("$staminaNum", out staminaNum);
+            variableStorage.SetValue("$staminaNum", staminaNum + 1);
+
+        }
+
+        else if (54> currentMinute && currentMinute >= 51)
+        {
+            GameObject.Find("Chance5").SetActive(false);
+            GameObject.Find("Chance5_empty").SetActive(false);
+            GameObject.Find("Chance4").SetActive(false);
+            GameObject.Find("Chance4_empty").SetActive(false);
+            variableStorage.TryGetValue("$staminaNum", out staminaNum);
+            variableStorage.SetValue("$staminaNum", staminaNum + 1);
+        }
+
+        else if (currentMinute >= 54)
+        {
+            GameObject.Find("Chance5").SetActive(false);
+            GameObject.Find("Chance5_empty").SetActive(false);
+            GameObject.Find("Chance4").SetActive(false);
+            GameObject.Find("Chance4_empty").SetActive(false);
+            GameObject.Find("Chance3").SetActive(false);
+            GameObject.Find("Chance3_empty").SetActive(false);
+            variableStorage.TryGetValue("$staminaNum", out staminaNum);
+            variableStorage.SetValue("$staminaNum", staminaNum + 1);
+
+        }
+
+
+    }
+
+
+
     [YarnCommand("stamina")]
     public static void StaminaControl()
     {
