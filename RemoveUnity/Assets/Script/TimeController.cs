@@ -24,9 +24,9 @@ public class TimeController : MonoBehaviour
     float bloodEvidence = 0;
     float trueEvidence = 0;
 
-    static int hour = 1;
-    static int min = 45;
-    static float sec = 0f;
+    public static int hour = 1;
+    public static int min = 45;
+    public static float sec = 0f;
     public void Start()
     {
         a = 0;

@@ -3,6 +3,7 @@ title: chance
 <<set $TotalChance = 0>>
 <<set $chance = 0>>
 <<set $InferingEnter = false>>
+<<set $staminaNum = 0>>
 
 
 ===
@@ -24,6 +25,13 @@ tags:
 어쩌면 지금이 마지막 기회일지도 모른다.
 대체 무엇이 거슬렸는지 찾아낼 기회.
 그래, 다시 처음부터 천천히 되짚어보자.
+<<if $staminaNum > 0>>
+    그런데 아까 증거를 지우는데 시간을 너무 오래 썼나봐.
+    더 줄였으면 생각할 시간이 있었을텐데.
+    그래도 열심히 해보자.
+<<else>>
+    고민할 시간이 충분하네. 열심히 해보자.
+<<endif>>
 <<fadeOut FadeImage FadeImage>>
 
 어디부터 되짚어 봐야 좋을까.
