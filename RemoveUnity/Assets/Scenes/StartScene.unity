@@ -3131,7 +3131,7 @@ MonoBehaviour:
   - name: 13
     bgm: {fileID: 8300000, guid: b3e2d6cc178b4ac43bf4b9625113e2e1, type: 3}
   - name: 33
-    bgm: {fileID: 8300000, guid: 6cbeeaa5f59b842429df848ff8e11cc5, type: 3}
+    bgm: {fileID: 8300000, guid: c7a7a632d61167d4ab29c770b7b70f0c, type: 3}
   - name: 35
     bgm: {fileID: 8300000, guid: 5ba4dab8e1b041747a55e2aa9c49f9fd, type: 3}
   - name: 36
@@ -3507,7 +3507,7 @@ MonoBehaviour:
   - name: 6
     sound: {fileID: 8300000, guid: 376a46d62adc9b2438ba50b7a81ab492, type: 3}
   - name: 7
-    sound: {fileID: 8300000, guid: 2dd7669bb8065624b9522b194498ab8f, type: 3}
+    sound: {fileID: 8300000, guid: 81413069c7930ac4e8b4127b89939665, type: 3}
   - name: 8
     sound: {fileID: 8300000, guid: fdf940fe163495f4fbee108eac473c56, type: 3}
   - name: 9
@@ -3559,7 +3559,7 @@ MonoBehaviour:
   - name: 32
     sound: {fileID: 8300000, guid: 8473242dc46bef649aff0552be2f8161, type: 3}
   - name: 33
-    sound: {fileID: 8300000, guid: 6cbeeaa5f59b842429df848ff8e11cc5, type: 3}
+    sound: {fileID: 8300000, guid: c7a7a632d61167d4ab29c770b7b70f0c, type: 3}
   - name: 34
     sound: {fileID: 8300000, guid: 6e6c12114ab091342b50cfcef0a07681, type: 3}
   - name: 35
