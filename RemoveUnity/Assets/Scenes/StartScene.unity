@@ -2070,6 +2070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5665317717604146022, guid: 3ff4e0d87ab7d4789a1565ac303e8261, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6635123125486227991, guid: 3ff4e0d87ab7d4789a1565ac303e8261, type: 3}
       propertyPath: m_Name
       value: Option View

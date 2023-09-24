@@ -70,6 +70,7 @@ tags:
 //<<jump InferingPictureD>>
 //<<jump InferingPassword>>
 <<jump InferingStorystart>>
+//<<jump InferingImpossible>>
 ===
 title: InferingStorystart
 ---
@@ -687,15 +688,6 @@ title: InferingImpossible
 10월 10일에 찍을 수 없었던 이유를 증명해줄 사람은......
 <<setNumber 1>>
 -> 오하나
-    <<set $TotalChance = $TotalChance+1>>
-    <<stamina>>
-    <<if $TotalChance>=5>>
-        <<jump Fail>>
-    <<else>>
-        으음...... 이게 아닌 거 같은데.
-        <<jump InferingImpossible>>
-    <<endif>>
--> 심재환
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
