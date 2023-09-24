@@ -70,6 +70,7 @@ tags:
 //<<jump InferingPictureD>>
 //<<jump InferingPassword>>
 <<jump InferingStorystart>>
+//<<jump InferingImpossible>>
 ===
 title: InferingStorystart
 ---
@@ -653,7 +654,7 @@ title: InferingPictureTime
 ---
 <<setNumber 1>>
 시간대가 이상한 사진은......
--> 갤러리 속 13번 사진
+-> 갤러리 속 9번 사진
     <<setNumber 3>>
     <<picture8_2In>>
     <<playSound SoundManager 34>>
@@ -687,15 +688,6 @@ title: InferingImpossible
 10월 10일에 찍을 수 없었던 이유를 증명해줄 사람은......
 <<setNumber 1>>
 -> 오하나
-    <<set $TotalChance = $TotalChance+1>>
-    <<stamina>>
-    <<if $TotalChance>=5>>
-        <<jump Fail>>
-    <<else>>
-        으음...... 이게 아닌 거 같은데.
-        <<jump InferingImpossible>>
-    <<endif>>
--> 심재환
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>
@@ -1225,6 +1217,7 @@ title: InferingPassword
 <<if $chance>=2>>
     다시 생각해 볼까?
     내 기억이 맞다면, 힌트는 캘린더와 갤러리에는 없었던 것 같아.
+    그리고 누군가의 생일이어야 해.
     <<set $TotalChance = $TotalChance+1>>
     <<stamina>>
     <<if $TotalChance>=5>>

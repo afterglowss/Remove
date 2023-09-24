@@ -2089,7 +2089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -327, y: 288}
+  m_AnchoredPosition: {x: -329.7, y: 230.6}
   m_SizeDelta: {x: 106.69, y: 106.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068666720
@@ -2701,7 +2701,8 @@ MonoBehaviour:
   m_text: "<size=140%><color=red>\uC81C\uC791</color></size>\nTeam <size=120%>\uC99D\uAC70\uC788\uB0D0</size>
     \n\n\uAE30\uD68D <size=120%>\uC774\uD76C\uC11C(PM)</size> \n\uD504\uB85C\uADF8\uB798\uBC0D
     <size=130%>\uAD6C\uB098\uD604 \uC2E0\uD61C\uC6D0</size>\n\uC544\uD2B8 <size=130%>\uC11C\uC218\uBBFC</size>
-    \n\n      <color=red>PANDORA</color> CUBE"
+    \n\n<size=80%>\uB3C4\uC6C0</size> \uC774\uC0C1\uD604 \uAE40\uC900\uC6B0 \uD64D\uAE30\uD0DC
+    \uC5C4\uC9C4\uC6A9\n\n      <color=red>PANDORA</color> CUBE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ab3b8ae5e659db4494428662401fd97, type: 2}
   m_sharedMaterial: {fileID: -6815043924989056005, guid: 9ab3b8ae5e659db4494428662401fd97, type: 2}

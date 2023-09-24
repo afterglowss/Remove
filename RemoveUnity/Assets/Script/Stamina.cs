@@ -11,12 +11,14 @@ public class Stamina : MonoBehaviour
     int currentMinute = TimeController.min;
     float currentSec = TimeController.sec;
 
+
     private InMemoryVariableStorage variableStorage;
     private void Start()
     {
   
         variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
-        int staminaNum = 5;
+        int staminaNum = 0;
+        int totalchance = 0;
 
         if (51> currentMinute && currentMinute >= 48)
         {
@@ -24,7 +26,7 @@ public class Stamina : MonoBehaviour
             GameObject.Find("Chance5_empty").SetActive(false);
             variableStorage.TryGetValue("$staminaNum", out staminaNum);
             variableStorage.SetValue("$staminaNum", staminaNum + 1);
-
+            variableStorage.SetValue("$TotalChance", totalchance + 1);
         }
 
         else if (54> currentMinute && currentMinute >= 51)
@@ -35,6 +37,7 @@ public class Stamina : MonoBehaviour
             GameObject.Find("Chance4_empty").SetActive(false);
             variableStorage.TryGetValue("$staminaNum", out staminaNum);
             variableStorage.SetValue("$staminaNum", staminaNum + 1);
+            variableStorage.SetValue("$TotalChance", totalchance + 2);
         }
 
         else if (currentMinute >= 54)
@@ -47,10 +50,9 @@ public class Stamina : MonoBehaviour
             GameObject.Find("Chance3_empty").SetActive(false);
             variableStorage.TryGetValue("$staminaNum", out staminaNum);
             variableStorage.SetValue("$staminaNum", staminaNum + 1);
+            variableStorage.SetValue("$TotalChance", totalchance + 3);
 
         }
-
-
     }
 
 
