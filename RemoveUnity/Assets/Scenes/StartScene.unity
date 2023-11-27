@@ -2884,6 +2884,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7902adce18bfdb47a04f9cbae67208f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    sawStoryScene: 0
+    sawTrueEnding: 0
+    sawEnding1: 0
+    sawEnding2: 0
+    sawEnding3: 0
+    sawEnding4: 0
 --- !u!4 &790434845
 Transform:
   m_ObjectHideFlags: 0

@@ -452,6 +452,7 @@ title: Basin
 	옷을 숨기고 세면대로 돌아오자 무언가 반짝이는 것이 보인다. 
 	<<playSound SoundManager 20>>
 	<<ringAppear Key2>>
+	<<stopSound SoundManager>>
 	화장대 서랍 열쇠를 발견했다.
 	<<set $DresserKey = true>>
 	<<wait 0.5>>

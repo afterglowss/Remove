@@ -15,15 +15,15 @@ public class Data
     public bool sawEnding3;
     public bool sawEnding4;
 
-    //public Data(bool sawStoryScene, bool sawTrueEnding, bool sawEnding1, bool sawEnding2, bool sawEnding3, bool sawEnding4)
-    //{
-    //    this.sawStoryScene = sawStoryScene;
-    //    this.sawTrueEnding = sawTrueEnding;
-    //    this.sawEnding1 = sawEnding1;
-    //    this.sawEnding2 = sawEnding2;
-    //    this.sawEnding3 = sawEnding3;
-    //    this.sawEnding4 = sawEnding4;
-    //}
+    public Data(bool sawStoryScene, bool sawTrueEnding, bool sawEnding1, bool sawEnding2, bool sawEnding3, bool sawEnding4)
+    {
+        this.sawStoryScene = sawStoryScene;
+        this.sawTrueEnding = sawTrueEnding;
+        this.sawEnding1 = sawEnding1;
+        this.sawEnding2 = sawEnding2;
+        this.sawEnding3 = sawEnding3;
+        this.sawEnding4 = sawEnding4;
+    }
 
 }
 
@@ -31,8 +31,8 @@ public class DataManager : MonoBehaviour
 {
     private static readonly string privateKey = "1718hy9dsf0jsdlfjds0pa9ids78ahgf81h32re";
 
-    static Data data = new Data(/*true, false, false, false, false, false*/);
-
+    public Data data = new Data(false, false, false, false, false, false);
+    //N65pRnwCAoNdGPdtNvEbbmj4EHt83AH7fjKy61cAOsJ7SEzlkn6JO/i9bNeQblWrRdGZ8qW+EAjuYlugUOZltn+nPmPXQrdMfsa+BcMjCEnGj2basYyKDqi7aRMSv7fYLbRVVKaCLpijN+zSiI0OpeZyiia0VaieyLsCX9k6uSY=
     string path;
 
     public static DataManager instance;
@@ -49,13 +49,12 @@ public class DataManager : MonoBehaviour
             Destroy(instance);
         }
 
-        //Save();
+        //Save();       //이거 잠깐 켰다가 끄면 모든 변수 false 처리됨.
+        
     }
     public static void Save()
     {
-        //원래라면 플레이어 정보나 인벤토리 등에서 긁어모아야 할 정보들.
-        
-        string jsonString = DataToJson(data);
+        string jsonString = DataToJson(instance.data);
         string encryptString = Encrypt(jsonString);
         SaveFile(encryptString);
     }
@@ -67,14 +66,13 @@ public class DataManager : MonoBehaviour
             Debug.Log("세이브 파일이 존재하지 않음.");
             return;
         }
-
         string encryptData = LoadFile(GetPath());
+        //Debug.Log(encryptData);
         string decryptData = Decrypt(encryptData);
 
-        Debug.Log(decryptData);
+        //Debug.Log(decryptData);
 
-        data = JsonToData(decryptData);
-        //return data;
+        instance.data = JsonToData(decryptData);
     }
     static string DataToJson(Data data)
     {
@@ -85,13 +83,18 @@ public class DataManager : MonoBehaviour
     //json string을 SaveData로 변환
     static Data JsonToData(string jsonData)
     {
-        data = JsonUtility.FromJson<Data>(jsonData);
-        return data;
+        instance.data = JsonUtility.FromJson<Data>(jsonData);
+        return instance.data;
     }
 
     static string GetPath()
     {
         return Path.Combine(Application.dataPath, "database.json");
+    }
+
+    static string GetTestPath()
+    {
+        return Path.Combine(Application.dataPath, "test.json");
     }
     private void Start()
     {
@@ -183,49 +186,49 @@ public class DataManager : MonoBehaviour
     public static bool GetSawStoryScene()
     {
         Load();
-        return data.sawStoryScene;
+        return instance.data.sawStoryScene;
     }
 
     [YarnCommand("setTrueSawStoryScene")]
     public static void SetTrueSawStoryScene()
     {
-        data.sawStoryScene = true;
+        instance.data.sawStoryScene = true;
         Save();
     }
     [YarnFunction("getSawTrueEnding")]
     public static bool GetSawTrueEnding()
     {
         Load();
-        return data.sawTrueEnding;
+        return instance.data.sawTrueEnding;
     }
     [YarnCommand("setTrueSawTrueEnding")]
     public static void SetTrueSawTrueEnding()
     {
-        data.sawTrueEnding = true;
+        instance.data.sawTrueEnding = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding1")]
     public static void SetTrueSawEnding1()
     {
-        data.sawEnding1 = true;
+        instance.data.sawEnding1 = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding2")]
     public static void SetTrueSawEnding2()
     {
-        data.sawEnding2 = true;
+        instance.data.sawEnding2 = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding3")]
     public static void SetTrueSawEnding3()
     {
-        data.sawEnding3 = true;
+        instance.data.sawEnding3 = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding4")]
     public static void SetTrueSawEnding4()
     {
-        data.sawEnding4 = true;
+        instance.data.sawEnding4 = true;
         Save();
     }
 
@@ -236,23 +239,23 @@ public class DataManager : MonoBehaviour
         switch (ending)
         {
             case 1:
-                if (data.sawEnding1)
+                if (instance.data.sawEnding1)
                     return true;
                 break;
             case 2:
-                if (data.sawEnding2)
+                if (instance.data.sawEnding2)
                     return true;
                 break;
             case 3:
-                if (data.sawEnding3)
+                if (instance.data.sawEnding3)
                     return true;
                 break;
             case 4:
-                if (data.sawEnding4)
+                if (instance.data.sawEnding4)
                     return true;
                 break;
             case 5:
-                if (data.sawTrueEnding)
+                if (instance.data.sawTrueEnding)
                     return true;
                 break;
             default:
