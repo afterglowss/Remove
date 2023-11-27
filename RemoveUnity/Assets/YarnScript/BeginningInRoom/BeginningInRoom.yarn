@@ -558,5 +558,14 @@ title: Ending5
 <<textFadeIn EndingCredit EndingCredit>>
 <<fadeIn Logo Logo>>
 <<wait 3>>
+<<textFadeOut EndingCredit EndingCredit>>
+<<fadeOut Logo Logo>>
+<<wait 2>>
+<<textFadeIn BGM BGM>>
+<<wait 2>>
+<<textFadeOut BGM BGM>>
+<<wait 2>>
+<<textFadeIn ThankYou ThankYou>>
+<<wait 2>>
 <<textAppear MainText>>
 ===

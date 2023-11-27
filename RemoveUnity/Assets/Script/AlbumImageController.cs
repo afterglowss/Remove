@@ -37,9 +37,7 @@ public class AlbumImageController : MonoBehaviour
         text3 = Ending3.GetComponentsInChildren<TextMeshProUGUI>();
         text4 = Ending4.GetComponentsInChildren<TextMeshProUGUI>();
         text5 = Ending5.GetComponentsInChildren<TextMeshProUGUI>();
-    }
-    private void Update()
-    {
+
         if (DataManager.IsSawEnding(1) && !ending1Appear)
         {
             Color color = Ending1.color;
@@ -101,6 +99,10 @@ public class AlbumImageController : MonoBehaviour
             color.a = 0f;
             hint.color = color;
         }
+    }
+    private void Update()
+    {
+        
     }
 
     private TextMeshProUGUI[] text;
