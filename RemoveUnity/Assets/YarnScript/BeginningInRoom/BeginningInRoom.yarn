@@ -14,8 +14,6 @@ tags:
 <<endif>>
 <<optionBlock 0>>
 <<setTrueSawStoryScene>>
-//<<seeScene 2>>
-//<<isSkip true>>
 <<stopSound SoundManager>>
 나: 이... 이게 다 뭐야...?
 나는 차마 말을 잇지 못했다.

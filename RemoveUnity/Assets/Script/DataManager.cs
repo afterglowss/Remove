@@ -15,15 +15,15 @@ public class Data
     public bool sawEnding3;
     public bool sawEnding4;
 
-    public Data(bool sawStoryScene, bool sawTrueEnding, bool sawEnding1, bool sawEnding2, bool sawEnding3, bool sawEnding4)
-    {
-        this.sawStoryScene = sawStoryScene;
-        this.sawTrueEnding = sawTrueEnding;
-        this.sawEnding1 = sawEnding1;
-        this.sawEnding2 = sawEnding2;
-        this.sawEnding3 = sawEnding3;
-        this.sawEnding4 = sawEnding4;
-    }
+    //public Data(bool sawStoryScene, bool sawTrueEnding, bool sawEnding1, bool sawEnding2, bool sawEnding3, bool sawEnding4)
+    //{
+    //    this.sawStoryScene = sawStoryScene;
+    //    this.sawTrueEnding = sawTrueEnding;
+    //    this.sawEnding1 = sawEnding1;
+    //    this.sawEnding2 = sawEnding2;
+    //    this.sawEnding3 = sawEnding3;
+    //    this.sawEnding4 = sawEnding4;
+    //}
 
 }
 
@@ -31,8 +31,8 @@ public class DataManager : MonoBehaviour
 {
     private static readonly string privateKey = "1718hy9dsf0jsdlfjds0pa9ids78ahgf81h32re";
 
-    public Data data = new Data(false, false, false, false, false, false);
-    //N65pRnwCAoNdGPdtNvEbbmj4EHt83AH7fjKy61cAOsJ7SEzlkn6JO/i9bNeQblWrRdGZ8qW+EAjuYlugUOZltn+nPmPXQrdMfsa+BcMjCEnGj2basYyKDqi7aRMSv7fYLbRVVKaCLpijN+zSiI0OpeZyiia0VaieyLsCX9k6uSY=
+    static Data data = new Data(/*true, false, false, false, false, false*/);
+
     string path;
 
     public static DataManager instance;
@@ -49,12 +49,13 @@ public class DataManager : MonoBehaviour
             Destroy(instance);
         }
 
-        //Save();       //¿Ã∞≈ ¿·±Ò ƒ◊¥Ÿ∞° ≤Ù∏È ∏µÁ ∫Øºˆ false √≥∏Æµ .
-        
+        //Save();
     }
     public static void Save()
     {
-        string jsonString = DataToJson(instance.data);
+        //??????? ?√∑???? ?????? ?Œ∫??? ???? ?????? ?? ??????.
+
+        string jsonString = DataToJson(data);
         string encryptString = Encrypt(jsonString);
         SaveFile(encryptString);
     }
@@ -63,16 +64,17 @@ public class DataManager : MonoBehaviour
     {
         if (!File.Exists(GetPath()))
         {
-            Debug.Log("ºº¿Ã∫Í ∆ƒ¿œ¿Ã ¡∏¿Á«œ¡ˆ æ ¿Ω.");
+            Debug.Log("ÏÑ∏Ïù¥Î∏å ÌååÏùºÏù¥ Ï°¥Ïû¨ÌïòÏßÄ ÏïäÏùå.");
             return;
         }
+
         string encryptData = LoadFile(GetPath());
-        //Debug.Log(encryptData);
         string decryptData = Decrypt(encryptData);
 
-        //Debug.Log(decryptData);
+        Debug.Log(decryptData);
 
-        instance.data = JsonToData(decryptData);
+        data = JsonToData(decryptData);
+        //return data;
     }
     static string DataToJson(Data data)
     {
@@ -80,25 +82,21 @@ public class DataManager : MonoBehaviour
         return jsonData;
     }
 
-    //json string¿ª SaveData∑Œ ∫Ø»Ø
+    //json string?? SaveData?? ???
     static Data JsonToData(string jsonData)
     {
-        instance.data = JsonUtility.FromJson<Data>(jsonData);
-        return instance.data;
+        data = JsonUtility.FromJson<Data>(jsonData);
+        return data;
     }
 
     static string GetPath()
     {
         return Path.Combine(Application.dataPath, "database.json");
     }
-
-    static string GetTestPath()
-    {
-        return Path.Combine(Application.dataPath, "test.json");
-    }
     private void Start()
     {
         //LoadData();
+
     }
     public void LoadData()
     {
@@ -111,31 +109,31 @@ public class DataManager : MonoBehaviour
         File.WriteAllText(path, json);
     }
 
-    //json string¿ª ∆ƒ¿œ∑Œ ¿˙¿Â
+    //json string?? ????? ????
     static void SaveFile(string jsonData)
     {
         using (FileStream fs = new FileStream(GetPath(), FileMode.Create, FileAccess.Write))
         {
-            //∆ƒ¿œ∑Œ ¿˙¿Â«“ ºˆ ¿÷∞‘ πŸ¿Ã∆Æ»≠
+            //????? ?????? ?? ??? ??????
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
 
-            //bytes¿« ≥ªøÎπ∞¿ª 0 ~ max ±Ê¿Ã±Ó¡ˆ fsø° ∫πªÁ
+            //bytes?? ???Îπ∞?? 0 ~ max ??????? fs?? ????
             fs.Write(bytes, 0, bytes.Length);
         }
     }
 
-    //∆ƒ¿œ ∫“∑Øø¿±‚
+    //???? ???????
     static string LoadFile(string path)
     {
         using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
         {
-            //∆ƒ¿œ¿ª πŸ¿Ã∆Æ»≠ «ﬂ¿ª ∂ß ¥„¿ª ∫Øºˆ∏¶ ¡¶¿€
+            //?????? ?????? ???? ?? ???? ?????? ????
             byte[] bytes = new byte[(int)fs.Length];
 
-            //∆ƒ¿œΩ∫∆Æ∏≤¿∏∑Œ ∫Œ≈Õ πŸ¿Ã∆Æ √ﬂ√‚
+            //???????????? ???? ????? ????
             fs.Read(bytes, 0, (int)fs.Length);
 
-            //√ﬂ√‚«— πŸ¿Ã∆Æ∏¶ json string¿∏∑Œ ¿Œƒ⁄µ˘
+            //?????? ??????? json string???? ?????
             string jsonString = System.Text.Encoding.UTF8.GetString(bytes);
             return jsonString;
         }
@@ -186,49 +184,49 @@ public class DataManager : MonoBehaviour
     public static bool GetSawStoryScene()
     {
         Load();
-        return instance.data.sawStoryScene;
+        return data.sawStoryScene;
     }
 
     [YarnCommand("setTrueSawStoryScene")]
     public static void SetTrueSawStoryScene()
     {
-        instance.data.sawStoryScene = true;
+        data.sawStoryScene = true;
         Save();
     }
     [YarnFunction("getSawTrueEnding")]
     public static bool GetSawTrueEnding()
     {
         Load();
-        return instance.data.sawTrueEnding;
+        return data.sawTrueEnding;
     }
     [YarnCommand("setTrueSawTrueEnding")]
     public static void SetTrueSawTrueEnding()
     {
-        instance.data.sawTrueEnding = true;
+        data.sawTrueEnding = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding1")]
     public static void SetTrueSawEnding1()
     {
-        instance.data.sawEnding1 = true;
+        data.sawEnding1 = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding2")]
     public static void SetTrueSawEnding2()
     {
-        instance.data.sawEnding2 = true;
+        data.sawEnding2 = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding3")]
     public static void SetTrueSawEnding3()
     {
-        instance.data.sawEnding3 = true;
+        data.sawEnding3 = true;
         Save();
     }
     [YarnCommand("setTrueSawEnding4")]
     public static void SetTrueSawEnding4()
     {
-        instance.data.sawEnding4 = true;
+        data.sawEnding4 = true;
         Save();
     }
 
@@ -239,23 +237,23 @@ public class DataManager : MonoBehaviour
         switch (ending)
         {
             case 1:
-                if (instance.data.sawEnding1)
+                if (data.sawEnding1)
                     return true;
                 break;
             case 2:
-                if (instance.data.sawEnding2)
+                if (data.sawEnding2)
                     return true;
                 break;
             case 3:
-                if (instance.data.sawEnding3)
+                if (data.sawEnding3)
                     return true;
                 break;
             case 4:
-                if (instance.data.sawEnding4)
+                if (data.sawEnding4)
                     return true;
                 break;
             case 5:
-                if (instance.data.sawTrueEnding)
+                if (data.sawTrueEnding)
                     return true;
                 break;
             default:
