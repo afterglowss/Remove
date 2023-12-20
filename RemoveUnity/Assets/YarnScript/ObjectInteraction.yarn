@@ -48,7 +48,7 @@ title: StalkingPhoto1
 	사진을 삭제했다.
 	<<set $PhotoDelete = $PhotoDelete+1>>
 	<<photoDelete Photo1 Photo1>>
-
+	<<photoButtonClick GalleryApp>>
 -> 아니야.
 	그래, 그냥 두자.
 ===
@@ -60,7 +60,7 @@ title: StalkingPhoto2
 	사진을 삭제했다.
 	<<set $PhotoDelete = $PhotoDelete+1>>
 	<<photoDelete Photo2 Photo2>>
-
+	<<photoButtonClick GalleryApp>>
 -> 아니야.
 	그래, 그냥 두자.
 ===
@@ -72,7 +72,7 @@ title: StalkingPhoto3
 	사진을 삭제했다.
 	<<set $PhotoDelete = $PhotoDelete+1>>
 	<<photoDelete Photo3 Photo3>>
-
+	<<photoButtonClick GalleryApp>>
 -> 아니야.
 	그래, 그냥 두자.
 ===
@@ -84,7 +84,7 @@ title: StalkingPhoto4
 	사진을 삭제했다.
 	<<set $PhotoDelete = $PhotoDelete+1>>
 	<<photoDelete Photo4 Photo4>>
-
+	<<photoButtonClick GalleryApp>>
 -> 아니야.
 	그래, 그냥 두자.
 ===
@@ -177,6 +177,7 @@ title: DresserDrawerOpen
 	<<wait 1>>
 	<<stopSound SoundManager>>
 	<<setNumber 1>>
+	//<<callRecord>>
 	<<objectDelete MentalHospital MentalHospital>>
 <<else>>
 	신경 쓰이는 것은 없다.

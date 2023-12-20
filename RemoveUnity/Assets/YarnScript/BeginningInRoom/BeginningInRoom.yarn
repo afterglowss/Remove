@@ -6,7 +6,7 @@ tags:
 <<stopSound SoundManager>>
 <<setNumber 3>>
 <<if getSawStoryScene() == true>>
-    <color=yellow>스킵하시겠습니까?</color>
+    <color=yellow>튜토리얼을 스킵하시겠습니까?</color>
     ->예.
         <<objectDelete HammerBlockImage HammerBlockImage>>
         <<jump Select>>
@@ -144,6 +144,12 @@ title: Confusing
 ===
 title: Select
 ---
+<<if getSawEnding4() == true>>
+    <color=yellow>해당 챕터 클리어 기록이 있습니다. 스킵하시겠습니까?</color>
+    ->예.
+        <<jumpScene Infering>>
+    ->아니오.
+<<endif>>
 역시 자수하는 것이 옳을까? 그냥 숨겨버리면 아무도 모르지 않을까?
 -> 자수한다 (지금이라도 늦지 않았다. 경찰에 자초지종을 설명하자!)
     <<jump Surrender>>
@@ -179,7 +185,6 @@ title: StartingGame
 ===
 title: Surrender
 ---
-<<setTrueSawEnding1>>
 <<fadeIn FadeImage FadeImage>>
 <<musicFadeOut MusicManager>>
 <<wait 1>>
@@ -221,6 +226,7 @@ title: Ending1
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
 <<textAppear MainText>>
+<<setTrueSawEnding1>>
 ===
 
 title: Ending2Enter
@@ -232,7 +238,6 @@ title: Ending2Enter
 ===
 title: Ending2
 ---
-<<setTrueSawEnding2>>
 <<musicFadeIn MusicManager>>
 <<playMusic MusicManager 36>>
 갑자기 머릿속이 복잡해진다.
@@ -271,6 +276,7 @@ title: Ending2
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
 <<textAppear MainText>>
+<<setTrueSawEnding2>>
 ===
 title: Ending3Enter
 ---
@@ -280,10 +286,9 @@ title: Ending3Enter
 ===
 title: Ending3
 ---
-<<setTrueSawEnding3>>
 <<stopMusic MusicManager>>
 <<playSound SoundManager 28>>
-<<wait 1>>
+<<wait 2>>
 <<playSound SoundManager 29>>
 <<wait 0.5>>
 ??: 경찰입니다. 문 열어주세요.
@@ -321,7 +326,11 @@ title: Ending3
 경찰: 같이 서로 가주셔야겠습니다.
 <<wait 0.5>>
 나: ......네.
-
+<<jump Ending3Skip1>>
+===
+title: Ending3Skip1
+---
+<<stopSound SoundManager>>
 <<fadeOut FadeImage FadeImage>>
 <<musicFadeIn MusicManager>>
 <<playMusic MusicManager 11>>
@@ -340,7 +349,10 @@ title: Ending3
 <<wait 0.5>>
 나는 끊임없이 해명했지만, 경찰은 나의 말을 전부 묵살했다.
 원룸에서 발견된 혈흔과 메신저 내용은 결정적인 증거가 되었다.
-
+<<jump Ending3Skip2>>
+===
+title: Ending3Skip2
+---
 <<fadeIn Arrest Arrest>>
 <<stopSound SoundManager>>
 <<playMusic MusicManager 1>>
@@ -364,6 +376,7 @@ title: Ending3
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
 <<textAppear MainText>>
+<<setTrueSawEnding3>>
 ===
 title: Ending4Enter
 ---
@@ -374,7 +387,6 @@ title: Ending4Enter
 ===
 title: Ending4
 ---
-<<setTrueSawEnding4>>
 <<stopMusic MusicManager>>
 <<playSound SoundManager 28>>
 <<wait 1>>
@@ -417,6 +429,10 @@ title: Ending4
 <<wait 0.5>>
 나: ......네.
 
+<<jump Ending4Skip1>>
+===
+title: Ending4Skip1
+---
 
 <<musicFadeIn MusicManager>>
 <<playMusic MusicManager 37>>
@@ -451,10 +467,10 @@ title: Ending4
 <<textFadeIn EndingText EndingText>>
 <<wait 3>>
 <<textAppear MainText>>
+<<setTrueSawEnding4>>
 ===
 title: Ending5
 ---
-<<setTrueSawTrueEnding>>
 집주인이 돌아가고 잠시 뒤.
 <<playSound SoundManager 7>>
 <<wait 1>>
@@ -490,7 +506,14 @@ title: Ending5
 그런 확신이 섰다.
 <<wait 1>>
 
-문을 막을 도구를 찾는데, 문이 벌컥 열렸다.
+
+
+<<jump Ending5Skip1>>
+===
+title: Ending5Skip1
+---
+
+휴대폰을 켜두고 문을 막을 도구를 찾는데, 문이 벌컥 열렸다.
 <<stopSound SoundManager>>
 <<fadeOut FadeImage FadeImage>>
 <<playMusic MusicManager 38>>
@@ -507,6 +530,10 @@ title: Ending5
 심재환: ......이렇게 된 이상, 어쩔 수 없죠.
 심재환이 갑자기 나를 향해 달려들었다.
 나는 손에 집히는 대로 물건을 집어던지며 방어했지만, 손이 떨리는 바람에 물건이 거의 빗나가 방어에 실패했다.
+
+<<stopMusic MusicManager>>
+<<stopSound SoundManager>>
+
 나: 아무도 없어요? 살려주세요!
 나는 악을 지르며 도움을 요청했다.
 우린 한동안 몸싸움을 이어나갔다.
@@ -516,7 +543,9 @@ title: Ending5
 
 <<fadeIn FadeImage FadeImage>>
 <<wait 1>>
+
 <<fadeOut Guest Guest>>
+
 
 그때, 기적처럼 경찰이 도착했다.
 심재환의 얼굴에 당혹감이 스쳐 지나갔다.
@@ -530,6 +559,12 @@ title: Ending5
 또 어찌나 계획적으로 행동했는지 증거 불충분으로 풀려날 뻔했으나,
 심재환이 문을 두들긴 순간부터 켜놓았던 스마트폰 녹음이 결정적인 증거가 되어 유죄 선고를 받았다.
 
+<<jump Ending5Skip2>>
+===
+title: Ending5Skip2
+---
+
+<<fadeOut Guest Guest>>
 <<fadeOut FadeImage FadeImage>>
 <<playMusic MusicManager 39>>
 <<wait 1.5>>
@@ -546,6 +581,7 @@ title: Ending5
 <<wait 0.5>>
 이제 나는 과거를 훌훌 털어버리고자 한다.
 앞으로의 나날엔 즐거움과 사랑만이 존재하기를.
+
 
 <<fadeIn FadeImage FadeImage>>
 <<wait 1.5>>
@@ -566,4 +602,5 @@ title: Ending5
 <<textFadeIn ThankYou ThankYou>>
 <<wait 2>>
 <<textAppear MainText>>
+<<setTrueSawTrueEnding>>
 ===

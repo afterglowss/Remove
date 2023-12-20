@@ -205,11 +205,17 @@ public class DataManager : MonoBehaviour
         data.sawTrueEnding = true;
         Save();
     }
+    
     [YarnCommand("setTrueSawEnding1")]
     public static void SetTrueSawEnding1()
     {
         data.sawEnding1 = true;
         Save();
+    }
+    public static bool GetSawEnding1()
+    {
+        Load();
+        return data.sawEnding1;
     }
     [YarnCommand("setTrueSawEnding2")]
     public static void SetTrueSawEnding2()
@@ -217,17 +223,33 @@ public class DataManager : MonoBehaviour
         data.sawEnding2 = true;
         Save();
     }
+    public static bool GetSawEnding2()
+    {
+        Load();
+        return data.sawEnding2;
+    }
     [YarnCommand("setTrueSawEnding3")]
     public static void SetTrueSawEnding3()
     {
         data.sawEnding3 = true;
         Save();
     }
+    public static bool GetSawEnding3()
+    {
+        Load();
+        return data.sawEnding3;
+    }
     [YarnCommand("setTrueSawEnding4")]
     public static void SetTrueSawEnding4()
     {
         data.sawEnding4 = true;
         Save();
+    }
+    [YarnFunction("getSawEnding4")]
+    public static bool GetSawEnding4()
+    {
+        Load();
+        return data.sawEnding4;
     }
 
     [YarnCommand("isSawEnding")]

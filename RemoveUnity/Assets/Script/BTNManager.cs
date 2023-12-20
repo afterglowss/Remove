@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Yarn;
 using Yarn.Unity;
 
 public enum BTNType
@@ -16,7 +17,12 @@ public enum BTNType
     SkipToPhone,
     SkipToStoryEnd,
     SkipToGamescene,
-    MainMenu
+    MainMenu,
+    SkipEnding1,
+    SkipEnding2,
+    SkipEnding3,
+    SkipEnding4,
+    SkipEnding5,
 }
 public class BTNManager : MonoBehaviour
 {
@@ -82,12 +88,30 @@ public class BTNManager : MonoBehaviour
         else if (BTNType.SkipToStoryEnd == type)
         {
             gameObject.SetActive(DataManager.GetSawStoryScene());
-            //gameObject.GetComponent<Button>().interactable = DataManager.GetSawStoryScene();
         }
         else if (BTNType.SkipToGamescene == type)
         {
             gameObject.SetActive(DataManager.GetSawStoryScene());
-            //gameObject.GetComponent<Button>().interactable = DataManager.GetSawStoryScene();
+        }
+        else if (BTNType.SkipEnding1 == type)
+        {
+            gameObject.SetActive(DataManager.GetSawEnding1());
+        }
+        else if (BTNType.SkipEnding2 == type)
+        {
+            gameObject.SetActive(DataManager.GetSawEnding2());
+        }
+        else if (BTNType.SkipEnding3 == type)
+        {
+            gameObject.SetActive(DataManager.GetSawEnding3());
+        }
+        else if (BTNType.SkipEnding4 == type)
+        {
+            gameObject.SetActive(DataManager.GetSawEnding4());
+        }
+        else if (BTNType.SkipEnding5 == type)
+        {
+            gameObject.SetActive(DataManager.GetSawTrueEnding());
         }
         else
         {
@@ -129,6 +153,49 @@ public class BTNManager : MonoBehaviour
             case BTNType.SkipToGamescene:
                 SceneManager.LoadScene("GameScene");
                 break;
+            case BTNType.SkipEnding1:
+                //dialogueRunner.Stop();
+                break;
+            case BTNType.SkipEnding2:
+                break;
+            case BTNType.SkipEnding3:
+                Debug.Log(dialogueRunner.Dialogue.CurrentNode);
+                if (dialogueRunner.Dialogue.CurrentNode.Equals("Ending3"))
+                {
+                    dialogueRunner.Stop();
+                    dialogueRunner.StartDialogue("Ending3Skip1");
+                }
+                else if (dialogueRunner.Dialogue.CurrentNode.Equals("Ending3Skip1"))
+                {
+                    dialogueRunner.Stop();
+                    dialogueRunner.StartDialogue("Ending3Skip2");
+                    gameObject.SetActive(false);
+                }
+                break;
+            case BTNType.SkipEnding4:
+                Debug.Log(dialogueRunner.Dialogue.CurrentNode);
+                if (dialogueRunner.Dialogue.CurrentNode.Equals("Ending4"))
+                {
+                    dialogueRunner.Stop();
+                    dialogueRunner.StartDialogue("Ending4Skip1");
+                    gameObject.SetActive(false);
+                }
+                break;
+            case BTNType.SkipEnding5:
+                Debug.Log(dialogueRunner.Dialogue.CurrentNode);
+                if (dialogueRunner.Dialogue.CurrentNode.Equals("Ending5"))
+                {
+                    dialogueRunner.Stop();
+                    dialogueRunner.StartDialogue("Ending5Skip1");
+                }
+                else if (dialogueRunner.Dialogue.CurrentNode.Equals("Ending5Skip1"))
+                {
+                    dialogueRunner.Stop();
+                    dialogueRunner.StartDialogue("Ending5Skip2");
+                    gameObject.SetActive(false);
+                }
+                break;
+
             case BTNType.MainMenu:
                 dialogueRunner.StartDialogue("GameExit");
                 break;
@@ -272,4 +339,5 @@ public class BTNManager : MonoBehaviour
     {
 
     }
+
 }

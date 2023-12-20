@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     private DialogueRunner dialogueRunner;
     private InMemoryVariableStorage variableStorage;
+
+    public Image callrecord;
 
     public void Start()
     {
@@ -56,5 +59,16 @@ public class GameManager : MonoBehaviour
     public static bool GetSkip()
     {
         return isSkip;
+    }
+
+
+    [YarnCommand("callRecord")]
+    public static void CallRecord()
+    {
+        GameObject.Find("PhoneCanvas").transform.Find("CallApp").gameObject.SetActive(true);
+        Color color;
+        color = instance.callrecord.color;
+        color.a = 1f;
+        instance.callrecord.color = color;
     }
 }
